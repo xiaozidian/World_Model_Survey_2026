@@ -2701,6 +2701,16 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
   line-height: 1.3;
 }
 
+/* Page 10 needs the full three-row failure chain at projection size. The
+   earlier 205px pipeline preset predates the legibility pass and lets the last
+   row escape into the takeaway bar. Reserve real content height instead. */
+.slide:nth-of-type(10) .method-cards {
+  flex: 0 0 232px;
+  min-height: 232px;
+  margin-top: 20px !important;
+}
+.slide:nth-of-type(10) .key-line { margin-top: 14px !important; }
+
 /* The MoE / MoT cards carry a third metadata row at projection size. Reserve
    that height instead of allowing the takeaway bar to sit on top of it. */
 .layout-experts .diagram { flex: 0 0 250px !important; }
@@ -4197,7 +4207,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
             <div><b>核心产品</b><p data-field="product">Galbot G1；GraspVLA / GroceryVLA</p></div>
             <div><b>世界模型关联</b><p data-field="world">合成数据与端到端策略，公开证据更偏可执行预测表征。</p></div>
             <div><b>商业证据</b><p data-field="evidence">零售、工业、医疗验证；与延锋推进制造场景合作。</p></div>
-            <div><b>资本阶段</b><p data-field="funding">2026 新轮 25 亿元；225 亿元为媒体/Excel 口径。</p></div>
+            <div><b>资本阶段</b><p data-field="funding">2026 新轮 25 亿元；225 亿元为媒体推算口径。</p></div>
             <div class="risk"><b>主要风险</b><p data-field="risk">高估值要求部署快速放量；零样本泛化仍需连续运营数据。</p></div>
           </div>
         </div>
@@ -4399,7 +4409,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
         </div>
         <div class="key-line reveal d3" style="margin-top:16px">看 cap table 时同时问：谁能带来<span class="cool">真实客户</span>，谁会影响<span class="cool">战略独立</span>，谁需要明确的<span class="cool">退出窗口</span>。</div>
         <div class="source">SOURCE · Financing workbook; company and investor announcements · Valuations retain source-confidence labels</div>
-        <div class="deep-copy"><h3>估值口径</h3><p>正式投后估值、媒体根据融资额推算、公司对外口径和 Excel 汇总必须分开。没有投资协议或监管文件时，不使用“精确估值”做回报测算。</p><h3>退出路径</h3><p>硬件与场景公司更可能走 IPO 或产业并购；纯模型平台需要证明软件收入和跨本体生态，才能获得独立平台估值。</p></div>
+        <div class="deep-copy"><h3>估值口径</h3><p>正式投后估值、媒体根据融资额推算、公司对外口径和汇总资料必须分开。没有投资协议或监管文件时，不使用“精确估值”做回报测算。</p><h3>退出路径</h3><p>硬件与场景公司更可能走 IPO 或产业并购；纯模型平台需要证明软件收入和跨本体生态，才能获得独立平台估值。</p></div>
       </div>
     </section>
 
@@ -4882,70 +4892,70 @@ class SlidePresentation {
         name: '银河通用', route: '模型优先 · 轮式双臂', product: 'Galbot G1；GraspVLA / GroceryVLA',
         world: '公开证据偏端到端可执行表征：仿真合成数据与真机策略闭环，未把高保真视频生成作为产品核心。',
         evidence: '零售、工业、医疗验证；与延锋推进制造场景合作。连续运行利用率和接管率仍待核验。',
-        funding: '2026 年新轮 25 亿元；225 亿元为媒体/Excel 口径，非正式估值文件。',
+        funding: '2026 年新轮 25 亿元；225 亿元为媒体推算口径，非正式估值文件。',
         risk: '高估值要求部署快速放量；零样本泛化需要跨门店、跨 SKU 的运营数据验证。'
       },
       galaxea: {
         name: '星海图', route: '模型平台 · 整机与开发生态', product: 'R1 Pro / Lite；G0+；VLA 一体机与开发平台',
         world: '端到端 VLA、开放模型与开发者平台并行，世界预测能力主要通过策略与平台接口体现。',
         evidence: '科研开发与产业验证并行；开发者覆盖不能直接等同于工业规模收入。',
-        funding: 'Excel 记录 2026 年 B 轮 10 亿元、B+ 轮近 20 亿元；200 亿元为媒体/Excel 口径。',
+        funding: '现有融资资料显示，2026 年 B 轮 10 亿元、B+ 轮近 20 亿元；200 亿元为媒体推算口径。',
         risk: '硬件平台收入能否反哺模型与数据，以及 PoC 向量产的转化率尚待验证。'
       },
       spirit: {
         name: '千寻智能', route: '模型优先 · 视频预训练', product: 'Spirit VLA；全力控人形机器人 Moz1',
         world: '以互联网人类视频学习动作先验，再以遥操作与真机数据完成具身对齐。',
         evidence: '现阶段更偏模型、开发者和样机验证；规模客户与持续部署数据公开有限。',
-        funding: 'Excel 记录 2025 年 Pre-A / Pre-A+ 合计约 11 亿元；100 亿元为媒体/Excel 口径。',
+        funding: '现有融资资料显示，2025 年 Pre-A / Pre-A+ 合计约 11 亿元；100 亿元为媒体推算口径。',
         risk: '人类视频的低成本优势能否迁移到接触、力控与长时程失败恢复，是核心技术门。'
       },
       ai2: {
         name: '智平方', route: 'VLA 全栈 · 产业工具链', product: '爱宝机器人；端到端 VLA；采集、仿真与训练工具链',
         world: '公开资料支持策略内化预测表征与产业数据闭环，尚不能证明独立世界模型在线参与决策。',
         evidence: '机场行李车回收、配送与向导等半结构化场景，适合形成早期运营闭环。',
-        funding: 'Excel 记录 2026 年 B 系列融资超 10 亿元；100 亿元为媒体/Excel 口径。',
+        funding: '现有融资资料显示，2026 年 B 系列融资超 10 亿元；100 亿元为媒体推算口径。',
         risk: '项目定制比例、第二场景复用率和部署毛利决定其能否从方案商走向平台。'
       },
       x2: {
         name: '自变量机器人', route: '模型优先 · World Unified Model', product: 'WALL-A / WALL-B；WALL-WM；移动操作本体',
         world: '名单中最直接把世界统一模型置于核心架构的公司之一，强调真实数据到真机自主进化。',
         evidence: '家庭与工业实习生式部署仍早期，公开长期运营数据有限。',
-        funding: 'Excel 记录至 2025 年 A 轮，美团战投领投；100 亿元为媒体/Excel 口径。',
+        funding: '现有融资资料显示，至 2025 年 A 轮由美团战投领投；100 亿元为媒体推算口径。',
         risk: '需要拆解统一模型相对标准 VLA 的独立真机增益、时延与数据边际收益。'
       },
       psibot: {
         name: '灵初智能', route: '灵巧操作 · 模型数据本体全栈', product: 'Psi Sim / Data / Model / Bot；Psi H1 灵巧手',
         world: '以人类手部操作数据和强化学习 VLA 补足通用视频对接触与精细动作的不足。',
         evidence: '模型、数据和研发平台并行，商业规模仍处早期。',
-        funding: 'Excel 记录天使轮与 2026 年 Pre-A；累计融资口径需公司及投资方材料复核。',
+        funding: '现有融资资料显示已完成天使轮与 2026 年 Pre-A；累计融资口径需公司及投资方材料复核。',
         risk: '数据授权、标注质量、失败覆盖与真机迁移收益需要第三方验证。'
       },
       agibot: {
         name: '智元机器人', route: '软硬件全栈 · 多产品线', product: '远征、灵犀、精灵；启元、GraspVLA、AimRT / AimDK',
         world: '具身基座模型和抓取 VLA 持续投入，当前可验证资产还包括整机、供应链和开放平台。',
         evidence: '工业搬运、码垛、商业服务与科研开发，多产品线提供数据入口。',
-        funding: 'Excel 记录腾讯、京东、上海具身智能基金等多轮投资；150 亿元为媒体/Excel 口径。',
+        funding: '现有融资资料显示，腾讯、京东、上海具身智能基金等参与多轮投资；150 亿元为媒体推算口径。',
         risk: '产品线过宽可能推高研发与营运资金；需验证共用软件比例和现金消耗。'
       },
       robotera: {
         name: '星动纪元', route: '软硬件全栈 · 人形与灵巧手', product: '人形本体、灵巧手；ERA-42 VLA',
         world: '公开路线以全栈 VLA 和真机迭代为主，尚无充分证据确认独立可干预世界模型。',
         evidence: '科研、展示与产业验证并行；战略股东可提供制造场景。',
-        funding: 'Excel 记录 2025 年 A/A+ 与 2026 年战略轮；100 亿元为媒体/Excel 口径。',
+        funding: '现有融资资料显示已完成 2025 年 A/A+ 与 2026 年战略轮；100 亿元为媒体推算口径。',
         risk: '战略合作能否转为规模收入，以及全栈模块是否真正共享，是资本效率关键。'
       },
       noematrix: {
         name: '穹彻智能', route: '具身大脑平台 · 跨本体适配', product: 'Noematrix Brain；Training / DevPlatform；CoMiner',
         world: '任务分解、规划、导航与技能操作平台化；预测模块对闭环决策的独立贡献尚未公开。',
         evidence: '泛商业场景与合作伙伴本体适配，收入中软件与集成工时需要拆分。',
-        funding: 'Excel 记录多轮 Pre-A 及阿里战略融资；未见权威公开估值。',
+        funding: '现有融资资料显示已完成多轮 Pre-A 及阿里战略融资；未见权威公开估值。',
         risk: '适配成本和硬件差异可能削弱平台效应，需看跨本体技能复用与软件收入。'
       },
       tas: {
         name: '它石智航', route: '工业全栈 · 部署数据闭环', product: '数据—模型—本体一体化工业机器人系统',
         world: '公开证据支持以工业部署数据迭代策略；具体世界模型架构仍需技术尽调。',
         evidence: '上海经信部门披露与安波福合作及百台级部署计划；计划不等于验收与回款。',
-        funding: 'Excel 记录 2025 年天使轮 1.2 亿美元、天使+轮 1.22 亿美元；无权威估值。',
+        funding: '现有融资资料显示，2025 年天使轮 1.2 亿美元、天使+轮 1.22 亿美元；无权威估值。',
         risk: '公司年轻且交付承诺大，组织、供应链、实际到场数量和客户回款均需核验。'
       },
       limx: {
@@ -4959,28 +4969,28 @@ class SlidePresentation {
         name: '宇树科技', route: '本体优先 · 运动控制与供应链', product: '四足、人形、机械臂；关节、电机、控制器与算法',
         world: '具身模型投入增加，但当前优势证据仍主要来自运动控制、成本、产品与供应链。',
         evidence: '开发者、科研、教育、娱乐与巡检等标准产品销售，全球渠道成熟度较高。',
-        funding: 'Excel 记录 2025 年 C 轮近 7 亿元；127 亿元为媒体/Excel 口径，经营以申报文件为准。',
+        funding: '现有融资资料显示，2025 年 C 轮近 7 亿元；127 亿元为媒体推算口径，经营以申报文件为准。',
         risk: '若通用操作“大脑”成为价值中心，硬件领先能否持续保持定价权。'
       },
       deep: {
         name: '云深处科技', route: '场景交付 · 四足与特种移动', product: '绝影 X30、Lite3、山猫 M20；行业巡检方案',
         world: '真实巡检可产生高价值运行数据，但公开材料未证明世界模型是主要策略架构。',
         evidence: '电力、消防、救援、安防及海外工业市场，场景边界和耐候产品证据较强。',
-        funding: 'Excel 记录 2025 年多轮 C / Pre-IPO 融资；未见权威公开估值。',
+        funding: '现有融资资料显示，2025 年完成多轮 C / Pre-IPO 融资；未见权威公开估值。',
         risk: '项目型销售、客户集中、回款和跨行业扩张速度决定增长质量。'
       },
       leju: {
         name: '乐聚机器人', route: '产业交付 · 教育到全尺寸人形', product: 'KUAVO 5 / 5-W；科研平台与工业方案',
         world: '部署可形成数据入口，公开证据更偏系统集成和产业化，世界模型角色仍不清晰。',
         evidence: '科研、工业与特种场景；与制造企业合作需继续跟踪订单、验收和复购。',
-        funding: 'Excel 记录多轮战略与产业资本投资；具体估值以正式材料为准。',
+        funding: '现有融资资料显示已获得多轮战略与产业资本投资；具体估值以正式材料为准。',
         risk: '生态合作与项目订单若不能沉淀标准产品，交付工时会限制规模化。'
       },
       fourier: {
         name: '傅利叶智能', route: '成熟产品 · 康复与通用人形', product: '康复机器人矩阵；GR-1 / GR-2 人形平台',
         world: '康复业务提供真实客户与工程基础，人形路线的模型与原业务协同仍需验证。',
         evidence: '医疗康复产品已有长期销售与全球渠道，是人形样本中的商业化对照组。',
-        funding: 'Excel 记录多轮融资，80 亿元为媒体/Excel 口径。',
+        funding: '现有融资资料显示已完成多轮融资，80 亿元为媒体推算口径。',
         risk: '康复现金流能否支撑人形投入，以及两条业务的数据、渠道和技术复用程度。'
       },
       ubtech: {
@@ -4994,56 +5004,56 @@ class SlidePresentation {
         name: '云鲸智能', route: '成熟消费产品 · 单任务闭环', product: '扫拖机器人；清洁算法、供应链与渠道',
         world: '不是通用人形公司，但真实家庭数据和封闭任务闭环是判断“产品化智能”的重要对照。',
         evidence: '消费产品销量、渠道和供应链已接受市场检验，可直接观察复购、退货与售后。',
-        funding: 'Excel 记录多轮融资；“超 100 亿元”属于媒体/Excel 估值口径。',
+        funding: '现有融资资料显示已完成多轮融资；“超 100 亿元”属于媒体推算口径。',
         risk: '消费硬件竞争、营销费用、渠道库存与品类扩张，而非通用机器人同类风险。'
       },
       magic: {
         name: '魔法原子', route: '多本体全栈 · 场景扩张', product: 'MagicBot、MagicDog、MagicHand；Magic-Mix / MagicSim',
         world: '尝试联合视频预测、动作专家与合成数据，需第三方复现和真机闭环指标支撑。',
         evidence: '工业、仓储、咖啡和大健康等多场景；公开订单需核验客户、验收与回款。',
-        funding: 'Excel 记录 2024 年天使轮 1.5 亿元及后续战略融资；无权威公开估值。',
+        funding: '现有融资资料显示，2024 年天使轮 1.5 亿元并有后续战略融资；无权威公开估值。',
         risk: '早期公司同时铺开多本体与多场景，可能稀释产品收敛和组织执行。'
       },
       engine: {
         name: '众擎机器人', route: '本体优先 · 高动态双足', product: 'SE01、PM01；全尺寸人形与灵巧手配置',
         world: '证据主要是运动策略与本体能力，尚不能证明通用操作或世界模型闭环。',
         evidence: '科研、开发者和展示需求为主，规模生产性部署信息较少。',
-        funding: 'Excel 记录 2025 年多轮 Pre-A / A 系融资；未见权威公开估值。',
+        funding: '现有融资资料显示，2025 年完成多轮 Pre-A / A 系融资；未见权威公开估值。',
         risk: '动态演示与持续生产任务之间存在证据鸿沟，需看销量、故障率与操作收入。'
       },
       noetix: {
         name: '松延动力', route: '低成本本体 · 消费与仿生', product: 'N2、E1、小布米及仿生人头平台',
         world: '优势主要在成本、结构和仿生表现，暂无充分公开证据支持通用世界模型能力。',
         evidence: '教育、家庭、文娱和品牌活动，商业需求曲线与工业人形不同。',
-        funding: 'Excel 记录 2026 年 B 轮近 10 亿元；未见权威公开估值。',
+        funding: '现有融资资料显示，2026 年 B 轮近 10 亿元；未见权威公开估值。',
         risk: '低 ASP、退货、内容需求和软件留存决定其是否能超越硬件玩具属性。'
       },
       linker: {
         name: '灵心巧手', route: '核心部件 · 灵巧手与数采', product: 'Linker Hand 系列；灵巧操作数据采集方案',
         world: '灵巧手和遥操作接口决定动作空间与数据质量，是世界模型接触任务的重要输入层。',
         evidence: '价值来自跨整机客户渗透、出货、耐久和接口标准，而非单一演示。',
-        funding: 'Excel 记录多轮早期融资；估值与出货口径需投资方和审计材料核验。',
+        funding: '现有融资资料显示已完成多轮早期融资；估值与出货口径需投资方和审计材料核验。',
         risk: '整机厂自研、价格战、耐久良率与客户集中会压缩部件议价权。'
       },
       paxini: {
         name: '帕西尼', route: '核心部件 · 多维触觉', product: '多维触觉传感器、电子皮肤与触觉数据平台',
         world: '为摩擦、压力、滑移等视觉不可见物理量提供监督，可提升预测和接触控制。',
         evidence: '应按量产良率、标定一致性、客户导入和实际装机，而非参数与展会效果估值。',
-        funding: '“帕西尼感知科技 / 帕西尼”已合并；Excel 融资轮次保留，未见权威估值。',
+        funding: '“帕西尼感知科技 / 帕西尼”已合并为同一主体；现有融资轮次未见权威估值支持。',
         risk: '传感器成本、寿命、漂移、数据接口标准与整机厂自研替代。'
       },
       drobotics: {
         name: '地瓜机器人', route: '计算平台 · 端侧软硬协同', product: '机器人计算芯片、板卡、工具链与开发平台',
         world: '提供 VLA 与世界模型落地所需端侧算力、时延与部署工具，不直接代表策略能力。',
         evidence: '商业价值看设计导入、量产装机、客户集中和软件生态活跃，而非峰值算力。',
-        funding: 'Excel 记录多轮融资；具体估值口径需以公司和投资协议为准。',
+        funding: '现有融资资料显示已完成多轮融资；具体估值口径需以公司和投资协议为准。',
         risk: '芯片迭代、生态迁移成本、客户自研和大厂平台竞争。'
       },
       mechmind: {
         name: '梅卡曼德', route: '工业视觉 · 软硬件平台', product: '3D 相机、机器视觉软件与工业机器人解决方案',
         world: '并非通用世界模型路线，但视觉—规划—执行闭环和工业数据可作为成熟商业对照。',
         evidence: '工业客户、标准产品和重复部署比单次项目更能说明价值捕获。',
-        funding: 'Excel 记录多轮融资；未见权威公开估值。',
+        funding: '现有融资资料显示已完成多轮融资；未见权威公开估值。',
         risk: '工业周期、项目定制、竞争降价和通用模型对传统视觉栈的替代。'
       }
     };

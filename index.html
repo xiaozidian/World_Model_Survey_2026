@@ -2172,7 +2172,7 @@ html, body, .deck-viewport, .deck-stage, .slide { background: var(--stage-bg); c
 .inline-deep-body ul { padding-left: 22px; }
 .inline-deep-body li + li { margin-top: 4px; }
 .cover .inline-deep-body { max-height: 150px; }
-.slide:nth-of-type(43) .inline-deep-body { max-height: 150px; }
+.slide:nth-of-type(44) .inline-deep-body { max-height: 150px; }
 .slide-shell:has(.inline-deep[open]) .source { display: none; }
 body:has(.inline-deep[open]) .deck-controls {
   opacity: 0;
@@ -2404,6 +2404,97 @@ body:has(.inline-deep[open]) .deck-controls {
 .evidence-band h3 { margin-bottom: 7px; font-size: 19px; }
 .evidence-band p { color: var(--ink-2); font-size: 17px; line-height: 1.42; }
 
+/* Cross-domain benchmark: Momenta turns the world-model thesis into a real
+   deployment loop. The sequence is intentionally dominant; evidence and
+   uncertainty sit below it instead of becoming another uniform card grid. */
+.momenta-loop {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 18px;
+  background: #eef5f4;
+  border-top: 2px solid var(--blue);
+  border-bottom: 1px solid #c8d8d6;
+}
+.momenta-step {
+  position: relative;
+  min-height: 128px;
+  padding: 17px 35px 16px 18px;
+}
+.momenta-step + .momenta-step { border-left: 1px solid #cedcda; }
+.momenta-step:not(:last-child)::after {
+  content: "\2192";
+  position: absolute;
+  top: 50%;
+  right: -14px;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--blue);
+  border-radius: 50%;
+  font: 800 16px/1 var(--font-body);
+  transform: translateY(-50%);
+}
+.momenta-step small {
+  display: block;
+  color: var(--blue);
+  font: 800 13px/1.2 var(--font-mono);
+}
+.momenta-step h3 { margin: 9px 0 5px; font-size: 21px; line-height: 1.25; }
+.momenta-step p { color: var(--ink-2); font-size: 18px; line-height: 1.42; }
+.momenta-analysis {
+  display: grid;
+  grid-template-columns: 1.16fr .82fr 1.02fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+.momenta-roles,
+.momenta-ledger,
+.momenta-boundary {
+  min-height: 250px;
+  padding: 17px 20px;
+  background: rgba(255,255,255,.76);
+  border-top: 2px solid #94c8c8;
+  border-radius: 0 0 9px 9px;
+}
+.momenta-analysis h3 { margin-bottom: 8px; font-size: 22px; line-height: 1.3; }
+.momenta-role {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid #d6e2e0;
+}
+.momenta-role b { color: var(--blue); font-size: 18px; }
+.momenta-role span { color: var(--ink-2); font-size: 18px; line-height: 1.4; }
+.momenta-ledger { background: var(--blue-soft); }
+.momenta-ledger dl { border-top: 1px solid #a9cdcd; }
+.momenta-ledger dl div {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(8,127,132,.16);
+}
+.momenta-ledger dt { color: var(--ink-2); font-size: 18px; }
+.momenta-ledger dd { color: var(--ink); font-size: 19px; font-weight: 800; line-height: 1.3; }
+.momenta-ledger p { margin-top: 9px; color: var(--ink-2); font-size: 18px; line-height: 1.4; }
+.momenta-boundary { background: var(--amber-soft); border-top-color: var(--amber); }
+.momenta-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  color: #98513f;
+  font-size: 15px;
+  font-weight: 800;
+}
+.momenta-flag .icon { width: 18px; height: 18px; }
+.momenta-boundary p { color: var(--ink-2); font-size: 18px; line-height: 1.44; }
+.momenta-boundary p + p { margin-top: 9px; padding-top: 9px; border-top: 1px solid #e6b8ad; }
+
 .wm-maturity {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -2623,7 +2714,7 @@ body:has(.inline-deep[open]) .deck-controls {
 .inline-deep-body h3 { font-size: 20px; }
 .inline-deep-body p,
 .inline-deep-body ul { font-size: 18px; line-height: 1.52; }
-.slide:nth-of-type(46) .inline-deep-body { max-height: 120px; }
+.slide:nth-of-type(47) .inline-deep-body { max-height: 120px; }
 .slide-shell:has(.inline-deep[open]) .source { display: none; }
 body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; }
 
@@ -2644,6 +2735,8 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
 .slide:nth-of-type(39) .flywheel-node { min-height: 218px; }
 .slide:nth-of-type(39) .evidence-band { min-height: 118px; }
 .slide:nth-of-type(39) .inline-context-item { padding: 18px 20px 20px; }
+.slide:nth-of-type(40) .inline-deep-slot { margin-top: 5px; }
+.slide:nth-of-type(44) .inline-deep-slot { margin-top: 8px; }
 .wm-level h3 { font-size: 21px; }
 .wm-level p { font-size: 18px; line-height: 1.45; }
 .company-mini-list span { font-size: 16px; }
@@ -2855,8 +2948,8 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
         <button class="chapter-tab" type="button" data-start="18" data-end="21"><svg class="icon"><use href="#i-box"/></svg><span>模拟器</span></button>
         <button class="chapter-tab" type="button" data-start="22" data-end="28"><svg class="icon"><use href="#i-film"/></svg><span>视频世界模型</span></button>
         <button class="chapter-tab" type="button" data-start="29" data-end="31"><svg class="icon"><use href="#i-chart"/></svg><span>评测与数据</span></button>
-        <button class="chapter-tab" type="button" data-start="32" data-end="43"><svg class="icon"><use href="#i-briefcase"/></svg><span>中国公司与 VC</span></button>
-        <button class="chapter-tab" type="button" data-start="44" data-end="46"><svg class="icon"><use href="#i-triangle-alert"/></svg><span>挑战与结论</span></button>
+        <button class="chapter-tab" type="button" data-start="32" data-end="44"><svg class="icon"><use href="#i-briefcase"/></svg><span>中国公司与 VC</span></button>
+        <button class="chapter-tab" type="button" data-start="45" data-end="47"><svg class="icon"><use href="#i-triangle-alert"/></svg><span>挑战与结论</span></button>
       </nav>
       <span class="deck-source">HOU ET AL. · 2026</span>
     </header>
@@ -2907,7 +3000,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="摘要" data-title="三句话读懂这篇综述">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">EXECUTIVE SUMMARY</span><span class="page-no">02 / 46</span></div>
+        <div class="rail"><span class="paper-id">EXECUTIVE SUMMARY</span><span class="page-no">02 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">摘要</div><h2 class="slide-title reveal d1" data-edit="s02-title">三句话读懂这篇综述</h2></div>
           <div class="thesis-tag reveal d2">世界模型的价值标准，正在从“生成质量”迁移到“决策效用”。</div>
@@ -2963,7 +3056,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="摘要" data-title="三条主线，一套行动标准">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SURVEY ORGANIZATION</span><span class="page-no">03 / 46</span></div>
+        <div class="rail"><span class="paper-id">SURVEY ORGANIZATION</span><span class="page-no">03 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">阅读地图</div><h2 class="slide-title reveal d1">三条主线，最终都回到<span class="cool">行动</span></h2></div>
           <div class="thesis-tag reveal d2">分类依据不同：架构、功能、能力，但评价终点相同。</div>
@@ -3006,7 +3099,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="基础" data-title="为什么反应式 VLA 还不够">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">MOTIVATION · FROM REACTION TO PREDICTION</span><span class="page-no">04 / 46</span></div>
+        <div class="rail"><span class="paper-id">MOTIVATION · FROM REACTION TO PREDICTION</span><span class="page-no">04 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">问题起点</div><h2 class="slide-title reveal d1">为什么反应式 VLA <span class="mark">还不够</span></h2></div>
           <div class="thesis-tag reveal d2">动作预测容量增加，并不会自动带来长时程可靠性。</div>
@@ -3048,7 +3141,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="基础" data-title="世界模型：定义与边界">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">DEFINITION & BOUNDARY</span><span class="page-no">05 / 46</span></div>
+        <div class="rail"><span class="paper-id">DEFINITION & BOUNDARY</span><span class="page-no">05 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">概念边界</div><h2 class="slide-title reveal d1">世界模型不是一种架构，而是一种<span class="cool">预测角色</span></h2></div>
         </div>
@@ -3089,7 +3182,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="基础" data-title="可行动世界模型的三项能力">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ACTIONABLE WORLD MODEL</span><span class="page-no">06 / 46</span></div>
+        <div class="rail"><span class="paper-id">ACTIONABLE WORLD MODEL</span><span class="page-no">06 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">能力框架</div><h2 class="slide-title reveal d1">可行动世界模型的<span class="cool">三项能力</span></h2></div>
           <div class="thesis-tag reveal d2">看见未来、比较未来、制造更多可学习的未来。</div>
@@ -3132,7 +3225,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="基础" data-title="一个联合分布，四种模型查询">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">PROBABILISTIC LENS</span><span class="page-no">07 / 46</span></div>
+        <div class="rail"><span class="paper-id">PROBABILISTIC LENS</span><span class="page-no">07 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">理论中心</div><h2 class="slide-title reveal d1">一个联合分布，四种模型查询</h2></div>
           <div class="thesis-tag reveal d2">别被公式吓到：它只是把“未来会怎样”和“接下来怎么做”记在同一本账里。</div>
@@ -3173,7 +3266,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="基础" data-title="2023-2026：从外置想象到内化预测">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">FIELD EVOLUTION</span><span class="page-no">08 / 46</span></div>
+        <div class="rail"><span class="paper-id">FIELD EVOLUTION</span><span class="page-no">08 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">演化时间线</div><h2 class="slide-title reveal d1">2023-2026：从外置想象到<span class="cool">内化预测</span></h2></div>
           <div class="thesis-tag reveal d2">不是旧架构被完全淘汰，而是耦合方式持续扩张。</div>
@@ -3206,7 +3299,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="策略架构" data-title="五种范式：预测如何进入策略">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3 · WORLD MODEL FOR POLICY</span><span class="page-no">09 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3 · WORLD MODEL FOR POLICY</span><span class="page-no">09 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">架构全景</div><h2 class="slide-title reveal d1">五种范式：预测如何进入<span class="cool">策略</span></h2></div>
           <div class="thesis-tag reveal d2">比较的关键不是模型名，而是预测与动作之间的接口。</div>
@@ -3260,7 +3353,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="IDM-style：先想象，再执行">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.2 · INVERSE DYNAMICS POLICY</span><span class="page-no">10 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.2 · INVERSE DYNAMICS POLICY</span><span class="page-no">10 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">范式 A</div><h2 class="slide-title reveal d1">IDM-style：先想象，再执行</h2></div>
           <div class="thesis-tag reveal d2">模块化最强，也最容易把“视觉合理”误当成“动作可行”。</div>
@@ -3299,7 +3392,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="解耦路线的真正进步：接口越来越可执行">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">PREDICTIVE INTERFACE EVOLUTION</span><span class="page-no">11 / 46</span></div>
+        <div class="rail"><span class="paper-id">PREDICTIVE INTERFACE EVOLUTION</span><span class="page-no">11 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">接口演进</div><h2 class="slide-title reveal d1">解耦路线的真正进步：接口越来越<span class="cool">可执行</span></h2></div>
         </div>
@@ -3332,7 +3425,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="策略架构" data-title="Single-backbone：把视频与动作放进同一生成过程">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.3 · SINGLE BACKBONE</span><span class="page-no">12 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.3 · SINGLE BACKBONE</span><span class="page-no">12 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">范式 B</div><h2 class="slide-title reveal d1">把视频与动作放进<span class="cool">同一生成过程</span></h2></div>
           <div class="thesis-tag reveal d2">从“两个模块传递结果”变为“一个模型联合去噪”。</div>
@@ -3386,7 +3479,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="视频骨干是一种有希望的归纳偏置，不是定论">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">INDUCTIVE BIAS · EVIDENCE CHECK</span><span class="page-no">13 / 46</span></div>
+        <div class="rail"><span class="paper-id">INDUCTIVE BIAS · EVIDENCE CHECK</span><span class="page-no">13 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">证据边界</div><h2 class="slide-title reveal d1">视频骨干是一种有希望的<span class="cool">归纳偏置</span>，不是定论</h2></div>
         </div>
@@ -3430,7 +3523,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="MoE / MoT：专业化与耦合同时保留">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.4 · MIXTURE OF EXPERTS / TRANSFORMERS</span><span class="page-no">14 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.4 · MIXTURE OF EXPERTS / TRANSFORMERS</span><span class="page-no">14 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">范式 C</div><h2 class="slide-title reveal d1">专业化与耦合<span class="cool">同时保留</span></h2></div>
           <div class="thesis-tag reveal d2">视频和动作时间尺度不同，完全共享参数未必最优。</div>
@@ -3477,7 +3570,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="Unified VLA：世界建模成为策略内部训练目标">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.5 · UNIFIED VLA</span><span class="page-no">15 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.5 · UNIFIED VLA</span><span class="page-no">15 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">范式 D</div><h2 class="slide-title reveal d1">世界建模成为策略内部的<span class="cool">训练目标</span></h2></div>
         </div>
@@ -3524,7 +3617,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="策略架构" data-title="Latent / Symbolic：不预测像素，也能建模世界">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.6 · LATENT & SYMBOLIC WORLD MODEL</span><span class="page-no">16 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.6 · LATENT & SYMBOLIC WORLD MODEL</span><span class="page-no">16 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">范式 E</div><h2 class="slide-title reveal d1">不预测像素，也能<span class="cool">建模世界</span></h2></div>
           <div class="thesis-tag reveal d2">控制需要可预测的状态，不一定需要可观看的未来。</div>
@@ -3570,7 +3663,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="五类架构没有单一赢家">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ARCHITECTURE TRADE-OFF</span><span class="page-no">17 / 46</span></div>
+        <div class="rail"><span class="paper-id">ARCHITECTURE TRADE-OFF</span><span class="page-no">17 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">横向比较</div><h2 class="slide-title reveal d1">五类架构没有<span class="cool">单一赢家</span></h2></div>
           <div class="thesis-tag reveal d2">当前证据更支持“多种预测结构都可能有效”，而不是唯一架构收敛。</div>
@@ -3614,7 +3707,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="模拟器" data-title="世界模型开始替代环境本身">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 4 · WORLD MODEL AS SIMULATOR</span><span class="page-no">18 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 4 · WORLD MODEL AS SIMULATOR</span><span class="page-no">18 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">功能转变</div><h2 class="slide-title reveal d1">世界模型开始替代<span class="cool">环境本身</span></h2></div>
           <div class="thesis-tag reveal d2">预测不再只辅助策略，而是承接交互、反馈和试错。</div>
@@ -3659,7 +3752,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="模拟器" data-title="用于强化学习：在想象中产生训练经验">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 4.1 · WORLD MODEL FOR RL</span><span class="page-no">19 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 4.1 · WORLD MODEL FOR RL</span><span class="page-no">19 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">用途 A</div><h2 class="slide-title reveal d1">在想象中产生<span class="cool">训练经验</span></h2></div>
           <div class="thesis-tag reveal d2">把昂贵真机交互，替换为可扩展的模型内 rollout。</div>
@@ -3695,7 +3788,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="模拟器" data-title="用于评估：先在想象中判断值不值得执行">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 4.2 · WORLD MODEL FOR EVALUATION</span><span class="page-no">20 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 4.2 · WORLD MODEL FOR EVALUATION</span><span class="page-no">20 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">用途 B</div><h2 class="slide-title reveal d1">先在想象中判断：<span class="cool">值不值得执行</span></h2></div>
         </div>
@@ -3737,7 +3830,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="模拟器" data-title="模拟器最危险的错误：评估信号被幻觉污染">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">TRUST BOUNDARY · HALLUCINATION</span><span class="page-no">21 / 46</span></div>
+        <div class="rail"><span class="paper-id">TRUST BOUNDARY · HALLUCINATION</span><span class="page-no">21 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">可靠性边界</div><h2 class="slide-title reveal d1">评估信号会被<span class="warn">幻觉污染</span></h2></div>
           <div class="thesis-tag reveal d2">模拟器错误不只影响画面，它会改变策略选择本身。</div>
@@ -3772,7 +3865,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="视频世界模型" data-title="视频世界模型的四级能力阶梯">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5 · ROBOTIC VIDEO WORLD MODEL</span><span class="page-no">22 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5 · ROBOTIC VIDEO WORLD MODEL</span><span class="page-no">22 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">能力演进</div><h2 class="slide-title reveal d1">视频世界模型的<span class="cool">四级能力阶梯</span></h2></div>
           <div class="thesis-tag reveal d2">从生成任务演示，走向可交互的预测基础设施。</div>
@@ -3806,7 +3899,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="视频世界模型" data-title="第一阶段：把视频生成器变成想象引擎">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5.2 · IMAGINATION ENGINE</span><span class="page-no">23 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5.2 · IMAGINATION ENGINE</span><span class="page-no">23 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">阶段 1</div><h2 class="slide-title reveal d1">把视频生成器变成<span class="cool">想象引擎</span></h2></div>
         </div>
@@ -3839,7 +3932,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="视频世界模型" data-title="第二阶段：从语义合理走向动作忠实">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5.3 · ACTION-CONTROLLABLE VIDEO WM</span><span class="page-no">24 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5.3 · ACTION-CONTROLLABLE VIDEO WM</span><span class="page-no">24 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">阶段 2</div><h2 class="slide-title reveal d1">从语义合理走向<span class="cool">动作忠实</span></h2></div>
           <div class="thesis-tag reveal d2">同一个场景，不同动作必须产生可区分、可验证的未来。</div>
@@ -3881,7 +3974,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="视频世界模型" data-title="第三阶段：用结构约束物理与交互">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5.4 · STRUCTURE-AWARE GENERATION</span><span class="page-no">25 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5.4 · STRUCTURE-AWARE GENERATION</span><span class="page-no">25 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">阶段 3</div><h2 class="slide-title reveal d1">用结构约束<span class="cool">物理与交互</span></h2></div>
           <div class="thesis-tag reveal d2">低维动作不足以描述复杂接触，模型需要更明确的中间变量。</div>
@@ -3921,7 +4014,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="视频世界模型" data-title="第四阶段：从专用生成器到世界基础模型">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5.5 · FOUNDATION WORLD MODELS</span><span class="page-no">26 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5.5 · FOUNDATION WORLD MODELS</span><span class="page-no">26 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">阶段 4</div><h2 class="slide-title reveal d1">从专用生成器到<span class="cool">世界基础模型</span></h2></div>
           <div class="thesis-tag reveal d2">目标是一个可复用的交互预测底座，而非单任务视频工具。</div>
@@ -3961,7 +4054,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="视频世界模型" data-title="视觉真实不等于可行动">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ACTIONABILITY QUADRANT</span><span class="page-no">27 / 46</span></div>
+        <div class="rail"><span class="paper-id">ACTIONABILITY QUADRANT</span><span class="page-no">27 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">判断框架</div><h2 class="slide-title reveal d1">视觉真实<span class="warn">不等于</span>可行动</h2></div>
           <div class="thesis-tag reveal d2">机器人世界模型需要同时回答：看起来像吗？动作后果对吗？</div>
@@ -3991,7 +4084,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="扩展应用" data-title="导航与自动驾驶把要求推向更长时程">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 6 · OTHER EMBODIED DOMAINS</span><span class="page-no">28 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 6 · OTHER EMBODIED DOMAINS</span><span class="page-no">28 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">扩展领域</div><h2 class="slide-title reveal d1">导航与自动驾驶，把要求推向<span class="cool">更长时程</span></h2></div>
         </div>
@@ -4042,7 +4135,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="评测" data-title="世界模型需要三层评测，而不是一个视频指标">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 7.1 · BENCHMARKS</span><span class="page-no">29 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 7.1 · BENCHMARKS</span><span class="page-no">29 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">评测框架</div><h2 class="slide-title reveal d1">需要三层评测，而不是<span class="cool">一个视频指标</span></h2></div>
           <div class="thesis-tag reveal d2">从预测质量，逐层走向决策效用与物理可执行性。</div>
@@ -4096,7 +4189,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="数据" data-title="训练数据的价值不由规模单独决定">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 7.2 · DATASETS</span><span class="page-no">30 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 7.2 · DATASETS</span><span class="page-no">30 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">数据能力地图</div><h2 class="slide-title reveal d1">数据的价值，不由<span class="cool">规模</span>单独决定</h2></div>
           <div class="thesis-tag reveal d2">机器人视频只有与动作、任务和物理交互对齐，才是世界模型数据。</div>
@@ -4130,7 +4223,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="结果" data-title="Benchmark 已很高，但尚不能证明架构收敛">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 7.3 · REPRESENTATIVE RESULTS</span><span class="page-no">31 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 7.3 · REPRESENTATIVE RESULTS</span><span class="page-no">31 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">结果解读</div><h2 class="slide-title reveal d1">Benchmark 已很高，但尚不能证明<span class="cool">架构收敛</span></h2></div>
         </div>
@@ -4167,7 +4260,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="从论文框架到投资框架">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CHINA LENS · PAPER → INVESTMENT</span><span class="page-no">32 / 46</span></div>
+        <div class="rail"><span class="paper-id">CHINA LENS · PAPER → INVESTMENT</span><span class="page-no">32 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">框架翻译</div><h2 class="slide-title reveal d1">从“模型能否预测”转向“公司能否<span class="cool">形成闭环</span>”</h2></div>
           <div class="thesis-tag reveal d2">论文给出技术坐标；投资判断还要加入本体、交付、单位经济性与资本约束。</div>
@@ -4190,7 +4283,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="24 家公司的技术路线全景">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">24 COMPANIES · ROUTE MAP</span><span class="page-no">33 / 46</span></div>
+        <div class="rail"><span class="paper-id">24 COMPANIES · ROUTE MAP</span><span class="page-no">33 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">市场全景</div><h2 class="slide-title reveal d1">24 家公司，不是同一场<span class="cool">机器人竞赛</span></h2></div>
           <div class="thesis-tag reveal d2">点击公司名称，下方固定区域切换研究卡；所有估值均保留证据等级。</div>
@@ -4221,7 +4314,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="模型优先路线：五种下注" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE A · MODEL-FIRST</span><span class="page-no">34 / 46</span></div>
+        <div class="rail"><span class="paper-id">ROUTE A · MODEL-FIRST</span><span class="page-no">34 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">模型优先</div><h2 class="slide-title reveal d1">同样做 VLA，下注的是<span class="cool">不同数据假设</span></h2></div><div class="thesis-tag reveal d2">投资人要比较的不是模型名称，而是数据来源、动作接口和闭环增益。</div></div>
         <div class="route-comparison reveal d2">
           <div class="route-comparison-head"><span>公司</span><span>模型 / 接口</span><span>数据假设</span><span>本体与场景</span><span>下一道验证门</span></div>
@@ -4242,7 +4335,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="软硬件全栈：闭环还是资本开支" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE B · FULL STACK</span><span class="page-no">35 / 46</span></div>
+        <div class="rail"><span class="paper-id">ROUTE B · FULL STACK</span><span class="page-no">35 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">软硬件全栈</div><h2 class="slide-title reveal d1">全栈的价值，是缩短反馈；代价是<span class="warn">烧钱更快</span></h2></div><div class="thesis-tag reveal d2">只有模块共享、数据回流和交付复用同时成立，全栈才是壁垒而不是组织负担。</div></div>
         <div class="route-comparison reveal d2">
           <div class="route-comparison-head"><span>公司</span><span>全栈抓手</span><span>模型 / 数据</span><span>产品与入口</span><span>下一道验证门</span></div>
@@ -4263,7 +4356,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="本体与运动控制：身体优势如何变现" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE C · BODY & CONTROL</span><span class="page-no">36 / 46</span></div>
+        <div class="rail"><span class="paper-id">ROUTE C · BODY & CONTROL</span><span class="page-no">36 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">本体与小脑</div><h2 class="slide-title reveal d1">先把身体做好，也是一条<span class="cool">独立成立</span>的路线</h2></div><div class="thesis-tag reveal d2">运动展示只能证明动态控制上限；投资价值还取决于标准化销量、可靠性和软件附加值。</div></div>
         <div class="route-comparison reveal d2">
           <div class="route-comparison-head"><span>公司</span><span>身体资产</span><span>当前优势证据</span><span>商业入口</span><span>下一道验证门</span></div>
@@ -4284,7 +4377,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="产业交付与成熟产品：谁更接近收入" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE D · DEPLOYMENT</span><span class="page-no">37 / 46</span></div>
+        <div class="rail"><span class="paper-id">ROUTE D · DEPLOYMENT</span><span class="page-no">37 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">产业交付</div><h2 class="slide-title reveal d1">离收入更近，不等于离<span class="cool">规模利润</span>更近</h2></div><div class="thesis-tag reveal d2">项目收入、标准产品、运营服务和消费硬件，需要完全不同的估值方法。</div></div>
         <div class="route-comparison reveal d2">
           <div class="route-comparison-head"><span>公司</span><span>成熟资产</span><span>主要场景</span><span>收入形态</span><span>下一道验证门</span></div>
@@ -4305,7 +4398,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="核心部件与平台：价值链上的卖铲人" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE E · PICKS & SHOVELS</span><span class="page-no">38 / 46</span></div>
+        <div class="rail"><span class="paper-id">ROUTE E · PICKS & SHOVELS</span><span class="page-no">38 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">关键部件</div><h2 class="slide-title reveal d1">不赌整机赢家，也可以赌<span class="cool">物理智能的瓶颈</span></h2></div><div class="thesis-tag reveal d2">部件公司的核心不是“进入人形赛道”，而是多客户渗透、标准接口、良率与持续定价权。</div></div>
         <div class="route-comparison reveal d2">
           <div class="route-comparison-head"><span>公司</span><span>价值链位置</span><span>对世界模型的作用</span><span>商业入口</span><span>下一道验证门</span></div>
@@ -4329,7 +4422,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="国内公司的数据飞轮">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">DATA FLYWHEEL · EVIDENCE LADDER</span><span class="page-no">39 / 46</span></div>
+        <div class="rail"><span class="paper-id">DATA FLYWHEEL · EVIDENCE LADDER</span><span class="page-no">39 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">数据飞轮</div><h2 class="slide-title reveal d1">数据量不是壁垒；<span class="cool">闭环信息密度</span>才是</h2></div><div class="thesis-tag reveal d2">成功视频最容易收集，也最容易高估。失败、恢复、接触和运营反馈才决定系统能否进化。</div></div>
         <div class="flywheel-loop reveal d2">
           <article class="flywheel-node"><svg class="icon"><use href="#i-hand"/></svg><h3>人类示教</h3><p>降低冷启动成本，但动作空间必须重新对齐。</p></article>
@@ -4349,11 +4442,54 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     </section>
 
     <!-- ===========================================
-         40 · WORLD MODEL MATURITY
+         40 · MOMENTA CROSS-DOMAIN BENCHMARK
+         =========================================== -->
+    <section class="slide" data-chapter="中国公司与 VC" data-title="Momenta：世界模型怎样穿过量产闭环" data-deep-mode="collapsed">
+      <div class="slide-shell">
+        <div class="rail"><span class="paper-id">CROSS-DOMAIN CASE · AUTONOMOUS DRIVING</span><span class="page-no">40 / 47</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">跨域量产对照</div><h2 class="slide-title reveal d1">Momenta：世界模型怎样穿过<span class="cool">量产闭环</span></h2></div><div class="thesis-tag reveal d2">它不是“视频生成公司”。公开证据更明确地指向预训练、闭环仿真和强化学习训练场。</div></div>
+        <div class="momenta-loop reveal d2" aria-label="Momenta 数据与算法闭环">
+          <article class="momenta-step"><small>01 · DEPLOY</small><h3>量产车辆回流</h3><p>采集真实交通交互、传感器效应与长尾事件。</p></article>
+          <article class="momenta-step"><small>02 · SELECT</small><h3>CLA 筛选</h3><p>自动挖掘高价值片段，减少人工规则与清洗成本。</p></article>
+          <article class="momenta-step"><small>03 · IMAGINE</small><h3>世界模型仿真</h3><p>输入自车行为，推演环境响应并放大边缘场景。</p></article>
+          <article class="momenta-step"><small>04 · LEARN</small><h3>强化学习 / 规划</h3><p>比较候选轨迹，以安全、舒适和效率反馈训练策略。</p></article>
+          <article class="momenta-step"><small>05 · LICENSE</small><h3>量产授权与 OTA</h3><p>进入车型、持续更新，再把新分布送回训练。</p></article>
+        </div>
+        <div class="momenta-analysis reveal d3">
+          <section class="momenta-roles">
+            <h3>R7 具体做三件事</h3>
+            <div class="momenta-role"><b>世界预训练</b><span>用真实驾驶数据压缩物理规律、常识与因果先验。</span></div>
+            <div class="momenta-role"><b>闭环仿真</b><span>观察自车动作改变后，交通参与者与场景如何演变。</span></div>
+            <div class="momenta-role"><b>虚拟训练场</b><span>让强化学习反复探索现实中稀缺或危险的轨迹。</span></div>
+          </section>
+          <section class="momenta-ledger">
+            <h3>量产与收入证据</h3>
+            <dl>
+              <div><dt>装车基础</dt><dd>&gt;68 万辆</dd></div>
+              <div><dt>2025 收入</dt><dd>24.13 亿元</dd></div>
+              <div><dt>毛利率</dt><dd>71.6%</dd></div>
+              <div><dt>收费方式</dt><dd>开发费 + 许可费</dd></div>
+            </dl>
+            <p>截至 2025 年末：68 款车型量产，合作 24 家车企；绝大部分收入来自量产车解决方案。</p>
+          </section>
+          <section class="momenta-boundary">
+            <div class="momenta-flag"><svg class="icon"><use href="#i-triangle-alert"/></svg>证据边界</div>
+            <p><strong>2026-04 公司发布：</strong>R7“量产首发”；<strong>2026-06 招股书图示：</strong>R7“即将推出”。发布、定点、装车、OTA 开通与规模交付必须分开核验。</p>
+            <p><strong>下一道验证门：</strong>同数据、同算力下，R7 相比已量产的 R6 强化学习模型，是否带来可复现的长尾闭环增益。</p>
+          </section>
+        </div>
+        <div class="key-line reveal d4" style="margin-top:14px">对机器人公司的启示：飞轮不是“有数据”，而是每轮部署都降低下一轮训练与交付成本，并由<span class="cool">可复用软件收入</span>持续供养。</div>
+        <div class="source">SOURCE · Momenta Global prospectus, 2026-06-29 · Momenta R7 release, 2026-04-26 · Company claims are labeled</div>
+        <div class="deep-copy"><h3>为什么放在这里，以及不能照搬什么</h3><p>Momenta 不是原 24 家具身机器人名单的一员，而是一个更成熟的自动驾驶对照：量产车提供真实数据，闭环仿真扩大长尾覆盖，软件许可费给研发飞轮供血；但道路驾驶的传感器、动作空间和指标更统一，不能据此假设机器人闭环会以同样速度成立。</p></div>
+      </div>
+    </section>
+
+    <!-- ===========================================
+         41 · WORLD MODEL MATURITY
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="世界模型成熟度阶梯">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">WORLD MODEL · PUBLIC EVIDENCE</span><span class="page-no">40 / 46</span></div>
+        <div class="rail"><span class="paper-id">WORLD MODEL · PUBLIC EVIDENCE</span><span class="page-no">41 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">证据阶梯</div><h2 class="slide-title reveal d1">公开材料中，真正完成闭环的证据<span class="warn">仍然稀缺</span></h2></div><div class="thesis-tag reveal d2">这里评的是“公开可验证层级”，不是公司未公开研发能力，也不是公司好坏排名。</div></div>
         <div class="wm-maturity reveal d2">
           <article class="wm-level" style="--level-h:170px;--level-color:#9bb1af"><small>LEVEL 1</small><h3>非主路线 / 未公开</h3><p>核心价值来自本体、场景或部件。</p><div class="company-mini-list"><span>云深处</span><span>云鲸</span><span>梅卡曼德</span><span>灵心</span><span>地瓜</span></div></article>
@@ -4368,11 +4504,11 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     </section>
 
     <!-- ===========================================
-         41 · COMMERCIAL PATHS
+         42 · COMMERCIAL PATHS
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="四条商业化路径">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">COMMERCIALIZATION · FOUR PATHS</span><span class="page-no">41 / 46</span></div>
+        <div class="rail"><span class="paper-id">COMMERCIALIZATION · FOUR PATHS</span><span class="page-no">42 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">商业路径</div><h2 class="slide-title reveal d1">同样卖机器人，收入质量可以<span class="cool">完全不同</span></h2></div><div class="thesis-tag reveal d2">先识别客户购买目的，再讨论市场规模和估值倍数。</div></div>
         <div class="commercial-grid reveal d2">
           <article class="commercial-lane"><svg class="icon"><use href="#i-flask"/></svg><h3>科研 / 开发平台</h3><p>标准产品较易交付，可形成生态和数据入口，但预算规模有限。</p><dl><div><dt>代表</dt><dd>星海图、宇树、逐际</dd></div><div><dt>优势</dt><dd>早收入、开发者反馈</dd></div><div><dt>风险</dt><dd>科研销量不等于生产需求</dd></div></dl></article>
@@ -4387,11 +4523,11 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     </section>
 
     <!-- ===========================================
-         42 · CAPITAL ECOLOGY
+         43 · CAPITAL ECOLOGY
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="融资与投资人生态">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CAPITAL MAP · WHO BUYS WHICH OPTION</span><span class="page-no">42 / 46</span></div>
+        <div class="rail"><span class="paper-id">CAPITAL MAP · WHO BUYS WHICH OPTION</span><span class="page-no">43 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">资本结构</div><h2 class="slide-title reveal d1">五类资本，买的是<span class="cool">五种不同期权</span></h2></div><div class="thesis-tag reveal d2">投资人名单既是资源，也是未来治理、客户独立性和退出节奏的约束。</div></div>
         <div class="capital-stack reveal d2">
           <div class="capital-lanes">
@@ -4414,11 +4550,11 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     </section>
 
     <!-- ===========================================
-         43 · VC DILIGENCE
+         44 · VC DILIGENCE
          =========================================== -->
     <section class="slide" data-chapter="中国公司与 VC" data-title="VC 尽调框架与观察名单">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">VC DILIGENCE · SEVEN GATES</span><span class="page-no">43 / 46</span></div>
+        <div class="rail"><span class="paper-id">VC DILIGENCE · SEVEN GATES</span><span class="page-no">44 / 47</span></div>
         <div class="heading-row compact"><div><div class="chapter-label">投资判断</div><h2 class="slide-title reveal d1">用七道门，把叙事压回<span class="cool">可验证指标</span></h2></div><div class="thesis-tag reveal d2">不做公司“买入/放弃”排名；先判断哪一条路线正在产生更高质量证据。</div></div>
         <div class="diligence-layout reveal d2">
           <div class="diligence-scorecard">
@@ -4438,16 +4574,16 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
         </div>
         <div class="key-line reveal d3" style="margin-top:16px">季度跟踪只保留十个数：部署量、运行小时、接管率、成功率、复购、ASP、毛利、软件占比、现金消耗、最新估值口径。</div>
         <div class="source">ANALYSIS · Internal VC diligence framework · Detailed 24-company memo accompanies this deck</div>
-        <div class="deep-copy"><h3>推荐的投前实测</h3><p>由投资团队指定未训练任务、随机物体和连续运行窗口；保留全部失败和人工介入；将演示视频与原始日志、后台操作记录对齐。</p><h3>路线级而非公司级结论</h3><p>模型路线看数据效率，本体路线看标准化产品，场景路线看项目复用，部件路线看多客户渗透。用同一套指标横向排名会掩盖商业模式差异。</p></div>
+        <div class="deep-copy"><h3>投前实测与路线分型</h3><p>由投资团队指定未训练任务、随机物体和连续运行窗口，保留全部失败与后台操作并对齐原始日志；判断时，模型路线看数据效率，本体路线看标准产品，场景路线看项目复用，部件路线看多客户渗透，避免用同一把尺子掩盖商业模式差异。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         44 · SIX OPEN CHALLENGES
+         45 · SIX OPEN CHALLENGES
          =========================================== -->
     <section class="slide" data-chapter="挑战" data-title="六个问题决定世界模型能否真正部署">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 8 · CHALLENGES & FUTURE DIRECTIONS</span><span class="page-no">44 / 46</span></div>
+        <div class="rail"><span class="paper-id">SEC. 8 · CHALLENGES & FUTURE DIRECTIONS</span><span class="page-no">45 / 47</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">开放问题</div><h2 class="slide-title reveal d1">六个问题，决定世界模型能否<span class="cool">真正部署</span></h2></div>
         </div>
@@ -4480,11 +4616,11 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     </section>
 
     <!-- ===========================================
-         45 · CRITICAL READING
+         46 · CRITICAL READING
          =========================================== -->
     <section class="slide" data-chapter="评论" data-title="这篇综述贡献了地图，但没有给出最终答案">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CRITICAL READING · CHINA MARKET RESPONSE</span><span class="page-no">45 / 46</span></div>
+        <div class="rail"><span class="paper-id">CRITICAL READING · CHINA MARKET RESPONSE</span><span class="page-no">46 / 47</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">批判性阅读</div><h2 class="slide-title reveal d1">它贡献了一张地图，但没有给出<span class="cool">最终答案</span></h2></div>
         </div>
@@ -4526,15 +4662,15 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     </section>
 
     <!-- ===========================================
-         46 · CLOSING SYNTHESIS
+         47 · CLOSING SYNTHESIS
          =========================================== -->
     <section class="slide dark" data-chapter="结论" data-title="从生成未来，到约束行动">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CONCLUSION · TECHNICAL AND INVESTMENT SYNTHESIS</span><span class="page-no">46 / 46</span></div>
+        <div class="rail"><span class="paper-id">CONCLUSION · TECHNICAL AND INVESTMENT SYNTHESIS</span><span class="page-no">47 / 47</span></div>
         <div style="margin:auto 0">
           <div class="chapter-label reveal d1">最终判断</div>
-          <h2 class="section-title reveal d2" data-edit="s46-title">世界模型的竞争，正在从<br><span class="mark">生成未来</span>转向<span class="mark">约束行动</span></h2>
-          <p class="section-summary reveal d3" data-edit="s46-summary" style="margin-top:34px">真正可用的世界模型，必须对动作干预敏感、在长时程内保持状态一致、能被验证，并把真实任务增益转化为可复用的部署与收入。</p>
+          <h2 class="section-title reveal d2" data-edit="s47-title">世界模型的竞争，正在从<br><span class="mark">生成未来</span>转向<span class="mark">约束行动</span></h2>
+          <p class="section-summary reveal d3" data-edit="s47-summary" style="margin-top:34px">真正可用的世界模型，必须对动作干预敏感、在长时程内保持状态一致、能被验证，并把真实任务增益转化为可复用的部署与收入。</p>
           <div class="three-col reveal d4" style="margin-top:52px;max-width:1500px">
             <div class="paper-block blue"><h3>看架构</h3><p>预测如何进入动作生成？推理时是否必须生成未来？</p><div class="card-detail"><small>接口位置决定可解释性、动作对齐和在线成本。</small></div></div>
             <div class="paper-block"><h3>看证据</h3><p>是否改善闭环任务、策略排名和跨环境泛化？</p><div class="card-detail"><small>开放环画质只能作为第一层证据，不能替代任务收益。</small></div></div>
@@ -4560,7 +4696,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
   <button id="prevBtn" type="button" title="上一页（←）" aria-label="上一页"><svg class="icon"><use href="#i-chevron-left"/></svg></button>
   <button class="page-index-button" id="overviewBtn" type="button" title="打开全册目录（O）">
     <svg class="icon page-menu-mark" aria-hidden="true"><use href="#i-grid"/></svg>
-    <span class="counter"><span id="currentNo">01</span><i>/</i><span id="totalNo">46</span></span>
+    <span class="counter"><span id="currentNo">01</span><i>/</i><span id="totalNo">47</span></span>
     <strong id="controlTitle">机器人学习中的世界模型</strong>
   </button>
   <button class="control-utility" id="fullBtn" type="button" title="全屏（F）"><svg class="icon"><use href="#i-maximize"/></svg><span>全屏</span></button>
@@ -4682,8 +4818,8 @@ class SlidePresentation {
       'workflow', 'route', 'layers', 'combine', 'flask', 'network', 'target', 'layers', 'gauge',
       'box', 'repeat', 'shield-check', 'triangle-alert', 'layers', 'film', 'workflow', 'scan-line',
       'orbit', 'eye', 'navigation', 'gauge', 'database', 'chart',
-      'briefcase', 'grid', 'brain-circuit', 'robot', 'robot', 'factory', 'cpu', 'database', 'layers',
-      'coins', 'coins', 'briefcase',
+      'briefcase', 'grid', 'brain-circuit', 'robot', 'robot', 'factory', 'cpu', 'database', 'navigation',
+      'layers', 'coins', 'coins', 'briefcase',
       'triangle-alert', 'microscope', 'check'
     ];
     const layouts = [
@@ -4691,8 +4827,8 @@ class SlidePresentation {
       'pipeline', 'ladder', 'split', 'evidence', 'experts', 'triptych', 'representation', 'matrix',
       'compare', 'pipeline', 'split', 'risk', 'ladder', 'pipeline', 'split', 'structure', 'split',
       'quadrant', 'compare', 'tabs', 'table', 'table',
-      'framework', 'matrix', 'table', 'table', 'table', 'table', 'table', 'pipeline', 'ladder',
-      'compare', 'compare', 'evidence',
+      'framework', 'matrix', 'table', 'table', 'table', 'table', 'table', 'pipeline', 'pipeline',
+      'ladder', 'compare', 'compare', 'evidence',
       'challenges', 'evidence', 'closing'
     ];
     const iconForText = (value, fallback) => {

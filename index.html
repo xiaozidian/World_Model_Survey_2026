@@ -797,7 +797,7 @@ dialog::backdrop { background: rgba(9,15,27,.78); }
 
 /* ===========================================
    ECG REFERENCE REDESIGN · signal atlas system
-   The 46-slide content stays intact; this layer replaces the visual grammar.
+   The 48-slide content stays intact; this layer replaces the visual grammar.
    =========================================== */
 :root {
   --stage-bg: #dfe8e5;
@@ -1522,7 +1522,7 @@ dialog::backdrop { background: rgba(4,30,34,.72); backdrop-filter: blur(5px); }
 .closing-chain i { color: var(--cyan); font: 800 16px/1 var(--font-mono); font-style: normal; }
 
 /* ===========================================
-   LIGHT ACADEMIC PALETTE · one calm register across all 46 slides
+   LIGHT ACADEMIC PALETTE · one calm register across all 48 slides
    =========================================== */
 :root {
   --stage-bg: #e7eeeb;
@@ -2054,6 +2054,16 @@ html, body, .deck-viewport, .deck-stage, .slide { background: var(--stage-bg); c
 
 /* Projection-first typography: readable from the back of a meeting room. */
 .rail { font-size: 12px; }
+.rail .paper-id {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rail .page-no {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
 .chapter-label { font-size: 12px; }
 .slide-title { font-size: 56px; line-height: 1.08; }
 .thesis-tag { font-size: 18px; line-height: 1.48; }
@@ -2495,6 +2505,83 @@ body:has(.inline-deep[open]) .deck-controls {
 .momenta-boundary p { color: var(--ink-2); font-size: 18px; line-height: 1.44; }
 .momenta-boundary p + p { margin-top: 9px; padding-top: 9px; border-top: 1px solid #e6b8ad; }
 
+/* Listed physical-AI comparables. The rows follow value capture rather than
+   marketing labels so the audience can compare like with like at a glance. */
+.physical-comp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 352px;
+  gap: 18px;
+  margin-top: 18px;
+}
+.physical-comp-table {
+  background: #f1f6f5;
+  border-top: 2px solid var(--blue);
+}
+.physical-comp-row {
+  min-height: 88px;
+  display: grid;
+  grid-template-columns: 184px 330px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  padding: 13px 18px;
+  border-bottom: 1px solid #cbdad8;
+}
+.physical-comp-row:last-child { border-bottom: 0; }
+.physical-comp-lane {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 900;
+}
+.physical-comp-lane .icon { width: 24px; height: 24px; color: var(--blue); }
+.physical-comp-names { display: flex; flex-wrap: wrap; gap: 7px; }
+.physical-comp-name {
+  padding: 6px 9px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #bfd2d0;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.physical-comp-row:first-child .physical-comp-name { background: var(--blue-soft); border-color: #8bc3c5; }
+.physical-comp-proof strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.28;
+}
+.physical-comp-proof span {
+  display: block;
+  color: var(--ink-2);
+  font-size: 18px;
+  line-height: 1.36;
+}
+.physical-comp-side {
+  min-height: 464px;
+  padding: 18px 20px;
+  background: #fff;
+  border-top: 2px solid #9ec8c8;
+}
+.physical-comp-side h3 { margin-bottom: 12px; font-size: 22px; line-height: 1.25; }
+.physical-comp-basket { padding: 13px 0; border-top: 1px solid #d5e1df; }
+.physical-comp-basket:first-of-type { border-top-color: #9ec8c8; }
+.physical-comp-basket b { display: block; color: var(--blue); font-size: 18px; }
+.physical-comp-basket span { display: block; margin-top: 4px; color: var(--ink-2); font-size: 18px; line-height: 1.4; }
+.physical-comp-exclude {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 2px solid #e5a795;
+  color: var(--ink-2);
+  font-size: 18px;
+  line-height: 1.42;
+}
+.physical-comp-exclude b { color: #9d4c3c; }
+
 .wm-maturity {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -2714,7 +2801,9 @@ body:has(.inline-deep[open]) .deck-controls {
 .inline-deep-body h3 { font-size: 20px; }
 .inline-deep-body p,
 .inline-deep-body ul { font-size: 18px; line-height: 1.52; }
-.slide:nth-of-type(47) .inline-deep-body { max-height: 120px; }
+.slide:nth-of-type(41) .inline-deep-body,
+.slide:nth-of-type(45) .inline-deep-body { max-height: 90px; }
+.slide:nth-of-type(48) .inline-deep-body { max-height: 120px; }
 .slide-shell:has(.inline-deep[open]) .source { display: none; }
 body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; }
 
@@ -2736,7 +2825,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
 .slide:nth-of-type(39) .evidence-band { min-height: 118px; }
 .slide:nth-of-type(39) .inline-context-item { padding: 18px 20px 20px; }
 .slide:nth-of-type(40) .inline-deep-slot { margin-top: 5px; }
-.slide:nth-of-type(44) .inline-deep-slot { margin-top: 8px; }
+.slide:nth-of-type(45) .inline-deep-slot { margin-top: 8px; }
 .wm-level h3 { font-size: 21px; }
 .wm-level p { font-size: 18px; line-height: 1.45; }
 .company-mini-list span { font-size: 16px; }
@@ -2880,6 +2969,407 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
 .token-exchange b { color: var(--blue); font: 800 19px/1 var(--font-mono); }
 .eval-minimum b { margin-right: 8px; font-size: 13px; }
 
+/* ===========================================
+   COMPANY ROUTES & INDUSTRY MAP · PAGES 32–47
+   A route-first vocabulary replaces company rankings and valuation comps.
+   =========================================== */
+.source a {
+  color: inherit;
+  text-decoration-color: color-mix(in oklch, var(--blue) 58%, transparent);
+  text-underline-offset: 3px;
+  pointer-events: auto;
+}
+.source a:hover,
+.source a:focus-visible { color: var(--blue); }
+
+.route-question-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+.route-question-card {
+  min-height: 330px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 12px;
+  padding: 24px;
+  background: #f1f6f5;
+  border-top: 4px solid var(--blue);
+  border-radius: 10px;
+}
+.route-question-card:nth-child(3),
+.route-question-card:nth-child(4) { border-top-color: var(--amber); }
+.route-question-card .icon { width: 31px; height: 31px; color: var(--blue); }
+.route-question-card:nth-child(3) .icon,
+.route-question-card:nth-child(4) .icon { color: var(--amber); }
+.route-question-card small { color: var(--muted); font: 800 14px/1 var(--font-mono); }
+.route-question-card h3 { font-size: 27px; line-height: 1.22; }
+.route-question-card p { color: var(--ink-2); font-size: 20px; line-height: 1.48; }
+.route-question-card strong {
+  padding-top: 12px;
+  color: var(--ink);
+  border-top: 1px solid #cadbd8;
+  font-size: 18px;
+  line-height: 1.42;
+}
+.route-reading-rule {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 14px 18px;
+  color: var(--ink-2);
+  background: var(--blue-soft);
+  border-radius: 9px;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+}
+.route-reading-rule i { color: var(--blue); font: 900 24px/1 var(--font-mono); font-style: normal; }
+
+.global-route-map { margin-top: 20px; }
+.route-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.route-stage {
+  position: relative;
+  min-height: 338px;
+  padding: 21px;
+  background: rgba(255,255,255,.78);
+  border-top: 4px solid var(--stage-color, var(--blue));
+  border-radius: 10px;
+}
+.route-stage:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 52px;
+  right: -20px;
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--blue);
+  border: 5px solid var(--slide-bg);
+  border-radius: 50%;
+  font: 900 17px/1 var(--font-mono);
+}
+.route-stage small { color: var(--stage-color, var(--blue)); font: 800 14px/1 var(--font-mono); }
+.route-stage h3 { margin: 10px 0 8px; font-size: 26px; }
+.route-stage > p { min-height: 78px; color: var(--ink-2); font-size: 19px; line-height: 1.46; }
+.route-brand-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.route-brand-list span {
+  padding: 7px 10px;
+  color: var(--ink);
+  background: #edf5f4;
+  border: 1px solid #c5d9d6;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.route-stage .route-proof {
+  margin-top: 17px;
+  padding-top: 12px;
+  color: var(--ink-2);
+  border-top: 1px solid #d4e0de;
+  font-size: 17px;
+  line-height: 1.42;
+}
+.route-platform-band {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 15px 19px;
+  color: #d9eeee;
+  background: #123f45;
+  border-radius: 9px;
+}
+.route-platform-band strong { color: var(--cyan); font-size: 21px; }
+.route-platform-band p { font-size: 18px; line-height: 1.4; }
+.route-platform-band span { color: #fff; font: 800 16px/1 var(--font-mono); }
+
+.company-landscape.route-landscape {
+  grid-template-rows: 230px 226px;
+  gap: 14px;
+  margin-top: 16px;
+}
+.route-landscape .company-cluster { padding: 12px 13px; }
+.route-landscape .company-cluster h3 { margin-bottom: 9px; font-size: 18px; }
+.route-landscape .company-chip-list { gap: 6px; }
+.route-landscape .company-chip {
+  min-height: 34px;
+  padding: 6px 9px;
+  font-size: 15px;
+}
+.route-landscape .company-cluster-dense h3 { font-size: 16px; line-height: 1.2; }
+.route-landscape .company-cluster-dense .company-chip { min-height: 31px; padding: 5px 7px; font-size: 14px; }
+.company-research-card.route-research-card {
+  grid-template-columns: 190px repeat(6, minmax(0, 1fr));
+  min-height: 226px;
+}
+.route-research-card > div { padding: 14px 14px; }
+.route-research-card .company-card-lead small { font-size: 13px; }
+.route-research-card .company-card-lead strong { margin: 8px 0 7px; font-size: 24px; }
+.route-research-card .company-card-lead span { font-size: 16px; line-height: 1.38; }
+.route-research-card b { margin-bottom: 7px; font-size: 15px; }
+.route-research-card p { font-size: 16px; line-height: 1.38; }
+.route-research-card .boundary b { color: #9d4c3c; }
+
+.route-anchor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.route-anchor-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.route-anchor-card {
+  min-height: 352px;
+  padding: 21px 22px;
+  background: #f1f6f5;
+  border-top: 4px solid var(--anchor-color, var(--blue));
+  border-radius: 10px;
+}
+.route-anchor-card:nth-child(3) { --anchor-color: var(--amber); }
+.route-anchor-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.route-anchor-head h3 { font-size: 28px; line-height: 1.15; }
+.route-anchor-head span {
+  flex: 0 0 auto;
+  padding: 6px 8px;
+  color: var(--anchor-color, var(--blue));
+  background: #fff;
+  border: 1px solid #c5d9d6;
+  border-radius: 6px;
+  font: 800 13px/1.1 var(--font-body);
+}
+.route-anchor-card > p { min-height: 60px; margin-top: 10px; color: var(--ink-2); font-size: 19px; line-height: 1.46; }
+.route-anchor-card dl { margin-top: 15px; border-top: 1px solid #c8d9d6; }
+.route-anchor-card dl div {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid #d7e3e1;
+}
+.route-anchor-card dt { color: var(--anchor-color, var(--blue)); font-size: 16px; font-weight: 800; }
+.route-anchor-card dd { color: var(--ink-2); font-size: 18px; line-height: 1.38; }
+.route-anchor-card dd strong { color: #914d3f; }
+
+.feedback-ribbon,
+.metric-ribbon,
+.constraint-strip {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+.feedback-ribbon { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.metric-ribbon,
+.constraint-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.feedback-ribbon span,
+.metric-ribbon span,
+.constraint-strip span {
+  position: relative;
+  min-height: 82px;
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  padding: 12px 16px;
+  color: var(--ink-2);
+  background: var(--blue-soft);
+  border-radius: 8px;
+  font-size: 17px;
+  line-height: 1.34;
+}
+.feedback-ribbon span:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -13px;
+  top: 29px;
+  z-index: 2;
+  color: var(--blue);
+  font-weight: 900;
+}
+.feedback-ribbon b,
+.metric-ribbon b,
+.constraint-strip b { color: var(--ink); font-size: 18px; }
+.constraint-strip span:last-child,
+.metric-ribbon span:last-child { background: var(--amber-soft); }
+
+.boundary-note {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 14px 17px;
+  color: var(--ink-2);
+  background: var(--amber-soft);
+  border-left: 4px solid var(--amber);
+  border-radius: 7px;
+  font-size: 19px;
+  line-height: 1.44;
+}
+.boundary-note .icon { flex: 0 0 auto; width: 25px; height: 25px; color: var(--amber); }
+.boundary-note strong { color: var(--ink); }
+
+.platform-stack,
+.spatial-product-line {
+  display: grid;
+  gap: 13px;
+  margin-top: 19px;
+}
+.platform-stack { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.platform-layer {
+  position: relative;
+  min-height: 238px;
+  padding: 20px;
+  background: #f1f6f5;
+  border-top: 4px solid var(--layer-color, var(--blue));
+  border-radius: 9px;
+}
+.platform-layer:not(:last-child)::after,
+.spatial-step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -18px;
+  z-index: 3;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--blue);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  font: 800 13px/1 var(--font-mono);
+}
+.platform-layer small,
+.spatial-step small { color: var(--layer-color, var(--blue)); font: 800 13px/1 var(--font-mono); }
+.platform-layer h3,
+.spatial-step h3 { margin: 10px 0 8px; font-size: 23px; line-height: 1.2; }
+.platform-layer p,
+.spatial-step p { color: var(--ink-2); font-size: 18px; line-height: 1.44; }
+.platform-layer b { display: block; margin-top: 12px; color: var(--ink); font-size: 16px; line-height: 1.36; }
+.platform-evidence,
+.spatial-boundary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 17px;
+}
+.platform-evidence article,
+.spatial-boundary article {
+  min-height: 126px;
+  padding: 17px 19px;
+  background: #fff;
+  border-top: 2px solid #94c8c8;
+  border-radius: 0 0 9px 9px;
+}
+.platform-evidence article:last-child,
+.spatial-boundary article:last-child { background: var(--amber-soft); border-top-color: var(--amber); }
+.platform-evidence h3,
+.spatial-boundary h3 { margin-bottom: 7px; font-size: 20px; }
+.platform-evidence p,
+.spatial-boundary p { color: var(--ink-2); font-size: 18px; line-height: 1.42; }
+
+.spatial-product-line { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.spatial-step {
+  position: relative;
+  min-height: 286px;
+  padding: 22px;
+  background: #f1f6f5;
+  border-top: 4px solid var(--layer-color, var(--blue));
+  border-radius: 10px;
+}
+.spatial-step ul { margin: 14px 0 0 21px; color: var(--ink-2); font-size: 18px; line-height: 1.45; }
+.spatial-step li + li { margin-top: 6px; }
+
+.route-triad-table,
+.public-evidence-matrix {
+  margin-top: 18px;
+  overflow: hidden;
+  border-top: 3px solid var(--blue);
+  border-bottom: 1px solid #c6d5d3;
+}
+.route-triad-head,
+.route-triad-row {
+  display: grid;
+  grid-template-columns: 196px repeat(3, minmax(0, 1fr));
+}
+.route-triad-head { color: var(--ink-2); background: #e7f0ef; font-size: 14px; font-weight: 800; }
+.route-triad-head span,
+.route-triad-row > * { min-width: 0; padding: 11px 12px; }
+.route-triad-row { min-height: 119px; background: rgba(255,255,255,.78); }
+.route-triad-row:nth-child(odd) { background: #f2f7f6; }
+.route-triad-row + .route-triad-row { border-top: 1px solid #d3dfdd; }
+.route-triad-row > * + *,
+.route-triad-head span + span { border-left: 1px solid #d8e3e1; }
+.route-triad-row strong { color: var(--ink); font-size: 20px; line-height: 1.25; }
+.route-triad-row span { color: var(--ink-2); font-size: 16px; line-height: 1.38; }
+.route-triad-row .evidence-limit { color: #8f4b3d; background: rgba(249,232,227,.56); font-weight: 700; }
+
+.evidence-matrix-head,
+.evidence-matrix-row {
+  display: grid;
+  grid-template-columns: 190px repeat(4, minmax(0, 1fr));
+}
+.evidence-matrix-head { color: var(--ink-2); background: #e7f0ef; font-size: 15px; font-weight: 800; }
+.evidence-matrix-head span,
+.evidence-matrix-row > * { min-width: 0; padding: 11px 14px; }
+.evidence-matrix-row { min-height: 82px; background: rgba(255,255,255,.78); }
+.evidence-matrix-row:nth-child(odd) { background: #f2f7f6; }
+.evidence-matrix-row + .evidence-matrix-row { border-top: 1px solid #d3dfdd; }
+.evidence-matrix-row > * + *,
+.evidence-matrix-head span + span { border-left: 1px solid #d8e3e1; }
+.evidence-matrix-row strong { color: var(--ink); font-size: 18px; }
+.evidence-matrix-row span { color: var(--ink-2); font-size: 16px; line-height: 1.36; }
+.evidence-matrix-row span b { color: var(--blue); }
+
+.revenue-route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.revenue-route {
+  min-height: 252px;
+  padding: 15px 17px;
+  background: #f1f6f5;
+  border-top: 4px solid var(--revenue-color, var(--blue));
+  border-radius: 10px;
+}
+.revenue-route:nth-child(4),
+.revenue-route:nth-child(5),
+.revenue-route:nth-child(6) { --revenue-color: var(--amber); }
+.revenue-route .icon { width: 29px; height: 29px; color: var(--revenue-color, var(--blue)); }
+.revenue-route h3 { margin: 6px 0 5px; font-size: 22px; }
+.revenue-route > p { min-height: 42px; color: var(--ink-2); font-size: 16px; line-height: 1.35; }
+.revenue-route dl { margin-top: 7px; border-top: 1px solid #c9d9d7; }
+.revenue-route dl div { display: grid; grid-template-columns: 73px 1fr; gap: 7px; padding: 4px 0; border-bottom: 1px solid #d8e3e1; }
+.revenue-route dt { color: var(--revenue-color, var(--blue)); font-size: 13px; font-weight: 800; }
+.revenue-route dd { color: var(--ink-2); font-size: 15px; line-height: 1.3; }
+
+.wm-diligence .diligence-row { grid-template-columns: 196px 1fr 176px; min-height: 64px; }
+.wm-diligence .diligence-row strong { font-size: 17px; }
+.wm-diligence .diligence-row span { font-size: 17px; line-height: 1.35; }
+.wm-diligence .diligence-row b { font-size: 16px; }
+.diligence-principles { display: grid; grid-template-rows: repeat(3, 1fr); gap: 12px; }
+.diligence-principles article { padding: 18px 20px; background: #f1f6f5; border-radius: 10px; }
+.diligence-principles article:nth-child(2) { background: var(--blue-soft); }
+.diligence-principles article:nth-child(3) { background: var(--amber-soft); }
+.diligence-principles h3 { margin-bottom: 8px; font-size: 21px; }
+.diligence-principles p { color: var(--ink-2); font-size: 18px; line-height: 1.44; }
+
+/* Every page in the rebuilt company chapter opens in a clean presenter state. */
+.slide[data-chapter="公司路线与产业映射"] .inline-deep-body { max-height: 224px; }
+
 /* Focus states are visible on the light canvas and do not rely on color alone. */
 :where(.chapter-tab, .tabbar button, .company-chip, .inline-deep summary, .deck-controls button):focus-visible {
   outline: 3px solid color-mix(in oklch, var(--blue) 72%, white);
@@ -2948,8 +3438,8 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
         <button class="chapter-tab" type="button" data-start="18" data-end="21"><svg class="icon"><use href="#i-box"/></svg><span>模拟器</span></button>
         <button class="chapter-tab" type="button" data-start="22" data-end="28"><svg class="icon"><use href="#i-film"/></svg><span>视频世界模型</span></button>
         <button class="chapter-tab" type="button" data-start="29" data-end="31"><svg class="icon"><use href="#i-chart"/></svg><span>评测与数据</span></button>
-        <button class="chapter-tab" type="button" data-start="32" data-end="44"><svg class="icon"><use href="#i-briefcase"/></svg><span>中国公司与 VC</span></button>
-        <button class="chapter-tab" type="button" data-start="45" data-end="47"><svg class="icon"><use href="#i-triangle-alert"/></svg><span>挑战与结论</span></button>
+        <button class="chapter-tab" type="button" data-start="32" data-end="47"><svg class="icon"><use href="#i-briefcase"/></svg><span>公司路线与产业映射</span></button>
+        <button class="chapter-tab" type="button" data-start="48" data-end="50"><svg class="icon"><use href="#i-triangle-alert"/></svg><span>挑战与结论</span></button>
       </nav>
       <span class="deck-source">HOU ET AL. · 2026</span>
     </header>
@@ -3000,7 +3490,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="摘要" data-title="三句话读懂这篇综述">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">EXECUTIVE SUMMARY</span><span class="page-no">02 / 47</span></div>
+        <div class="rail"><span class="paper-id">EXECUTIVE SUMMARY</span><span class="page-no">02 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">摘要</div><h2 class="slide-title reveal d1" data-edit="s02-title">三句话读懂这篇综述</h2></div>
           <div class="thesis-tag reveal d2">世界模型的价值标准，正在从“生成质量”迁移到“决策效用”。</div>
@@ -3056,7 +3546,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="摘要" data-title="三条主线，一套行动标准">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SURVEY ORGANIZATION</span><span class="page-no">03 / 47</span></div>
+        <div class="rail"><span class="paper-id">SURVEY ORGANIZATION</span><span class="page-no">03 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">阅读地图</div><h2 class="slide-title reveal d1">三条主线，最终都回到<span class="cool">行动</span></h2></div>
           <div class="thesis-tag reveal d2">分类依据不同：架构、功能、能力，但评价终点相同。</div>
@@ -3099,7 +3589,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="基础" data-title="为什么反应式 VLA 还不够">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">MOTIVATION · FROM REACTION TO PREDICTION</span><span class="page-no">04 / 47</span></div>
+        <div class="rail"><span class="paper-id">MOTIVATION · FROM REACTION TO PREDICTION</span><span class="page-no">04 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">问题起点</div><h2 class="slide-title reveal d1">为什么反应式 VLA <span class="mark">还不够</span></h2></div>
           <div class="thesis-tag reveal d2">动作预测容量增加，并不会自动带来长时程可靠性。</div>
@@ -3141,7 +3631,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="基础" data-title="世界模型：定义与边界">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">DEFINITION & BOUNDARY</span><span class="page-no">05 / 47</span></div>
+        <div class="rail"><span class="paper-id">DEFINITION & BOUNDARY</span><span class="page-no">05 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">概念边界</div><h2 class="slide-title reveal d1">世界模型不是一种架构，而是一种<span class="cool">预测角色</span></h2></div>
         </div>
@@ -3182,7 +3672,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="基础" data-title="可行动世界模型的三项能力">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ACTIONABLE WORLD MODEL</span><span class="page-no">06 / 47</span></div>
+        <div class="rail"><span class="paper-id">ACTIONABLE WORLD MODEL</span><span class="page-no">06 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">能力框架</div><h2 class="slide-title reveal d1">可行动世界模型的<span class="cool">三项能力</span></h2></div>
           <div class="thesis-tag reveal d2">看见未来、比较未来、制造更多可学习的未来。</div>
@@ -3225,7 +3715,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="基础" data-title="一个联合分布，四种模型查询">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">PROBABILISTIC LENS</span><span class="page-no">07 / 47</span></div>
+        <div class="rail"><span class="paper-id">PROBABILISTIC LENS</span><span class="page-no">07 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">理论中心</div><h2 class="slide-title reveal d1">一个联合分布，四种模型查询</h2></div>
           <div class="thesis-tag reveal d2">别被公式吓到：它只是把“未来会怎样”和“接下来怎么做”记在同一本账里。</div>
@@ -3266,7 +3756,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="基础" data-title="2023-2026：从外置想象到内化预测">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">FIELD EVOLUTION</span><span class="page-no">08 / 47</span></div>
+        <div class="rail"><span class="paper-id">FIELD EVOLUTION</span><span class="page-no">08 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">演化时间线</div><h2 class="slide-title reveal d1">2023-2026：从外置想象到<span class="cool">内化预测</span></h2></div>
           <div class="thesis-tag reveal d2">不是旧架构被完全淘汰，而是耦合方式持续扩张。</div>
@@ -3299,7 +3789,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="策略架构" data-title="五种范式：预测如何进入策略">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3 · WORLD MODEL FOR POLICY</span><span class="page-no">09 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3 · WORLD MODEL FOR POLICY</span><span class="page-no">09 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">架构全景</div><h2 class="slide-title reveal d1">五种范式：预测如何进入<span class="cool">策略</span></h2></div>
           <div class="thesis-tag reveal d2">比较的关键不是模型名，而是预测与动作之间的接口。</div>
@@ -3353,7 +3843,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="IDM-style：先想象，再执行">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.2 · INVERSE DYNAMICS POLICY</span><span class="page-no">10 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.2 · INVERSE DYNAMICS POLICY</span><span class="page-no">10 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">范式 A</div><h2 class="slide-title reveal d1">IDM-style：先想象，再执行</h2></div>
           <div class="thesis-tag reveal d2">模块化最强，也最容易把“视觉合理”误当成“动作可行”。</div>
@@ -3392,7 +3882,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="解耦路线的真正进步：接口越来越可执行">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">PREDICTIVE INTERFACE EVOLUTION</span><span class="page-no">11 / 47</span></div>
+        <div class="rail"><span class="paper-id">PREDICTIVE INTERFACE EVOLUTION</span><span class="page-no">11 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">接口演进</div><h2 class="slide-title reveal d1">解耦路线的真正进步：接口越来越<span class="cool">可执行</span></h2></div>
         </div>
@@ -3425,7 +3915,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="策略架构" data-title="Single-backbone：把视频与动作放进同一生成过程">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.3 · SINGLE BACKBONE</span><span class="page-no">12 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.3 · SINGLE BACKBONE</span><span class="page-no">12 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">范式 B</div><h2 class="slide-title reveal d1">把视频与动作放进<span class="cool">同一生成过程</span></h2></div>
           <div class="thesis-tag reveal d2">从“两个模块传递结果”变为“一个模型联合去噪”。</div>
@@ -3479,7 +3969,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="视频骨干是一种有希望的归纳偏置，不是定论">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">INDUCTIVE BIAS · EVIDENCE CHECK</span><span class="page-no">13 / 47</span></div>
+        <div class="rail"><span class="paper-id">INDUCTIVE BIAS · EVIDENCE CHECK</span><span class="page-no">13 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">证据边界</div><h2 class="slide-title reveal d1">视频骨干是一种有希望的<span class="cool">归纳偏置</span>，不是定论</h2></div>
         </div>
@@ -3523,7 +4013,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="MoE / MoT：专业化与耦合同时保留">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.4 · MIXTURE OF EXPERTS / TRANSFORMERS</span><span class="page-no">14 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.4 · MIXTURE OF EXPERTS / TRANSFORMERS</span><span class="page-no">14 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">范式 C</div><h2 class="slide-title reveal d1">专业化与耦合<span class="cool">同时保留</span></h2></div>
           <div class="thesis-tag reveal d2">视频和动作时间尺度不同，完全共享参数未必最优。</div>
@@ -3570,7 +4060,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="Unified VLA：世界建模成为策略内部训练目标">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.5 · UNIFIED VLA</span><span class="page-no">15 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.5 · UNIFIED VLA</span><span class="page-no">15 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">范式 D</div><h2 class="slide-title reveal d1">世界建模成为策略内部的<span class="cool">训练目标</span></h2></div>
         </div>
@@ -3617,7 +4107,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="策略架构" data-title="Latent / Symbolic：不预测像素，也能建模世界">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 3.6 · LATENT & SYMBOLIC WORLD MODEL</span><span class="page-no">16 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 3.6 · LATENT & SYMBOLIC WORLD MODEL</span><span class="page-no">16 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">范式 E</div><h2 class="slide-title reveal d1">不预测像素，也能<span class="cool">建模世界</span></h2></div>
           <div class="thesis-tag reveal d2">控制需要可预测的状态，不一定需要可观看的未来。</div>
@@ -3663,7 +4153,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="策略架构" data-title="五类架构没有单一赢家">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ARCHITECTURE TRADE-OFF</span><span class="page-no">17 / 47</span></div>
+        <div class="rail"><span class="paper-id">ARCHITECTURE TRADE-OFF</span><span class="page-no">17 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">横向比较</div><h2 class="slide-title reveal d1">五类架构没有<span class="cool">单一赢家</span></h2></div>
           <div class="thesis-tag reveal d2">当前证据更支持“多种预测结构都可能有效”，而不是唯一架构收敛。</div>
@@ -3707,7 +4197,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="模拟器" data-title="世界模型开始替代环境本身">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 4 · WORLD MODEL AS SIMULATOR</span><span class="page-no">18 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 4 · WORLD MODEL AS SIMULATOR</span><span class="page-no">18 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">功能转变</div><h2 class="slide-title reveal d1">世界模型开始替代<span class="cool">环境本身</span></h2></div>
           <div class="thesis-tag reveal d2">预测不再只辅助策略，而是承接交互、反馈和试错。</div>
@@ -3752,7 +4242,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="模拟器" data-title="用于强化学习：在想象中产生训练经验">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 4.1 · WORLD MODEL FOR RL</span><span class="page-no">19 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 4.1 · WORLD MODEL FOR RL</span><span class="page-no">19 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">用途 A</div><h2 class="slide-title reveal d1">在想象中产生<span class="cool">训练经验</span></h2></div>
           <div class="thesis-tag reveal d2">把昂贵真机交互，替换为可扩展的模型内 rollout。</div>
@@ -3788,7 +4278,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="模拟器" data-title="用于评估：先在想象中判断值不值得执行">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 4.2 · WORLD MODEL FOR EVALUATION</span><span class="page-no">20 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 4.2 · WORLD MODEL FOR EVALUATION</span><span class="page-no">20 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">用途 B</div><h2 class="slide-title reveal d1">先在想象中判断：<span class="cool">值不值得执行</span></h2></div>
         </div>
@@ -3830,7 +4320,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="模拟器" data-title="模拟器最危险的错误：评估信号被幻觉污染">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">TRUST BOUNDARY · HALLUCINATION</span><span class="page-no">21 / 47</span></div>
+        <div class="rail"><span class="paper-id">TRUST BOUNDARY · HALLUCINATION</span><span class="page-no">21 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">可靠性边界</div><h2 class="slide-title reveal d1">评估信号会被<span class="warn">幻觉污染</span></h2></div>
           <div class="thesis-tag reveal d2">模拟器错误不只影响画面，它会改变策略选择本身。</div>
@@ -3865,7 +4355,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="视频世界模型" data-title="视频世界模型的四级能力阶梯">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5 · ROBOTIC VIDEO WORLD MODEL</span><span class="page-no">22 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5 · ROBOTIC VIDEO WORLD MODEL</span><span class="page-no">22 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">能力演进</div><h2 class="slide-title reveal d1">视频世界模型的<span class="cool">四级能力阶梯</span></h2></div>
           <div class="thesis-tag reveal d2">从生成任务演示，走向可交互的预测基础设施。</div>
@@ -3899,7 +4389,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="视频世界模型" data-title="第一阶段：把视频生成器变成想象引擎">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5.2 · IMAGINATION ENGINE</span><span class="page-no">23 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5.2 · IMAGINATION ENGINE</span><span class="page-no">23 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">阶段 1</div><h2 class="slide-title reveal d1">把视频生成器变成<span class="cool">想象引擎</span></h2></div>
         </div>
@@ -3932,7 +4422,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="视频世界模型" data-title="第二阶段：从语义合理走向动作忠实">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5.3 · ACTION-CONTROLLABLE VIDEO WM</span><span class="page-no">24 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5.3 · ACTION-CONTROLLABLE VIDEO WM</span><span class="page-no">24 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">阶段 2</div><h2 class="slide-title reveal d1">从语义合理走向<span class="cool">动作忠实</span></h2></div>
           <div class="thesis-tag reveal d2">同一个场景，不同动作必须产生可区分、可验证的未来。</div>
@@ -3974,7 +4464,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="视频世界模型" data-title="第三阶段：用结构约束物理与交互">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5.4 · STRUCTURE-AWARE GENERATION</span><span class="page-no">25 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5.4 · STRUCTURE-AWARE GENERATION</span><span class="page-no">25 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">阶段 3</div><h2 class="slide-title reveal d1">用结构约束<span class="cool">物理与交互</span></h2></div>
           <div class="thesis-tag reveal d2">低维动作不足以描述复杂接触，模型需要更明确的中间变量。</div>
@@ -4014,7 +4504,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="视频世界模型" data-title="第四阶段：从专用生成器到世界基础模型">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 5.5 · FOUNDATION WORLD MODELS</span><span class="page-no">26 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 5.5 · FOUNDATION WORLD MODELS</span><span class="page-no">26 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">阶段 4</div><h2 class="slide-title reveal d1">从专用生成器到<span class="cool">世界基础模型</span></h2></div>
           <div class="thesis-tag reveal d2">目标是一个可复用的交互预测底座，而非单任务视频工具。</div>
@@ -4054,7 +4544,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide dark" data-chapter="视频世界模型" data-title="视觉真实不等于可行动">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ACTIONABILITY QUADRANT</span><span class="page-no">27 / 47</span></div>
+        <div class="rail"><span class="paper-id">ACTIONABILITY QUADRANT</span><span class="page-no">27 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">判断框架</div><h2 class="slide-title reveal d1">视觉真实<span class="warn">不等于</span>可行动</h2></div>
           <div class="thesis-tag reveal d2">机器人世界模型需要同时回答：看起来像吗？动作后果对吗？</div>
@@ -4084,7 +4574,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="扩展应用" data-title="导航与自动驾驶把要求推向更长时程">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 6 · OTHER EMBODIED DOMAINS</span><span class="page-no">28 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 6 · OTHER EMBODIED DOMAINS</span><span class="page-no">28 / 50</span></div>
         <div class="heading-row">
           <div><div class="chapter-label">扩展领域</div><h2 class="slide-title reveal d1">导航与自动驾驶，把要求推向<span class="cool">更长时程</span></h2></div>
         </div>
@@ -4135,7 +4625,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
          =========================================== -->
     <section class="slide" data-chapter="评测" data-title="世界模型需要三层评测，而不是一个视频指标">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 7.1 · BENCHMARKS</span><span class="page-no">29 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 7.1 · BENCHMARKS</span><span class="page-no">29 / 50</span></div>
         <div class="heading-row compact">
           <div><div class="chapter-label">评测框架</div><h2 class="slide-title reveal d1">需要三层评测，而不是<span class="cool">一个视频指标</span></h2></div>
           <div class="thesis-tag reveal d2">从预测质量，逐层走向决策效用与物理可执行性。</div>
@@ -4187,12 +4677,12 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     <!-- ===========================================
          30 · DATASET CAPABILITY MAP
          =========================================== -->
-    <section class="slide" data-chapter="数据" data-title="训练数据的价值不由规模单独决定">
+    <section class="slide" data-chapter="数据" data-title="从数据规模到数据资产：关键是状态转移覆盖">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 7.2 · DATASETS</span><span class="page-no">30 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 7.2 · DATASETS</span><span class="page-no">30 / 50</span></div>
         <div class="heading-row compact">
-          <div><div class="chapter-label">数据能力地图</div><h2 class="slide-title reveal d1">数据的价值，不由<span class="cool">规模</span>单独决定</h2></div>
-          <div class="thesis-tag reveal d2">机器人视频只有与动作、任务和物理交互对齐，才是世界模型数据。</div>
+          <div><div class="chapter-label">数据能力地图</div><h2 class="slide-title reveal d1">从数据规模到数据资产：关键是<span class="cool">状态转移覆盖</span></h2></div>
+          <div class="thesis-tag reveal d2">信息密度、获取成本、复用权与边际真机增益，共同决定数据能否资本化。</div>
         </div>
         <div class="content tight reveal d2">
           <table class="matrix">
@@ -4206,14 +4696,14 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
               <tr><td><strong>Contact / multimodal</strong></td><td>摩擦、力、触觉和接触稳定</td><td>RH20T-P、VTDexManip、FreeTacMan</td><td>覆盖和同步最不足</td></tr>
             </tbody>
           </table>
-          <div class="key-line" style="margin-top:24px">最稀缺的不是成功视频，而是<span class="cool">决策敏感变化、失败恢复和密集物理监督</span>。</div>
+          <div class="key-line" style="margin-top:24px">数据规模只支持技术可能性；<span class="cool">单位可训练数据成本、复用权和边际模型增益</span>，才支持数据资产溢价。</div>
         </div>
         <div class="source">SOURCE · Table 3; Table 4; Sec. 7.2</div>
         <div class="deep-copy">
           <h3>为什么作者不用单一数据集分类</h3>
           <p>同一数据资源可能同时支持跨本体、语言条件、长时程和接触建模。论文因此按互补属性比较，而不是强制把数据集放入互斥类别。</p>
-          <h3>数据规模的错觉</h3>
-          <p>大量成功演示可以提高模仿性能，却未必覆盖动作干预差异、失败状态或摩擦等不可见物理属性。对世界模型而言，transition diversity 往往比纯视频数量更重要。</p>
+          <h3>买方如何判断数据资产</h3>
+          <p>除 transition diversity 外，还要核验采集与清洗成本是否持续下降、数据使用权能否跨项目复用，以及新增数据能否带来可测量的真机增益。缺一项，就只能按研发投入看待，不能按可复利资产定价。</p>
         </div>
       </div>
     </section>
@@ -4221,11 +4711,12 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     <!-- ===========================================
          31 · BENCHMARK RESULTS
          =========================================== -->
-    <section class="slide dark" data-chapter="结果" data-title="Benchmark 已很高，但尚不能证明架构收敛">
+    <section class="slide dark" data-chapter="结果" data-title="Benchmark 高分是技术入场券，不是估值锚">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 7.3 · REPRESENTATIVE RESULTS</span><span class="page-no">31 / 47</span></div>
+        <div class="rail"><span class="paper-id">SEC. 7.3 · REPRESENTATIVE RESULTS</span><span class="page-no">31 / 50</span></div>
         <div class="heading-row compact">
-          <div><div class="chapter-label">结果解读</div><h2 class="slide-title reveal d1">Benchmark 已很高，但尚不能证明<span class="cool">架构收敛</span></h2></div>
+          <div><div class="chapter-label">结果解读</div><h2 class="slide-title reveal d1">Benchmark 高分是<span class="cool">技术入场券</span>，不是估值锚</h2></div>
+          <div class="thesis-tag reveal d2">公开成绩提高技术路线成立的概率，但不能证明真实部署、商业复制或平台价值。</div>
         </div>
         <div class="content tight">
           <table class="data-table reveal d2">
@@ -4240,9 +4731,9 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
             </tbody>
           </table>
           <div class="three-col reveal d3" style="margin-top:24px">
-            <div class="paper-block blue"><h3>观察 1</h3><p>多种方法已接近满分，首先说明现有任务正在饱和，而不是架构已经收敛。</p></div>
-            <div class="paper-block"><h3>观察 2</h3><p>Goal 与 Long 更能暴露持续动作一致性和误差累积。</p></div>
-            <div class="paper-block amber"><h3>观察 3</h3><p>跨 RoboTwin、CALVIN、SIMPLER 的协议差异使排名不可直接迁移。</p></div>
+            <div class="paper-block blue"><h3>技术含义</h3><p>标准任务已有实质进展；接近满分更说明任务趋于饱和，不代表架构已经收敛。</p></div>
+            <div class="paper-block"><h3>商业缺口</h3><p>榜单不覆盖在线时延、连续运行、人工接管、工程集成与客户成本。</p></div>
+            <div class="paper-block amber"><h3>重估条件</h3><p>同预算消融、长时程、跨本体迁移与真实部署，才可能释放产品或平台溢价。</p></div>
           </div>
         </div>
         <div class="source">SOURCE · Table 5; Table 6 · Values are reported by original papers under listed protocols</div>
@@ -4256,434 +4747,440 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
     </section>
 
     <!-- ===========================================
-         32 · PAPER TO INVESTMENT FRAMEWORK
+         32 · HOW TO READ A WORLD-MODEL COMPANY
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="从论文框架到投资框架">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="读一家公司：从技术位置走到价值捕获" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CHINA LENS · PAPER → INVESTMENT</span><span class="page-no">32 / 47</span></div>
+        <div class="rail"><span class="paper-id">COMPANY READING · SIX QUESTIONS</span><span class="page-no">32 / 50</span></div>
         <div class="heading-row compact">
-          <div><div class="chapter-label">框架翻译</div><h2 class="slide-title reveal d1">从“模型能否预测”转向“公司能否<span class="cool">形成闭环</span>”</h2></div>
-          <div class="thesis-tag reveal d2">论文给出技术坐标；投资判断还要加入本体、交付、单位经济性与资本约束。</div>
+          <div><div class="chapter-label">公司读法</div><h2 class="slide-title reveal d1">读一家公司：从技术位置走到<span class="cool">价值捕获</span></h2></div>
+          <div class="thesis-tag reveal d2">“使用世界模型”不是投资类别；技术、产品、付费方和价格隐含预期必须同时回答。</div>
         </div>
-        <div class="vc-translation reveal d2">
-          <article class="vc-translation-step"><svg class="icon"><use href="#i-target"/></svg><h3>预测能力</h3><p>未来是否随动作而改变，而不只是生成一段“看起来合理”的视频。</p><strong><b>投资问题</b><br>模型增益能否被真机任务量化？</strong></article>
-          <article class="vc-translation-step"><svg class="icon"><use href="#i-workflow"/></svg><h3>策略耦合</h3><p>预测是在训练中做正则，还是在线参与动作选择与风险判断。</p><strong><b>投资问题</b><br>能力是产品核心还是发布会功能？</strong></article>
-          <article class="vc-translation-step"><svg class="icon"><use href="#i-database"/></svg><h3>数据飞轮</h3><p>是否覆盖失败、恢复、接触、跨本体和真实工作分布。</p><strong><b>投资问题</b><br>新增数据能否持续降低边际成本？</strong></article>
-          <article class="vc-translation-step"><svg class="icon"><use href="#i-factory"/></svg><h3>部署闭环</h3><p>从样机到连续运行，需要本体可靠性、集成、运维和客户流程。</p><strong><b>投资问题</b><br>第二个客户是否更快、更便宜？</strong></article>
-          <article class="vc-translation-step"><svg class="icon"><use href="#i-coins"/></svg><h3>商业证据</h3><p>意向、订单、交付、验收和回款是完全不同的价值阶段。</p><strong><b>投资问题</b><br>估值对应的下一项硬指标是什么？</strong></article>
+        <div class="route-question-grid reveal d2">
+          <article class="route-question-card"><svg class="icon"><use href="#i-layers"/></svg><small>QUESTION 01</small><h3>建模什么？</h3><p>像素、三维场景、对象关系、接触动力学，还是任务状态与价值。</p><strong>输出必须对应一个可验证的“未来”。</strong></article>
+          <article class="route-question-card"><svg class="icon"><use href="#i-workflow"/></svg><small>QUESTION 02</small><h3>怎样接动作？</h3><p>只做训练辅助，还是能比较候选动作、生成策略或拒绝危险动作。</p><strong>关键是动作反事实，不是画面逼真。</strong></article>
+          <article class="route-question-card"><svg class="icon"><use href="#i-box"/></svg><small>QUESTION 03</small><h3>产品接口是什么？</h3><p>卖算力与工具、世界生成 API、策略模型、整机，还是场景运营。</p><strong>接口决定客户、毛利和数据回流。</strong></article>
+          <article class="route-question-card"><svg class="icon"><use href="#i-shield-check"/></svg><small>QUESTION 04</small><h3>证据走到哪？</h3><p>发布主张、模型与代码、同口径实验、连续部署、复购与现金回款。</p><strong>公司叙事与已证明能力必须分栏。</strong></article>
         </div>
-        <div class="key-line reveal d3" style="margin-top:18px">核心判断：技术路线决定<span class="cool">上限</span>，部署数据决定<span class="cool">斜率</span>，单位经济性决定公司能否活到上限兑现。</div>
-        <div class="source">SOURCE · Hou et al., 2026; public company materials; financing workbook · Research date 2026-07-14</div>
-        <div class="deep-copy"><h3>为什么不能直接按“世界模型公司”分类</h3><p>同一家公司可能同时销售本体、平台、模型和项目方案；“世界模型”也可能只是训练辅助、在线规划模块或品牌语言。研究中必须把产品收入、技术角色和公开证据拆开。</p><h3>本章的证据纪律</h3><p>官网可证明公司公开宣称了什么，监管与客户文件可提高商业证据质量，但只有持续运行、验收、回款和复购才能证明规模化。</p></div>
+        <div class="route-reading-rule reveal d3"><span>前四问：技术与产品</span><i>+</i><span>谁付费，替代哪项预算？</span><i>+</i><span>当前价格隐含哪一级里程碑？</span></div>
+        <div class="source">ANALYSIS · Six questions: model object · action coupling · product interface · public evidence · payer / budget · price-implied milestone</div>
+        <div class="deep-copy"><h3>为什么不直接列“世界模型公司”</h3><p>同一家公司可能同时拥有本体、仿真、VLA 与行业项目；世界模型也可能只是训练目标，而不是客户购买的产品。六问法把技术角色、商业接口与买方价格纪律放在同一框架内。</p><h3>本章的判断单位</h3><p>后续评价具体产品、收入与证据。融资不能替代技术验证，但本轮价格必须反推市场已经提前计入的技术和商业里程碑。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         33 · 24-COMPANY LANDSCAPE
+         33 · GLOBAL INDUSTRY ROUTE MAP
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="24 家公司的技术路线全景">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="全球产业链：价值从四个接口进入" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">24 COMPANIES · ROUTE MAP</span><span class="page-no">33 / 47</span></div>
+        <div class="rail"><span class="paper-id">GLOBAL MAP · REPRESENT → SIMULATE → ACT → DEPLOY</span><span class="page-no">33 / 50</span></div>
         <div class="heading-row compact">
-          <div><div class="chapter-label">市场全景</div><h2 class="slide-title reveal d1">24 家公司，不是同一场<span class="cool">机器人竞赛</span></h2></div>
-          <div class="thesis-tag reveal d2">点击公司名称，下方固定区域切换研究卡；所有估值均保留证据等级。</div>
+          <div><div class="chapter-label">全球路线地图</div><h2 class="slide-title reveal d1">全球产业链：价值从<span class="cool">四个接口</span>进入</h2></div>
+          <div class="thesis-tag reveal d2">跨层可能增强闭环，也会增加资本与执行负担；平台溢价来自标准化和复用，不来自覆盖层数。</div>
         </div>
-        <div class="company-landscape reveal d2">
+        <div class="global-route-map reveal d2">
+          <div class="route-stage-grid">
+            <article class="route-stage" style="--stage-color:#4778c7"><small>01 · REPRESENT</small><h3>世界表示</h3><p>客户购买订阅、API 与三维资产工作流。</p><div class="route-brand-list"><span>World Labs</span><span>自变量</span><span>千寻智能</span></div><div class="route-proof">价值证据：付费留存、单位生成成本与生产流程渗透。</div></article>
+            <article class="route-stage" style="--stage-color:#168b91"><small>02 · SIMULATE</small><h3>仿真与评估</h3><p>开发团队购买工具许可、计算消耗和训练评估平台。</p><div class="route-brand-list"><span>NVIDIA</span><span>Momenta</span><span>智元</span></div><div class="route-proof">价值证据：生产级工作负载、sim-to-real 与策略排序一致。</div></article>
+            <article class="route-stage" style="--stage-color:#4d9568"><small>03 · ACT</small><h3>动作策略</h3><p>整机厂与集成商购买模型许可、开发平台或联合交付。</p><div class="route-brand-list"><span>银河通用</span><span>穹彻</span><span>灵初</span></div><div class="route-proof">价值证据：独立软件收入、跨本体迁移和部署提速。</div></article>
+            <article class="route-stage" style="--stage-color:#c96d45"><small>04 · DEPLOY</small><h3>真实部署</h3><p>终端客户购买软件、整机、项目交付或运营结果。</p><div class="route-brand-list"><span>Momenta</span><span>优必选</span><span>它石</span><span>云深处</span></div><div class="route-proof">价值证据：验收、回款、复购、利用率与第二客户复用。</div></article>
+          </div>
+          <div class="route-platform-band"><strong>读法 · 利润入口与资本结构地图</strong><p>一家公司可以跨多层；覆盖越广不等于倍数越高，只有共享工具、数据和客户接口带来边际成本下降，才形成平台价值。</p><span>VALUE CAPTURE MAP</span></div>
+        </div>
+        <div class="source">ANALYSIS · Route placement describes system role, not exclusive company categories or valuation comparables</div>
+        <div class="deep-copy"><h3>地图怎么读</h3><p>World Labs 从空间表示与生成接口切入，NVIDIA 从基础设施与生态切入，Momenta 从垂直部署闭环切入，中国具身公司则在策略、全栈、本体和行业部署之间寻找入口。</p><h3>为什么允许跨层</h3><p>世界模型的价值链天然相连。禁止跨层会掩盖平台效应；把所有层合并成“物理 AI”又会掩盖客户接口和商业模式差异。</p></div>
+      </div>
+    </section>
+
+    <!-- ===========================================
+         34 · CHINA 24-COMPANY INTERACTIVE LANDSCAPE
+         =========================================== -->
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="中国 24 家公司：同一技术叙事，四种资本属性" data-deep-mode="collapsed">
+      <div class="slide-shell">
+        <div class="rail"><span class="paper-id">CHINA · 24 COMPANIES / FOUR SYSTEM ROLES</span><span class="page-no">34 / 50</span></div>
+        <div class="heading-row compact">
+          <div><div class="chapter-label">中国公司映射</div><h2 class="slide-title reveal d1">中国 24 家公司：同一叙事，<span class="cool">四种资本属性</span></h2></div>
+          <div class="thesis-tag reveal d2">路线差异对应不同的收入可见性、资本强度、估值底座与证据结构。</div>
+        </div>
+        <div class="company-landscape route-landscape reveal d2">
           <div class="company-map-grid" id="companyMap">
-            <article class="company-cluster"><h3><svg class="icon"><use href="#i-brain-circuit"/></svg>模型优先 / VLA</h3><div class="company-chip-list"><button class="company-chip is-selected" data-company="galbot">银河通用</button><button class="company-chip" data-company="galaxea">星海图</button><button class="company-chip" data-company="spirit">千寻智能</button><button class="company-chip" data-company="ai2">智平方</button><button class="company-chip" data-company="x2">自变量</button><button class="company-chip" data-company="psibot">灵初智能</button></div></article>
-            <article class="company-cluster"><h3><svg class="icon"><use href="#i-robot"/></svg>软硬件全栈</h3><div class="company-chip-list"><button class="company-chip" data-company="agibot">智元</button><button class="company-chip" data-company="robotera">星动纪元</button><button class="company-chip" data-company="noematrix">穹彻</button><button class="company-chip" data-company="tas">它石智航</button><button class="company-chip" data-company="limx">逐际动力</button><button class="company-chip" data-company="unitree">宇树</button></div></article>
-            <article class="company-cluster"><h3><svg class="icon"><use href="#i-factory"/></svg>场景交付 / 成熟产品</h3><div class="company-chip-list"><button class="company-chip" data-company="deep">云深处</button><button class="company-chip" data-company="leju">乐聚</button><button class="company-chip" data-company="fourier">傅利叶</button><button class="company-chip" data-company="ubtech">优必选</button><button class="company-chip" data-company="narwal">云鲸</button><button class="company-chip" data-company="magic">魔法原子</button></div></article>
-            <article class="company-cluster"><h3><svg class="icon"><use href="#i-cpu"/></svg>本体产品 / 关键部件</h3><div class="company-chip-list"><button class="company-chip" data-company="engine">众擎</button><button class="company-chip" data-company="noetix">松延动力</button><button class="company-chip" data-company="linker">灵心巧手</button><button class="company-chip" data-company="paxini">帕西尼</button><button class="company-chip" data-company="drobotics">地瓜机器人</button><button class="company-chip" data-company="mechmind">梅卡曼德</button></div></article>
+            <article class="company-cluster"><h3><svg class="icon"><use href="#i-brain-circuit"/></svg>核心世界模型 / 策略</h3><div class="company-chip-list"><button class="company-chip is-selected" data-company="galbot">银河通用</button><button class="company-chip" data-company="galaxea">星海图</button><button class="company-chip" data-company="spirit">千寻智能</button><button class="company-chip" data-company="ai2">智平方</button><button class="company-chip" data-company="x2">自变量</button></div></article>
+            <article class="company-cluster company-cluster-dense"><h3><svg class="icon"><use href="#i-robot"/></svg>全栈闭环 + 本体控制相邻</h3><div class="company-chip-list"><button class="company-chip" data-company="agibot">智元</button><button class="company-chip" data-company="psibot">灵初</button><button class="company-chip" data-company="noematrix">穹彻</button><button class="company-chip" data-company="robotera">星动纪元</button><button class="company-chip" data-company="unitree">宇树</button><button class="company-chip" data-company="limx">逐际</button><button class="company-chip" data-company="engine">众擎</button><button class="company-chip" data-company="noetix">松延</button><button class="company-chip" data-company="magic">魔法原子</button></div></article>
+            <article class="company-cluster"><h3><svg class="icon"><use href="#i-factory"/></svg>垂直部署 / 产品闭环</h3><div class="company-chip-list"><button class="company-chip" data-company="ubtech">优必选</button><button class="company-chip" data-company="fourier">傅利叶</button><button class="company-chip" data-company="tas">它石智航</button><button class="company-chip" data-company="deep">云深处</button><button class="company-chip" data-company="leju">乐聚</button><button class="company-chip" data-company="narwal">云鲸</button></div></article>
+            <article class="company-cluster"><h3><svg class="icon"><use href="#i-cpu"/></svg>物理 AI 支撑层</h3><div class="company-chip-list"><button class="company-chip" data-company="linker">灵心巧手</button><button class="company-chip" data-company="paxini">帕西尼</button><button class="company-chip" data-company="drobotics">地瓜机器人</button><button class="company-chip" data-company="mechmind">梅卡曼德</button></div></article>
           </div>
-          <div class="company-research-card" id="companyResearchCard" aria-live="polite">
-            <div class="company-card-lead"><small>当前研究卡</small><strong data-field="name">银河通用</strong><span data-field="route">模型优先 · 轮式双臂</span></div>
-            <div><b>核心产品</b><p data-field="product">Galbot G1；GraspVLA / GroceryVLA</p></div>
-            <div><b>世界模型关联</b><p data-field="world">合成数据与端到端策略，公开证据更偏可执行预测表征。</p></div>
-            <div><b>商业证据</b><p data-field="evidence">零售、工业、医疗验证；与延锋推进制造场景合作。</p></div>
-            <div><b>资本阶段</b><p data-field="funding">2026 新轮 25 亿元；225 亿元为媒体推算口径。</p></div>
-            <div class="risk"><b>主要风险</b><p data-field="risk">高估值要求部署快速放量；零样本泛化仍需连续运营数据。</p></div>
+          <div class="company-research-card route-research-card" id="companyResearchCard" aria-live="polite">
+            <div class="company-card-lead"><small>路线类型</small><strong data-field="name">银河通用</strong><span data-field="route">模型优先 · 任务闭环</span></div>
+            <div><b>建模对象</b><p data-field="object">物体、场景与可执行操作状态。</p></div>
+            <div><b>系统位置</b><p data-field="system">策略模型 / 移动操作。</p></div>
+            <div><b>动作耦合</b><p data-field="coupling">预测表征进入端到端策略。</p></div>
+            <div><b>当前产品</b><p data-field="product">Galbot G1；GraspVLA / GroceryVLA。</p></div>
+            <div><b>公开证据</b><p data-field="evidence">零售与工业公开验证；长期运行指标待核验。</p></div>
+            <div class="boundary"><b>证据边界</b><p data-field="boundary">需看跨门店成功率、利用率和接管率。</p></div>
           </div>
         </div>
-        <div class="source">SOURCE · Company websites, official filings and financing workbook · Click names to compare</div>
-        <div class="deep-copy"><h3>坐标怎么读</h3><p>“模型优先”不代表本体弱，“场景交付”也不代表模型落后。主标签只回答公司当前最可验证的资产是什么；次标签和研究卡补充其第二增长曲线。</p><h3>为什么把云鲸放入样本</h3><p>云鲸不是通用人形公司，但它提供重要对照：单一高频任务如何通过产品定义、真实家庭数据、供应链和渠道形成商业闭环。</p></div>
+        <div class="source">SOURCE · Official company product pages and public filings · Financing and valuation details remain in the research memo</div>
+        <div class="deep-copy"><h3>四种资本属性</h3><p>模型优先看里程碑与概率加权；全栈看分部价值与资本效率；垂直部署看收入质量、复制性和回款；支撑层看 design-in、毛利和客户黏性。分组不是永久标签。</p><h3>研究卡的纪律</h3><p>“公开证据”只写已公开的产品、实验或部署；“证据边界”明确下一项需要核验的数据。融资明细与媒体估值留在补充层，主页面先建立正确的估值底座。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         34 · MODEL-FIRST ROUTES
+         35 · MODEL-FIRST ROUTES
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="模型优先路线：五种下注" data-deep-mode="collapsed">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="模型优先：先验证可复用增益，再谈平台溢价" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE A · MODEL-FIRST</span><span class="page-no">34 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">模型优先</div><h2 class="slide-title reveal d1">同样做 VLA，下注的是<span class="cool">不同数据假设</span></h2></div><div class="thesis-tag reveal d2">投资人要比较的不是模型名称，而是数据来源、动作接口和闭环增益。</div></div>
-        <div class="route-comparison reveal d2">
-          <div class="route-comparison-head"><span>公司</span><span>模型 / 接口</span><span>数据假设</span><span>本体与场景</span><span>下一道验证门</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-brain-circuit"/></svg>银河通用</strong><span>GraspVLA / GroceryVLA <em>端到端</em></span><span>仿真合成 + 零售真机</span><span>轮式双臂；零售、工业</span><span class="route-gate">跨门店成功率与利用率</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-brain-circuit"/></svg>星海图</strong><span>G0+；VLA 一体机 <em>平台</em></span><span>开发者生态 + 数采平台</span><span>R1 Pro/Lite；科研、产业</span><span class="route-gate">PoC 转量产与数据回流</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-brain-circuit"/></svg>千寻智能</strong><span>Spirit VLA <em>视频预训练</em></span><span>人类视频 + 遥操作真机</span><span>Moz1；通用操作</span><span class="route-gate">视频迁移到接触任务</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-brain-circuit"/></svg>智平方</strong><span>端到端 VLA <em>工具链</em></span><span>产业数据平台 + 仿真</span><span>爱宝；机场与服务</span><span class="route-gate">项目复用与部署毛利</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-brain-circuit"/></svg>自变量</strong><span>WALL-B / WUM <em>世界统一</em></span><span>真实世界为主 + 自主进化</span><span>移动操作；家庭、工业</span><span class="route-gate">相对 VLA 基线的真机增益</span></div>
+        <div class="rail"><span class="paper-id">CHINA ROUTE A · MODEL-FIRST</span><span class="page-no">35 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">模型优先路线</div><h2 class="slide-title reveal d1">先验证<span class="cool">可复用增益</span>，再谈平台溢价</h2></div><div class="thesis-tag reveal d2">在独立增益、跨本体复用与付费接口成立前，模型价值主要是概率加权的技术期权。</div></div>
+        <div class="route-anchor-grid reveal d2">
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>自变量</h3><span>WORLD UNIFIED</span></div><p>统一世界建模假设：状态、未来与动作能否形成跨任务的可行动表征。</p><dl><div><dt>付费接口</dt><dd>模型 / 开发平台 / 联合交付待验证</dd></div><div><dt>估值底座</dt><dd>里程碑法，现阶段不预付平台收入</dd></div><div><dt>重估条件</dt><dd>同数据、同算力下的独立真机增益</dd></div><div><dt>主要折价</dt><dd><strong>产品接口与第二客户复用未证</strong></dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>银河通用</h3><span>TASK CLOSED LOOP</span></div><p>任务闭环假设：合成数据与真实部署能否降低跨商品、跨门店的边际成本。</p><dl><div><dt>付费接口</dt><dd>整机、任务能力与行业交付</dd></div><div><dt>估值底座</dt><dd>已验收业务 + 折价的软件期权</dd></div><div><dt>重估条件</dt><dd>第二场景部署更快、接管更少</dd></div><div><dt>主要折价</dt><dd><strong>项目工时可能侵蚀复用与毛利</strong></dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>千寻智能</h3><span>VIDEO PRIOR</span></div><p>视频先验假设：互联网行为数据能否显著减少真机数据，同时补足接触与恢复。</p><dl><div><dt>付费接口</dt><dd>VLA / 本体 / 开发合作待形成</dd></div><div><dt>估值底座</dt><dd>里程碑法 + 概率加权技术期权</dd></div><div><dt>重估条件</dt><dd>更少真机数据下的接触任务增益</dd></div><div><dt>主要折价</dt><dd><strong>人类视频与机器人动作空间错位</strong></dd></div></dl></article>
         </div>
-        <div class="key-line reveal d3" style="margin-top:18px">模型公司的尽调核心：把“更聪明”拆成<span class="cool">更少数据、更少接管、更快迁移、更低成本</span>四个可量化结果。</div>
-        <div class="source">SOURCE · Official company materials; detailed links in research memo · Valuations are not technical evidence</div>
-        <div class="deep-copy"><h3>五家公司最本质的差异</h3><p>银河通用偏任务闭环，星海图偏平台生态，千寻偏人类视频迁移，智平方偏产业工具链，自变量最直接押注世界统一模型。它们即使都叫 VLA，资本开支、数据成本和商业化路径也不同。</p><h3>建议的同口径测试</h3><p>统一本体、任务、物体集合、训练数据量和推理预算，比较成功率、失败恢复、跨场景迁移和在线时延，才能判断架构本身的贡献。</p></div>
+        <div class="boundary-note reveal d3"><svg class="icon"><use href="#i-flask"/></svg><span><strong>同口径测试：</strong>统一本体、任务、数据量与推理预算，比较成功率、失败恢复、迁移速度和在线时延。</span></div>
+        <div class="source">SOURCE · Official company model and product materials · Product claims are separated from third-party task evidence</div>
+        <div class="deep-copy"><h3>为什么只主讲三家</h3><p>自变量、银河通用、千寻智能分别把核心赌注放在统一模型、任务闭环和人类视频迁移上，最适合解释模型路线的差异；星海图、智平方等仍保留在交互地图与底稿。</p><h3>尽调重点</h3><p>“更聪明”必须转换成更少真机数据、更少人工接管、更快迁移或更低计算成本，否则无法判断世界建模目标是否真正创造产品价值。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         35 · FULL-STACK ROUTES
+         36 · FULL-STACK ROUTES
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="软硬件全栈：闭环还是资本开支" data-deep-mode="collapsed">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="全栈：闭环提速，也会放大资本负担" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE B · FULL STACK</span><span class="page-no">35 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">软硬件全栈</div><h2 class="slide-title reveal d1">全栈的价值，是缩短反馈；代价是<span class="warn">烧钱更快</span></h2></div><div class="thesis-tag reveal d2">只有模块共享、数据回流和交付复用同时成立，全栈才是壁垒而不是组织负担。</div></div>
-        <div class="route-comparison reveal d2">
-          <div class="route-comparison-head"><span>公司</span><span>全栈抓手</span><span>模型 / 数据</span><span>产品与入口</span><span>下一道验证门</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>智元</strong><span>本体 + 启元 + AimRT/AimDK</span><span>GraspVLA；开放平台数据</span><span>远征、灵犀、精灵多系列</span><span class="route-gate">产品线共享与现金消耗</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>星动纪元</strong><span>人形 + 灵巧手 + ERA-42</span><span>全栈 VLA 与真机迭代</span><span>科研、工业验证</span><span class="route-gate">战略场景转规模收入</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>灵初智能</strong><span>Psi Sim/Data/Model/Bot/Hand</span><span>手部数据 + 强化学习 VLA</span><span>灵巧操作研发平台</span><span class="route-gate">数据授权与真机迁移</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>穹彻智能</strong><span>Brain + Dev + Training + 本体</span><span>CoMiner 数采与跨本体适配</span><span>泛商业、合作伙伴本体</span><span class="route-gate">软件收入和适配工时</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>它石智航</strong><span>数据—模型—本体</span><span>工业部署数据闭环</span><span>汽车零部件制造集群</span><span class="route-gate">百台部署的验收回款</span></div>
+        <div class="rail"><span class="paper-id">CHINA ROUTE B · FULL-STACK FEEDBACK</span><span class="page-no">36 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">软硬件全栈</div><h2 class="slide-title reveal d1">闭环提速，也会放大<span class="cool">资本负担</span></h2></div><div class="thesis-tag reveal d2">只有共享架构持续降低边际部署成本，全栈广度才是平台价值，而不是组织复杂度。</div></div>
+        <div class="route-anchor-grid reveal d2">
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>智元</h3><span>MULTI-PRODUCT STACK</span></div><p>多本体、模型与开发平台并行；优势取决于底层软件和数据是否真正共享。</p><dl><div><dt>基础价值</dt><dd>已交付硬件、项目与可核验收入</dd></div><div><dt>平台期权</dt><dd>跨产品共享运行时、模型和数据</dd></div><div><dt>关键指标</dt><dd>共用软件比、库存、第二本体周期</dd></div><div><dt>主要折价</dt><dd><strong>产品线扩张与营运资金占用</strong></dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>灵初智能</h3><span>DEXTEROUS STACK</span></div><p>围绕灵巧操作连接 Sim、Data、Model、Bot 与 Hand，补足接触数据缺口。</p><dl><div><dt>基础价值</dt><dd>灵巧手、本体与研发平台交付</dd></div><div><dt>平台期权</dt><dd>仿真—数据—模型的接触闭环</dd></div><div><dt>关键指标</dt><dd>数据授权、失败覆盖、客户复用</dd></div><div><dt>主要折价</dt><dd><strong>研发平台能否形成规模收入</strong></dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>穹彻智能</h3><span>CROSS-BODY BRAIN</span></div><p>以具身大脑和开发平台适配合作伙伴本体，押注技能跨本体复用。</p><dl><div><dt>基础价值</dt><dd>已验收开发平台与合作项目</dd></div><div><dt>平台期权</dt><dd>Brain / Training 跨本体复用</dd></div><div><dt>关键指标</dt><dd>第二本体周期、软件收入与毛利</dd></div><div><dt>主要折价</dt><dd><strong>集成工时侵蚀平台经济性</strong></dd></div></dl></article>
         </div>
-        <div class="key-line reveal d3" style="margin-top:18px">判断全栈是否成立，看三个比率：<span class="cool">共用软件比例、第二项目部署时间、真实数据回流速度</span>。</div>
-        <div class="source">SOURCE · AgiBot, RobotEra, PsiBot, Noematrix and Shanghai official materials · 2026-07-14</div>
-        <div class="deep-copy"><h3>为什么它石值得单独盯</h3><p>公开材料提出百台级工业机器人集群，若实际到场并进入连续生产，其数据质量可能显著高于展会数采。但计划、部署、验收、回款必须逐层核实。</p><h3>全栈最常见的误区</h3><p>同时拥有模型、本体、灵巧手和平台不代表它们共享同一技术底座。若每条产品线需要独立工程团队，全栈会放大组织复杂度和资金需求。</p></div>
+        <div class="feedback-ribbon reveal d3"><span><b>真实任务</b>发现工作分布</span><span><b>数据选择</b>保留失败与接管</span><span><b>模型更新</b>学习未来与策略</span><span><b>本体验证</b>暴露控制约束</span><span><b>再次部署</b>测复用与成本</span></div>
+        <div class="source">SOURCE · AgiBot, PsiBot and Noematrix official product materials · Full-stack breadth is not treated as proof of shared architecture</div>
+        <div class="deep-copy"><h3>全栈成立的三个比率</h3><p>看共用软件比例、第二项目部署时间和真实数据回流速度。若每条产品线都需要独立工程团队，全栈只是组织复杂度。</p><h3>为什么与模型优先路线分开</h3><p>模型优先的核心资产是可迁移表征与策略；全栈路线同时承担本体、供应链、集成和运营资金，因此技术上限与资本效率必须一起看。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         36 · BODY AND CONTROL
+         37 · BODY AND CONTROL CONSTRAINTS
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="本体与运动控制：身体优势如何变现" data-deep-mode="collapsed">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="本体与控制：先定硬件价值，再看智能化期权" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE C · BODY & CONTROL</span><span class="page-no">36 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">本体与小脑</div><h2 class="slide-title reveal d1">先把身体做好，也是一条<span class="cool">独立成立</span>的路线</h2></div><div class="thesis-tag reveal d2">运动展示只能证明动态控制上限；投资价值还取决于标准化销量、可靠性和软件附加值。</div></div>
-        <div class="route-comparison reveal d2">
-          <div class="route-comparison-head"><span>公司</span><span>身体资产</span><span>当前优势证据</span><span>商业入口</span><span>下一道验证门</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>宇树</strong><span>关节、电机、控制器、整机</span><span>四足/人形标准产品与运动控制</span><span>科研、开发者、巡检、娱乐</span><span class="route-gate">软件收入与硬件毛利持续性</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>众擎</strong><span>全尺寸双足与拟人步态</span><span>SE01 / PM01 高动态展示</span><span>科研、开发平台</span><span class="route-gate">连续运行和操作任务收入</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>松延动力</strong><span>低成本小人形与仿生交互</span><span>N2、E1、小布米、仿生人头</span><span>家庭、教育、文娱</span><span class="route-gate">真实付费、留存与售后</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>逐际动力</strong><span>Oli、TRON 2、多形态控制</span><span>产品交付 + COSA OS + VGM</span><span>科研、全球开发者</span><span class="route-gate">平台装机与人形协同</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-robot"/></svg>魔法原子</strong><span>人形、四足、灵巧手矩阵</span><span>场景演示与 Magic-Mix/Sim</span><span>工业、仓储、大健康</span><span class="route-gate">订单验收和产品线共享</span></div>
+        <div class="rail"><span class="paper-id">ADJACENT ROUTE · BODY / CONTROL CONSTRAINTS</span><span class="page-no">37 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">本体与控制约束</div><h2 class="slide-title reveal d1">先定<span class="cool">硬件价值</span>，再看智能化期权</h2></div><div class="thesis-tag reveal d2">运动控制不等于世界模型；基础价值看产品经济性，智能化溢价看独立软件与闭环证据。</div></div>
+        <div class="route-anchor-grid two reveal d2">
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>宇树科技</h3><span>BODY-FIRST</span></div><p>标准本体、运动控制与供应链构成已验证底座；世界模型只能作为额外期权。</p><dl><div><dt>基础价值</dt><dd>整机收入、渠道与供应链能力</dd></div><div><dt>核心指标</dt><dd>ASP、BOM、毛利、良率与返修率</dd></div><div><dt>智能期权</dt><dd>通用操作、软件附加与数据闭环</dd></div><div><dt>重估条件</dt><dd><strong>独立软件收入与世界预测增益</strong></dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>逐际动力</h3><span>BODY + EMBODIED OS</span></div><p>多形态本体、COSA OS 与 VGM 同路推进，基础硬件与软件期权必须分开定价。</p><dl><div><dt>基础价值</dt><dd>Oli、TRON 等产品与开发者交付</dd></div><div><dt>核心指标</dt><dd>ASP、毛利、可靠性与售后成本</dd></div><div><dt>智能期权</dt><dd>具身 OS、VGM 与跨本体迁移</dd></div><div><dt>重估条件</dt><dd><strong>软件收入及在线决策独立增益</strong></dd></div></dl></article>
         </div>
-        <div class="key-line reveal d3" style="margin-top:18px">“身体先行”的最大期权：未来大脑成熟时成为<span class="cool">最低成本、最可靠的执行平台</span>；最大风险是被压成低毛利硬件。</div>
-        <div class="source">SOURCE · Official product pages and public filings · Motion demos are not equated with autonomous labor</div>
-        <div class="deep-copy"><h3>为什么运动能力仍然重要</h3><p>高动态动作检验关节功率、平衡、控制和软硬件协同，但无法自动推出机器人能理解任务、操作物体或连续工作。二者应分别尽调。</p><h3>本体公司的关键财务指标</h3><p>ASP、硬件毛利、关节良率、返修率、保修成本、标准产品销量和软件收入占比，比单次融资估值更能判断长期定价权。</p></div>
+        <div class="constraint-strip reveal d3"><span><b>动作空间</b>自由度与坐标统一</span><span><b>实时控制</b>频率、延迟与稳定性</span><span><b>物理上限</b>力矩、功率与接触</span><span><b>可靠性</b>良率、故障与维护</span></div>
+        <div class="source">SOURCE · Unitree and LimX Dynamics official product and developer materials · Motion demos are not equated with autonomous labor</div>
+        <div class="deep-copy"><h3>相邻路线的意义</h3><p>世界模型的动作反事实只有落在真实本体约束内才有用。本体公司的数据、控制器和硬件一致性可能成为重要底座，但应分别验证运动能力、操作能力和世界建模能力。</p><h3>商业判断</h3><p>看标准产品销量、ASP、硬件毛利、关节良率、返修率与软件收入占比，而不是只看高动态演示。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         37 · DEPLOYMENT AND MATURE PRODUCTS
+         38 · REAL DEPLOYMENT AND WORK DISTRIBUTION
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="产业交付与成熟产品：谁更接近收入" data-deep-mode="collapsed">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="真实部署：从订单到复购，才形成工作分布资产" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE D · DEPLOYMENT</span><span class="page-no">37 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">产业交付</div><h2 class="slide-title reveal d1">离收入更近，不等于离<span class="cool">规模利润</span>更近</h2></div><div class="thesis-tag reveal d2">项目收入、标准产品、运营服务和消费硬件，需要完全不同的估值方法。</div></div>
-        <div class="route-comparison reveal d2">
-          <div class="route-comparison-head"><span>公司</span><span>成熟资产</span><span>主要场景</span><span>收入形态</span><span>下一道验证门</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-factory"/></svg>优必选</strong><span>上市披露、Walker、Thinker-WM</span><span>汽车、制造、物流</span><span>工业机器人订单与交付</span><span class="route-gate">收入确认、毛利与现金流</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-factory"/></svg>傅利叶</strong><span>康复业务 + GR 人形平台</span><span>医疗康复、科研</span><span>专用产品 + 通用平台</span><span class="route-gate">跨业务数据和渠道复用</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-factory"/></svg>云深处</strong><span>四足耐候产品与行业方案</span><span>电力、消防、安防</span><span>设备 + 项目 + 运维</span><span class="route-gate">在役时长、续约与海外毛利</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-factory"/></svg>乐聚</strong><span>夸父系列与产业生态</span><span>科研、工业、特种</span><span>整机销售 + 场景合作</span><span class="route-gate">客户复购和项目复用</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-factory"/></svg>云鲸</strong><span>成熟家庭清洁产品闭环</span><span>家庭高频清洁</span><span>消费硬件 + 耗材渠道</span><span class="route-gate">毛利、海外、复购与品类边界</span></div>
+        <div class="rail"><span class="paper-id">CHINA ROUTE C · REAL WORK DISTRIBUTION</span><span class="page-no">38 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">真实部署</div><h2 class="slide-title reveal d1">从订单到复购，才形成<span class="cool">工作分布资产</span></h2></div><div class="thesis-tag reveal d2">订单不是收入，部署不是复用；只有连续运行与客户反馈同时成立，现场数据才有资产价值。</div></div>
+        <div class="route-anchor-grid reveal d2">
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>优必选</h3><span>INDUSTRIAL HUMANOID</span></div><p>上市披露与汽车工厂验证提供观察工业人形从订单到交付的窗口。</p><dl><div><dt>工作分布</dt><dd>汽车制造、物流与重复工序</dd></div><div><dt>数据价值</dt><dd>工位节拍、异常、协同与接管</dd></div><div><dt>证据门</dt><dd>收入确认、毛利、利用率和回款</dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>它石智航</h3><span>INDUSTRIAL CLUSTER</span></div><p>数据—模型—本体一体化进入零部件制造，部署计划需要逐层核验。</p><dl><div><dt>工作分布</dt><dd>汽车零部件与生产任务集群</dd></div><div><dt>数据价值</dt><dd>批量同任务中的长尾与恢复</dd></div><div><dt>证据门</dt><dd>实际到场、验收、运行小时与回款</dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>云深处</h3><span>PROFESSIONAL FIELD</span></div><p>耐候四足进入巡检、消防与救援，形成环境变化和故障数据。</p><dl><div><dt>工作分布</dt><dd>电力、安防、消防与复杂地形</dd></div><div><dt>数据价值</dt><dd>全天候运行、异常与远程介入</dd></div><div><dt>证据门</dt><dd>在役时长、续约、复购和海外毛利</dd></div></dl></article>
         </div>
-        <div class="key-line reveal d3" style="margin-top:18px">最值得借鉴的不是“人形”标签，而是<span class="cool">任务频率 × 可标准化程度 × 付费意愿</span>三者同时成立。</div>
-        <div class="source">SOURCE · HKEX, company sites, customer and government releases · Commercial claims require delivery and cash checks</div>
-        <div class="deep-copy"><h3>为什么优必选是重要样本</h3><p>上市公司披露让我们能够观察收入、现金消耗、产能和世界模型研发，而不只依赖融资新闻。它也是检验“工业人形订单能否转化为毛利”的现实窗口。</p><h3>为什么云鲸是对照组</h3><p>专用机器人通过高频任务、渠道和售后形成闭环，提醒我们通用性不是商业价值的唯一来源。越早解决具体痛点，越可能积累真实数据和现金流。</p></div>
+        <div class="metric-ribbon reveal d3"><span><b>01 · 订单</b>预算与约束成立</span><span><b>02 · 到场 → 验收</b>完成真实交付</span><span><b>03 · 收入 → 回款</b>兑现财务结果</span><span><b>04 · 复购</b>检验持续价值</span></div>
+        <div class="source">SOURCE · UBTECH filings and official company / customer releases · Plans, delivery, acceptance and cash collection are kept separate</div>
+        <div class="deep-copy"><h3>为什么真实部署不能只看订单</h3><p>意向、框架协议、正式订单、到场、验收和回款是六个不同阶段。只有持续运行日志才能证明系统进入真实工作分布。</p><h3>对世界模型的价值</h3><p>真实部署提供动作—结果 transition、长尾失败和恢复数据；但“拥有部署数据”仍不等于公司已经建立可干预的世界模型。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         38 · COMPONENTS AND PLATFORMS
+         39 · PHYSICAL-AI ENABLING LAYER
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="核心部件与平台：价值链上的卖铲人" data-deep-mode="collapsed">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="物理 AI 支撑层：更早兑现收入，仍需证明议价权" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">ROUTE E · PICKS & SHOVELS</span><span class="page-no">38 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">关键部件</div><h2 class="slide-title reveal d1">不赌整机赢家，也可以赌<span class="cool">物理智能的瓶颈</span></h2></div><div class="thesis-tag reveal d2">部件公司的核心不是“进入人形赛道”，而是多客户渗透、标准接口、良率与持续定价权。</div></div>
-        <div class="route-comparison reveal d2">
-          <div class="route-comparison-head"><span>公司</span><span>价值链位置</span><span>对世界模型的作用</span><span>商业入口</span><span>下一道验证门</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-hand"/></svg>灵心巧手</strong><span>低成本、高自由度灵巧手</span><span>定义动作空间与可执行上限</span><span>整机厂、科研、教育</span><span class="route-gate">出货、寿命、返修与 ASP</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-hand"/></svg>帕西尼</strong><span>多维触觉、灵巧手、整机</span><span>补充摩擦、滑移、刚度与接触</span><span>制造、医疗、消费电子</span><span class="route-gate">良率、标定、耐久与客户复购</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-cpu"/></svg>地瓜机器人</strong><span>端侧芯片、RDK、工具链</span><span>把模型压到可接受功耗与时延</span><span>开发者与机器人厂商</span><span class="route-gate">量产客户、生态锁定与毛利</span></div>
-          <div class="route-company-row"><strong><svg class="icon"><use href="#i-eye"/></svg>梅卡曼德</strong><span>3D 视觉、AI 大脑、工业软件</span><span>提供可部署感知与抓取基线</span><span>汽车、物流、重工、3C</span><span class="route-gate">标准收入占比与工程工时</span></div>
+        <div class="rail"><span class="paper-id">ENABLING LAYER · SENSE / COMPUTE / PERCEIVE</span><span class="page-no">39 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">物理 AI 支撑层</div><h2 class="slide-title reveal d1">更早兑现收入，仍需证明<span class="cool">议价权</span></h2></div><div class="thesis-tag reveal d2">支撑层可按部件与半导体逻辑定价；design-in、毛利和多客户复用，比“进入人形供应链”更重要。</div></div>
+        <div class="route-anchor-grid reveal d2">
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>帕西尼</h3><span>TACTILE INPUT</span></div><p>触觉与电子皮肤把视觉看不到的接触物理送入模型，商业上仍是部件与数据接口。</p><dl><div><dt>收入接口</dt><dd>传感器、灵巧手与触觉数据平台</dd></div><div><dt>估值底座</dt><dd>design-in、ASP、出货与毛利</dd></div><div><dt>重估条件</dt><dd>跨客户复购与规模良率</dd></div><div><dt>主要折价</dt><dd><strong>标定、寿命与客户集中</strong></dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>地瓜机器人</h3><span>EDGE COMPUTE</span></div><p>芯片、板卡和工具链决定模型能否在功耗与时延预算内量产部署。</p><dl><div><dt>收入接口</dt><dd>芯片、RDK、软件栈与开发工具</dd></div><div><dt>估值底座</dt><dd>design-in、量产装机与生命周期收入</dd></div><div><dt>重估条件</dt><dd>多客户量产与软件附着</dd></div><div><dt>主要折价</dt><dd><strong>库存、价格竞争与生态黏性</strong></dd></div></dl></article>
+          <article class="route-anchor-card"><div class="route-anchor-head"><h3>梅卡曼德</h3><span>3D PERCEPTION</span></div><p>3D 视觉、规划与工业软件提供成熟基线，检验通用模型是否真正产生替代收益。</p><dl><div><dt>收入接口</dt><dd>相机、软件与工业解决方案</dd></div><div><dt>估值底座</dt><dd>标准产品收入、毛利与复购</dd></div><div><dt>重估条件</dt><dd>软件占比提升、工程工时下降</dd></div><div><dt>主要折价</dt><dd><strong>项目定制与整机厂自研替代</strong></dd></div></dl></article>
         </div>
-        <div class="route-spectrum reveal d3" style="margin-top:16px;grid-template-columns:1fr 42px 1fr 42px 1fr">
-          <article style="min-height:150px"><h3>稀缺输入</h3><p>触觉、接触和高质量 3D 感知直接约束物理可执行性。</p></article><i><svg class="icon"><use href="#i-chevron-right"/></svg></i>
-          <article style="min-height:150px"><h3>共享底座</h3><p>灵巧手与端侧计算可以服务多种本体，分散单一路线风险。</p></article><i><svg class="icon"><use href="#i-chevron-right"/></svg></i>
-          <article class="accent-risk" style="min-height:150px"><h3>价值泄漏</h3><p>整机厂自研、接口碎片化和价格战会快速侵蚀部件议价权。</p></article>
-        </div>
-        <div class="source">SOURCE · Linker Hand, PaXini, D-Robotics and Mech-Mind public materials · 2026-07-14</div>
-        <div class="deep-copy"><h3>部件公司的“平台性”怎么判断</h3><p>至少需要多个非关联头部客户、稳定接口、开发者工具、跨本体数据和持续售后收入。只有一次样机供货，不能证明平台地位。</p><h3>触觉为何与综述直接相关</h3><p>论文指出视觉难以观测摩擦、刚度和接触稳定性。触觉既是传感器市场，也可能成为未来多模态世界模型最稀缺的数据源。</p></div>
+        <div class="boundary-note reveal d3"><svg class="icon"><use href="#i-layers"/></svg><span><strong>边界：</strong>支撑层能改善输入、算力或部署，但不能据此声称已经拥有动作条件世界模型或通用机器人策略。</span></div>
+        <div class="source">SOURCE · PaXini, D-Robotics and Mech-Mind official product materials · Enabling value is measured through multi-customer adoption</div>
+        <div class="deep-copy"><h3>为什么仍然值得单列</h3><p>视觉世界模型最缺接触物理，在线策略最受时延和功耗约束，工业客户又需要稳定的三维感知基线。支撑层可能比整机更早跨客户复用。</p><h3>商业风险</h3><p>整机厂自研、接口碎片化、价格战与客户集中会侵蚀议价权；“进入人形供应链”本身不是平台证据。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         39 · DATA FLYWHEEL
+         40 · ENTERPRISE DATA FLYWHEEL
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="国内公司的数据飞轮">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="企业数据飞轮：只有降低单位任务成本，数据才是资产" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">DATA FLYWHEEL · EVIDENCE LADDER</span><span class="page-no">39 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">数据飞轮</div><h2 class="slide-title reveal d1">数据量不是壁垒；<span class="cool">闭环信息密度</span>才是</h2></div><div class="thesis-tag reveal d2">成功视频最容易收集，也最容易高估。失败、恢复、接触和运营反馈才决定系统能否进化。</div></div>
+        <div class="rail"><span class="paper-id">DATA FLYWHEEL · EVIDENCE LADDER</span><span class="page-no">40 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">企业数据飞轮</div><h2 class="slide-title reveal d1">只有降低<span class="cool">单位任务成本</span>，数据才是资产</h2></div><div class="thesis-tag reveal d2">数据权利、可训练性、可测量模型增益和单位经济改善，缺一项都不能称为飞轮。</div></div>
         <div class="flywheel-loop reveal d2">
-          <article class="flywheel-node"><svg class="icon"><use href="#i-hand"/></svg><h3>人类示教</h3><p>降低冷启动成本，但动作空间必须重新对齐。</p></article>
-          <article class="flywheel-node"><svg class="icon"><use href="#i-database"/></svg><h3>真机执行</h3><p>记录状态、动作、力觉与环境变化，形成可干预 transition。</p></article>
-          <article class="flywheel-node"><svg class="icon"><use href="#i-triangle-alert"/></svg><h3>失败与恢复</h3><p>偏离、卡死、抓空与人工接管，才决定长时程鲁棒性。</p></article>
-          <article class="flywheel-node"><svg class="icon"><use href="#i-box"/></svg><h3>仿真与合成</h3><p>放大边缘情况，但必须量化 sim-to-real 与动作偏差。</p></article>
-          <article class="flywheel-node"><svg class="icon"><use href="#i-repeat"/></svg><h3>部署回流</h3><p>客户任务回到训练、回归测试和版本发布，形成商业闭环。</p></article>
+          <article class="flywheel-node"><svg class="icon"><use href="#i-factory"/></svg><h3>真实部署</h3><p>进入客户工作分布，持续暴露失败、接管与长尾任务。</p></article>
+          <article class="flywheel-node"><svg class="icon"><use href="#i-shield-check"/></svg><h3>数据权利</h3><p>合同允许训练、跨项目复用，并满足合规与客户边界。</p></article>
+          <article class="flywheel-node"><svg class="icon"><use href="#i-database"/></svg><h3>可训练数据</h3><p>经过选择、同步与标注，形成高信息密度的状态转移。</p></article>
+          <article class="flywheel-node"><svg class="icon"><use href="#i-brain-circuit"/></svg><h3>模型增益</h3><p>同预算消融证明成功率、恢复或迁移确实由模型改善。</p></article>
+          <article class="flywheel-node"><svg class="icon"><use href="#i-repeat"/></svg><h3>单位经济</h3><p>接管、工程人天和新增客户成本下降，推动再部署。</p></article>
         </div>
         <div class="evidence-bands reveal d3">
-          <article class="evidence-band"><h3>高价值证据</h3><p>连续运行、人工接管、失败恢复、客户复购、跨场景迁移。</p></article>
-          <article class="evidence-band"><h3>有条件证据</h3><p>公开数据集、Benchmark、开发者装机、仿真规模与消融实验。</p></article>
-          <article class="evidence-band"><h3>弱证据</h3><p>剪辑演示、单次成功、未定义“小时数”、未验收订单和融资估值。</p></article>
+          <article class="evidence-band"><h3>资产条件</h3><p>合法复用权、单位可训练数据成本下降、边际真机增益可测。</p></article>
+          <article class="evidence-band"><h3>经营结果</h3><p>人工接管、工程工时、客户部署周期与单位任务成本持续下降。</p></article>
+          <article class="evidence-band"><h3>主要反证</h3><p>数据量增长但毛利不升、第二客户仍需重做、训练成本同步上升。</p></article>
         </div>
         <div class="source">ANALYSIS · Data value is assessed by transition diversity, intervention coverage and deployment feedback</div>
-        <div class="deep-copy"><h3>尽调时至少索取什么</h3><p>原始任务日志、成功率分母、失败分类、人工接管记录、版本前后对比、训练数据组成和新客户部署时间。不能只看公司挑选的视频。</p><h3>跨本体数据的隐藏成本</h3><p>不同机器人的自由度、坐标系、控制频率和力矩限制不同。所谓跨本体训练，需要明确动作统一方式和迁移损失。</p></div>
+        <div class="deep-copy"><h3>尽调时至少索取什么</h3><p>原始任务日志、成功率分母、人工接管、版本消融、训练数据组成、数据权利条款、新客户部署时间和单位任务成本。不能只看公司挑选的视频。</p><h3>飞轮的经济定义</h3><p>数据量不是结果。只有新增数据使产品更好、部署更便宜、客户更愿意复购，并且这些收益超过采集与训练成本，数据才形成可复利资产。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         40 · MOMENTA CROSS-DOMAIN BENCHMARK
+         41 · MOMENTA VERTICAL CLOSED LOOP
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="Momenta：世界模型怎样穿过量产闭环" data-deep-mode="collapsed">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="Momenta：量产许可构成底座，R7 增益决定期权值" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CROSS-DOMAIN CASE · AUTONOMOUS DRIVING</span><span class="page-no">40 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">跨域量产对照</div><h2 class="slide-title reveal d1">Momenta：世界模型怎样穿过<span class="cool">量产闭环</span></h2></div><div class="thesis-tag reveal d2">它不是“视频生成公司”。公开证据更明确地指向预训练、闭环仿真和强化学习训练场。</div></div>
+        <div class="rail"><span class="paper-id">CASE A · VERTICAL DEPLOYMENT LOOP</span><span class="page-no">41 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">CASE A · MOMENTA · 垂直部署闭环</div><h2 class="slide-title reveal d1">Momenta：量产许可构成底座，<span class="cool">R7 增益</span>决定期权值</h2></div><div class="thesis-tag reveal d2">FY2025 高增长与许可占比提升支持业务底座；世界模型溢价仍需由单位车型经济性和长尾增益证明。</div></div>
         <div class="momenta-loop reveal d2" aria-label="Momenta 数据与算法闭环">
-          <article class="momenta-step"><small>01 · DEPLOY</small><h3>量产车辆回流</h3><p>采集真实交通交互、传感器效应与长尾事件。</p></article>
-          <article class="momenta-step"><small>02 · SELECT</small><h3>CLA 筛选</h3><p>自动挖掘高价值片段，减少人工规则与清洗成本。</p></article>
-          <article class="momenta-step"><small>03 · IMAGINE</small><h3>世界模型仿真</h3><p>输入自车行为，推演环境响应并放大边缘场景。</p></article>
-          <article class="momenta-step"><small>04 · LEARN</small><h3>强化学习 / 规划</h3><p>比较候选轨迹，以安全、舒适和效率反馈训练策略。</p></article>
-          <article class="momenta-step"><small>05 · LICENSE</small><h3>量产授权与 OTA</h3><p>进入车型、持续更新，再把新分布送回训练。</p></article>
+          <article class="momenta-step"><small>01 · DEPLOY</small><h3>量产车回流</h3><p>采集真实交互、传感器效应与长尾事件。</p></article>
+          <article class="momenta-step"><small>02 · SELECT</small><h3>高价值筛选</h3><p>挖掘稀缺片段，降低人工规则与清洗成本。</p></article>
+          <article class="momenta-step"><small>03 · SIMULATE</small><h3>闭环仿真</h3><p>让自车动作改变后，环境响应也随之变化。</p></article>
+          <article class="momenta-step"><small>04 · LEARN</small><h3>强化学习 / 规划</h3><p>比较候选轨迹，以安全、舒适和效率训练策略。</p></article>
+          <article class="momenta-step"><small>05 · UPDATE</small><h3>授权与 OTA</h3><p>进入量产车型，再把新分布送回训练。</p></article>
         </div>
         <div class="momenta-analysis reveal d3">
-          <section class="momenta-roles">
-            <h3>R7 具体做三件事</h3>
-            <div class="momenta-role"><b>世界预训练</b><span>用真实驾驶数据压缩物理规律、常识与因果先验。</span></div>
-            <div class="momenta-role"><b>闭环仿真</b><span>观察自车动作改变后，交通参与者与场景如何演变。</span></div>
-            <div class="momenta-role"><b>虚拟训练场</b><span>让强化学习反复探索现实中稀缺或危险的轨迹。</span></div>
-          </section>
-          <section class="momenta-ledger">
-            <h3>量产与收入证据</h3>
-            <dl>
-              <div><dt>装车基础</dt><dd>&gt;68 万辆</dd></div>
-              <div><dt>2025 收入</dt><dd>24.13 亿元</dd></div>
-              <div><dt>毛利率</dt><dd>71.6%</dd></div>
-              <div><dt>收费方式</dt><dd>开发费 + 许可费</dd></div>
-            </dl>
-            <p>截至 2025 年末：68 款车型量产，合作 24 家车企；绝大部分收入来自量产车解决方案。</p>
-          </section>
-          <section class="momenta-boundary">
-            <div class="momenta-flag"><svg class="icon"><use href="#i-triangle-alert"/></svg>证据边界</div>
-            <p><strong>2026-04 公司发布：</strong>R7“量产首发”；<strong>2026-06 招股书图示：</strong>R7“即将推出”。发布、定点、装车、OTA 开通与规模交付必须分开核验。</p>
-            <p><strong>下一道验证门：</strong>同数据、同算力下，R7 相比已量产的 R6 强化学习模型，是否带来可复现的长尾闭环增益。</p>
-          </section>
+          <section class="momenta-roles"><h3>估值拆解</h3><div class="momenta-role"><b>业务底座</b><span>技术开发服务与量产软件许可。</span></div><div class="momenta-role"><b>增量期权</b><span>R7 带来的车型扩张、许可提升与更高阶能力。</span></div><div class="momenta-role"><b>主要折价</b><span>客户集中、应收、持续研发与车型适配成本。</span></div></section>
+          <section class="momenta-ledger"><h3>FY2025 商业锚点</h3><dl><div><dt>收入</dt><dd>24.13 亿元</dd></div><div><dt>同比增长</dt><dd>+82.1%</dd></div><div><dt>毛利率</dt><dd>49.0% → 71.6%</dd></div><div><dt>许可占比</dt><dd>22.1% → 40.1%</dd></div></dl><p>开发服务占 59.9%；研发开支 18.69 亿元 / 77.5%；经调整亏损 3.03 亿元；量产 68 款、合作 24 家车企。</p></section>
+          <section class="momenta-boundary"><div class="momenta-flag"><svg class="icon"><use href="#i-triangle-alert"/></svg>重估条件</div><p><strong>技术：</strong>同数据、同算力下证明 R7 对长尾闭环的独立增益。</p><p><strong>经营：</strong>许可占比、单车型适配效率、应收周转和现金消耗同步改善。</p></section>
         </div>
-        <div class="key-line reveal d4" style="margin-top:14px">对机器人公司的启示：飞轮不是“有数据”，而是每轮部署都降低下一轮训练与交付成本，并由<span class="cool">可复用软件收入</span>持续供养。</div>
-        <div class="source">SOURCE · Momenta Global prospectus, 2026-06-29 · Momenta R7 release, 2026-04-26 · Company claims are labeled</div>
-        <div class="deep-copy"><h3>为什么放在这里，以及不能照搬什么</h3><p>Momenta 不是原 24 家具身机器人名单的一员，而是一个更成熟的自动驾驶对照：量产车提供真实数据，闭环仿真扩大长尾覆盖，软件许可费给研发飞轮供血；但道路驾驶的传感器、动作空间和指标更统一，不能据此假设机器人闭环会以同样速度成立。</p></div>
+        <div class="key-line reveal d4" style="margin-top:14px">可迁移的是闭环方法，不是估值倍数：<span class="cool">量产底座 + 经营增益期权 − 持续达标资本</span>。</div>
+        <div class="source">SOURCE · <a href="https://www.momenta.ai/technology.html" target="_blank" rel="noreferrer">Momenta technology / R7</a> · <a href="https://www.hkexnews.hk/listedco/listconews/sehk/2026/0629/2026062900058_c.pdf" target="_blank" rel="noreferrer">HKEX prospectus</a> · Product release and scaled deployment are labeled separately</div>
+        <div class="deep-copy"><h3>为什么保留 Momenta</h3><p>它展示了一个垂直场景如何用真实部署、闭环仿真、强化学习和软件许可共同供养迭代，是“世界模型进入产业闭环”的成熟参照。</p><h3>为什么不能直接类比机器人</h3><p>道路驾驶的传感器、动作空间和评测指标比通用机器人更统一；机器人还要处理本体差异、接触、场景集成与更碎片化的客户流程。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         41 · WORLD MODEL MATURITY
+         42 · NVIDIA PHYSICAL-AI INFRASTRUCTURE
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="世界模型成熟度阶梯">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="NVIDIA：Physical AI 价值捕获在整条计算栈" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">WORLD MODEL · PUBLIC EVIDENCE</span><span class="page-no">41 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">证据阶梯</div><h2 class="slide-title reveal d1">公开材料中，真正完成闭环的证据<span class="warn">仍然稀缺</span></h2></div><div class="thesis-tag reveal d2">这里评的是“公开可验证层级”，不是公司未公开研发能力，也不是公司好坏排名。</div></div>
-        <div class="wm-maturity reveal d2">
-          <article class="wm-level" style="--level-h:170px;--level-color:#9bb1af"><small>LEVEL 1</small><h3>非主路线 / 未公开</h3><p>核心价值来自本体、场景或部件。</p><div class="company-mini-list"><span>云深处</span><span>云鲸</span><span>梅卡曼德</span><span>灵心</span><span>地瓜</span></div></article>
-          <article class="wm-level" style="--level-h:220px;--level-color:#77afb1"><small>LEVEL 2</small><h3>预测辅助训练</h3><p>视频、仿真或未来表征用于数采和训练。</p><div class="company-mini-list"><span>逐际 VGM</span><span>部分全栈厂商</span></div></article>
-          <article class="wm-level" style="--level-h:270px;--level-color:#4a9da1"><small>LEVEL 3</small><h3>VLA 与预测联合</h3><p>模型公开强调未来、联合表示或可执行预测。</p><div class="company-mini-list"><span>银河</span><span>星海图</span><span>千寻</span><span>智平方</span><span>灵初</span></div></article>
-          <article class="wm-level" style="--level-h:320px;--level-color:#087f84"><small>LEVEL 4</small><h3>世界建模内化</h3><p>公司明确将世界模型写入策略或统一模型。</p><div class="company-mini-list"><span>自变量</span><span>优必选</span><span>魔法原子</span></div></article>
-          <article class="wm-level" style="--level-h:370px;--level-color:#d86a55;background:#fff8f6"><small>LEVEL 5</small><h3>部署闭环已证明</h3><p>需同时披露预测增益、连续运行、复购和单位经济性。</p><div class="company-mini-list"><span>公开证据：尚不足</span></div></article>
+        <div class="rail"><span class="paper-id">CASE B · PHYSICAL AI INFRASTRUCTURE</span><span class="page-no">42 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">CASE B · NVIDIA · 基础设施平台</div><h2 class="slide-title reveal d1">NVIDIA：Physical AI 价值捕获在<span class="cool">整条计算栈</span></h2></div><div class="thesis-tag reveal d2">Cosmos 与 GR00T 降低采用门槛；经济价值来自训练、仿真、软件和端侧计算的多层附着。</div></div>
+        <div class="platform-stack reveal d2">
+          <article class="platform-layer" style="--layer-color:#4778c7"><small>WORLD / TWIN</small><h3>Omniverse + OpenUSD</h3><p>数字孪生、场景资产与协作式三维工作流。</p><b>价值接口：工业软件与生态标准</b></article>
+          <article class="platform-layer" style="--layer-color:#168b91"><small>SIMULATION</small><h3>Isaac Sim / Lab</h3><p>机器人仿真、合成数据、训练与评估工具。</p><b>价值接口：仿真计算与开发流程</b></article>
+          <article class="platform-layer" style="--layer-color:#4d9568"><small>WORLD MODELS</small><h3>Cosmos 3</h3><p>开放世界基础模型，降低数据生成与后训练门槛。</p><b>价值接口：新增训练工作负载</b></article>
+          <article class="platform-layer" style="--layer-color:#8b7a3f"><small>ROBOT FOUNDATION</small><h3>Isaac GR00T 1.7</h3><p>跨本体 VLA 基础模型与开发配方。</p><b>价值接口：策略开发生态黏性</b></article>
+          <article class="platform-layer" style="--layer-color:#c96d45"><small>DEPLOYMENT</small><h3>Jetson + Isaac ROS</h3><p>把感知与机器人工作负载部署到端侧。</p><b>价值接口：量产 design-in 与运行栈</b></article>
         </div>
-        <div class="source">ANALYSIS · Evidence levels based on public materials available by 2026-07-14</div>
-        <div class="deep-copy"><h3>为什么 Level 5 暂不放公司</h3><p>公司可能已经具备内部能力，但公开材料很少同时披露世界模型独立增益、长期闭环运行、客户复购和单位经济性。缺证据不等于没有能力。</p><h3>最容易犯的错误</h3><p>把发布模型名称当成成熟度，把订单金额当成部署闭环，把视觉效果当成动作因果。三者都需要额外验证。</p></div>
+        <div class="platform-evidence reveal d3"><article><h3>价值捕获链</h3><p>开放模型 → 开发工作负载 → 训练/仿真算力 → Jetson design-in → 长期工具链。</p></article><article><h3>创业公司要保留什么</h3><p>独占客户流程、真实数据、应用利润和可替代平台的策略差异。</p></article><article><h3>披露边界</h3><p><strong>NVIDIA 公开分部披露未单列 Physical AI 或机器人收入</strong>；不能用公司整体倍数定价机器人模型创业公司。</p></article></div>
+        <div class="source">OFFICIAL · <a href="https://www.nvidia.com/en-us/ai/cosmos/" target="_blank" rel="noreferrer">NVIDIA Cosmos</a> · <a href="https://developer.nvidia.com/isaac/gr00t" target="_blank" rel="noreferrer">Isaac GR00T</a> · <a href="https://developer.nvidia.com/isaac/sim" target="_blank" rel="noreferrer">Isaac Sim</a> · <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm" target="_blank" rel="noreferrer">FY2026 10-K</a></div>
+        <div class="deep-copy"><h3>NVIDIA 路线的投资含义</h3><p>它定义的是 Physical AI 的平台租金和利润池边界，不是具身创业公司的直接可比。重点看生产级工作负载、训练与推理算力附着、多层工具渗透和端侧 design-in。</p><h3>证据纪律</h3><p>Cosmos、GR00T、Isaac 与 Omniverse 应分别描述。GR00T 1.7 的视觉语言 backbone 为 Cosmos-Reason2-2B（Qwen3-VL），不能误写为直接以 Cosmos 3 为 backbone。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         42 · COMMERCIAL PATHS
+         43 · WORLD LABS SPATIAL INTELLIGENCE
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="四条商业化路径">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="World Labs：当前价值看 SaaS / API，Physical AI 只计期权" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">COMMERCIALIZATION · FOUR PATHS</span><span class="page-no">42 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">商业路径</div><h2 class="slide-title reveal d1">同样卖机器人，收入质量可以<span class="cool">完全不同</span></h2></div><div class="thesis-tag reveal d2">先识别客户购买目的，再讨论市场规模和估值倍数。</div></div>
-        <div class="commercial-grid reveal d2">
-          <article class="commercial-lane"><svg class="icon"><use href="#i-flask"/></svg><h3>科研 / 开发平台</h3><p>标准产品较易交付，可形成生态和数据入口，但预算规模有限。</p><dl><div><dt>代表</dt><dd>星海图、宇树、逐际</dd></div><div><dt>优势</dt><dd>早收入、开发者反馈</dd></div><div><dt>风险</dt><dd>科研销量不等于生产需求</dd></div></dl></article>
-          <article class="commercial-lane"><svg class="icon"><use href="#i-factory"/></svg><h3>工业项目与生产力</h3><p>客户价值明确，但集成、验收、安全与现场工程成本最高。</p><dl><div><dt>代表</dt><dd>优必选、银河、它石、乐聚</dd></div><div><dt>优势</dt><dd>真实任务和高价值数据</dd></div><div><dt>风险</dt><dd>项目制、长回款、低复用</dd></div></dl></article>
-          <article class="commercial-lane"><svg class="icon"><use href="#i-robot"/></svg><h3>消费 / 专业机器人</h3><p>标准化和渠道决定规模，产品价值必须独立于“通用智能”叙事。</p><dl><div><dt>代表</dt><dd>云鲸、松延、宇树</dd></div><div><dt>优势</dt><dd>真实付费、快速产品迭代</dd></div><div><dt>风险</dt><dd>低 ASP、退货、内容化需求</dd></div></dl></article>
-          <article class="commercial-lane"><svg class="icon"><use href="#i-cpu"/></svg><h3>部件 / 平台供应</h3><p>跨本体分散赢家风险，但议价权取决于标准、良率和生态锁定。</p><dl><div><dt>代表</dt><dd>灵心、帕西尼、地瓜、梅卡曼德</dd></div><div><dt>优势</dt><dd>多客户、可复用、先于整机放量</dd></div><div><dt>风险</dt><dd>价格战与整机厂自研</dd></div></dl></article>
+        <div class="rail"><span class="paper-id">CASE C · SPATIAL INTELLIGENCE</span><span class="page-no">43 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">CASE C · WORLD LABS · 3D 原生空间智能</div><h2 class="slide-title reveal d1">World Labs：当前价值看<span class="cool"> SaaS / API</span>，Physical AI 只计期权</h2></div><div class="thesis-tag reveal d2">Marble 与 World API 已形成可收费接口；机器人动力学和策略闭环尚不能进入基础估值。</div></div>
+        <div class="spatial-product-line reveal d2">
+          <article class="spatial-step" style="--layer-color:#4778c7"><small>RESEARCH THESIS</small><h3>RTFM：空间智能底座</h3><p>以历史帧和相机位姿生成新视角，建立可探索的空间记忆。</p><ul><li>实时 learned renderer</li><li>相机位姿条件</li><li>不等于物理动力学</li></ul></article>
+          <article class="spatial-step" style="--layer-color:#168b91"><small>CURRENT BASE</small><h3>Marble：SaaS 产品</h3><p>把文本、图像或视频转为可浏览、可编辑、可导出的三维世界。</p><ul><li>订阅与 credits</li><li>生成、编辑、导航</li><li>三维资产与碰撞网格</li></ul></article>
+          <article class="spatial-step" style="--layer-color:#c96d45"><small>CURRENT BASE</small><h3>World API：用量接口</h3><p>把世界生成与导出接入创作、设计和仿真工作流。</p><ul><li>API credits 与用量</li><li>生产工作流留存</li><li>单位世界计算成本</li></ul></article>
         </div>
-        <div class="key-line reveal d3" style="margin-top:16px">商业化优先级：<span class="cool">生产力采购</span> ＞ 可复购标准产品 ＞ 科研预算 ＞ 品牌展示；但证据必须看验收和回款。</div>
-        <div class="source">ANALYSIS · Revenue path determines margin structure, working capital and valuation method</div>
-        <div class="deep-copy"><h3>订单口径五级</h3><p>意向合作、框架协议、正式订单、交付验收、回款确认。研究中必须明确公司披露处于哪一级，不能把前两级直接计入收入预测。</p><h3>从项目制走向产品化的信号</h3><p>第二客户部署时间缩短、现场工程师数量下降、软件配置比例提高、标准 BOM 和售后流程稳定、客户主动复购。</p></div>
+        <div class="spatial-boundary reveal d3"><article><h3>当前估值底座</h3><p>付费激活、API 留存、重复生成、导出率、单位计算成本与毛利。</p></article><article><h3>Physical AI 期权门</h3><p>物理真实性 → 策略排序一致性 → sim-to-real 真机增益。</p></article><article><h3>不能提前计入</h3><p>碰撞网格只是粗粒度仿真输入，不证明动作条件动力学或机器人策略能力。</p></article></div>
+        <div class="source">OFFICIAL · <a href="https://www.worldlabs.ai/blog/rtfm" target="_blank" rel="noreferrer">RTFM</a> · <a href="https://www.worldlabs.ai/blog/marble-world-model" target="_blank" rel="noreferrer">Marble</a> · <a href="https://marble.worldlabs.ai/pricing" target="_blank" rel="noreferrer">Pricing</a> · <a href="https://www.worldlabs.ai/blog/announcing-the-world-api" target="_blank" rel="noreferrer">World API</a> · <a href="https://www.worldlabs.ai/blog/taxonomy-of-world-models" target="_blank" rel="noreferrer">Taxonomy</a></div>
+        <div class="deep-copy"><h3>估值纪律</h3><p>先按当前 SaaS、API 和三维工作流建立基础价值；仿真、planner 与机器人训练只按里程碑概率定价，并扣除算力、研发与兑现时间。</p><h3>证据边界</h3><p>公开产品已证明空间生成、编辑、导航、导出和 API 接口，但尚不足以证明世界能够忠实响应机器人动作、正确排序策略或降低真实部署接管率。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         43 · CAPITAL ECOLOGY
+         44 · THREE ROUTES ARE NOT COMPARABLES
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="融资与投资人生态">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="同叫世界模型，三条路线对应三套估值方程" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CAPITAL MAP · WHO BUYS WHICH OPTION</span><span class="page-no">43 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">资本结构</div><h2 class="slide-title reveal d1">五类资本，买的是<span class="cool">五种不同期权</span></h2></div><div class="thesis-tag reveal d2">投资人名单既是资源，也是未来治理、客户独立性和退出节奏的约束。</div></div>
-        <div class="capital-stack reveal d2">
-          <div class="capital-lanes">
-            <div class="capital-lane"><strong><svg class="icon"><use href="#i-network"/></svg>互联网平台</strong><span>美团、京东、阿里、腾讯、百度、蚂蚁</span><span>物流零售场景、云与模型生态入口</span></div>
-            <div class="capital-lane"><strong><svg class="icon"><use href="#i-factory"/></svg>产业资本</strong><span>上汽、北汽、吉利、宁德、蓝思、拓普</span><span>产线验证、供应链、零部件和制造能力</span></div>
-            <div class="capital-lane"><strong><svg class="icon"><use href="#i-coins"/></svg>地方国资</strong><span>北京、上海、深圳、合肥、杭州等基金</span><span>产业落地、产能、示范项目与区域集群</span></div>
-            <div class="capital-lane"><strong><svg class="icon"><use href="#i-shield-check"/></svg>国家与运营商</strong><span>国家 AI 基金、中移系、电信、联通</span><span>战略基础设施、规模应用与长期资本</span></div>
-            <div class="capital-lane"><strong><svg class="icon"><use href="#i-briefcase"/></svg>财务 VC / PE</strong><span>红杉、高瓴、IDG、启明、顺为、经纬等</span><span>技术拐点、估值增长与 IPO / 并购退出</span></div>
-          </div>
-          <div class="capital-thesis">
-            <article><h3>资源协同不是收入</h3><p>战略股东可以提供场景与供应链，但关联试点不能替代独立客户复购。</p></article>
-            <article><h3>高估值压缩试错时间</h3><p>百亿估值公司必须更快证明部署、毛利和数据飞轮，而不是只完成下一轮融资。</p></article>
-            <article><h3>资本充裕也有反作用</h3><p>持续融资可能推迟产品收敛和成本纪律，扩大产品线与固定开支。</p></article>
-          </div>
+        <div class="rail"><span class="paper-id">VALUATION · THREE ROUTES / THREE EQUATIONS</span><span class="page-no">44 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">估值拆解</div><h2 class="slide-title reveal d1">三条路线，对应<span class="cool">三套估值方程</span></h2></div><div class="thesis-tag reveal d2">不可比不等于不能定价；先识别已验证现金流，再按里程碑概率计入技术期权。</div></div>
+        <div class="key-line reveal d2" style="margin-top:16px">买方估值拆解 ≈ <span class="cool">已验证资产 / 业务价值 + Σ(Pᵢ × 技术期权ᵢ) − 达标资本 − 时间 / 执行 / 流动性折价</span></div>
+        <div class="route-triad-table reveal d3" aria-label="三种世界模型路线估值方程">
+          <div class="route-triad-head"><span>路线锚点</span><span>当前基础价值口径</span><span>概率加权期权</span><span>主要折价</span></div>
+          <div class="route-triad-row"><strong>Momenta<br>垂直闭环</strong><span>技术开发与量产软件许可；收入、毛利和车型部署可核验。</span><span>R7 对许可占比、单车型经济性及更高阶驾驶能力的增量。</span><span class="evidence-limit">客户集中、应收、持续研发与车型适配。</span></div>
+          <div class="route-triad-row"><strong>NVIDIA<br>基础设施</strong><span>计算、软件与端侧平台的整体经济价值；不拆出“机器人倍数”。</span><span>Physical AI 工作负载对训练、仿真和 design-in 的增量附着。</span><span class="evidence-limit">未单列业务收入；平台价值不能迁移给创业公司。</span></div>
+          <div class="route-triad-row"><strong>World Labs<br>空间智能</strong><span>Marble、World API 与三维工作流已形成产品和收费接口；基础价值仍需由付费使用与留存核验。</span><span>仿真、策略排序及机器人训练能力按里程碑概率计入。</span><span class="evidence-limit">算力成本、物理真实性、兑现时间和客户付费尚待证明。</span></div>
         </div>
-        <div class="key-line reveal d3" style="margin-top:16px">看 cap table 时同时问：谁能带来<span class="cool">真实客户</span>，谁会影响<span class="cool">战略独立</span>，谁需要明确的<span class="cool">退出窗口</span>。</div>
-        <div class="source">SOURCE · Financing workbook; company and investor announcements · Valuations retain source-confidence labels</div>
-        <div class="deep-copy"><h3>估值口径</h3><p>正式投后估值、媒体根据融资额推算、公司对外口径和汇总资料必须分开。没有投资协议或监管文件时，不使用“精确估值”做回报测算。</p><h3>退出路径</h3><p>硬件与场景公司更可能走 IPO 或产业并购；纯模型平台需要证明软件收入和跨本体生态，才能获得独立平台估值。</p></div>
+        <div class="source">ANALYSIS · Technical adjacency does not imply cash-flow adjacency or a shared trading multiple</div>
+        <div class="deep-copy"><h3>估值纪律</h3><p>基础价值寻找相同收入形态、毛利结构与资本强度的财务可比；尚未形成收入的技术能力使用里程碑法。公式不是制造精确数字，而是强制分开已发生价值与未来叙事。</p><h3>避免重复扣减</h3><p>成功概率作用于期权价值；若期权现金流已经按完成里程碑所需投入计算，就不能再次完整扣除同一笔达标资本。模型必须明确采用投前价值还是投后价值口径。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         44 · VC DILIGENCE
+         45 · CHINA PUBLIC EVIDENCE MATRIX
          =========================================== -->
-    <section class="slide" data-chapter="中国公司与 VC" data-title="VC 尽调框架与观察名单">
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="估值跟技术与商业双证据收敛" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">VC DILIGENCE · SEVEN GATES</span><span class="page-no">44 / 47</span></div>
-        <div class="heading-row compact"><div><div class="chapter-label">投资判断</div><h2 class="slide-title reveal d1">用七道门，把叙事压回<span class="cool">可验证指标</span></h2></div><div class="thesis-tag reveal d2">不做公司“买入/放弃”排名；先判断哪一条路线正在产生更高质量证据。</div></div>
-        <div class="diligence-layout reveal d2">
+        <div class="rail"><span class="paper-id">DUAL EVIDENCE · TECHNOLOGY × COMMERCIAL</span><span class="page-no">45 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">双证据矩阵</div><h2 class="slide-title reveal d1">估值跟<span class="cool">技术与商业双证据</span>收敛</h2></div><div class="thesis-tag reveal d2">技术决定潜在上限，商业决定兑现速度；本轮价格按两条证据链中较弱的一边折现。</div></div>
+        <div class="public-evidence-matrix reveal d2" aria-label="技术与商业双证据链">
+          <div class="evidence-matrix-head"><span>证据链</span><span>主张 / 演示</span><span>可复现验证</span><span>闭环兑现</span><span>跨客户复用</span></div>
+          <div class="evidence-matrix-row"><strong>技术证据</strong><span>模型发布、剪辑演示、架构叙事</span><span><b>同预算实验与消融</b><br>原始日志、明确分母</span><span>连续运行、动作反事实、接管与恢复</span><span><b>第二本体 / 第二客户</b><br>性能保持、适配提速</span></div>
+          <div class="evidence-matrix-row"><strong>商业证据</strong><span>意向、框架订单、样板客户</span><span><b>付费 PoC</b><br>预算来源与验收口径</span><span>验收 → 收入确认 → 回款</span><span><b>复购与毛利改善</b><br>工程人天不同比增长</span></div>
+          <div class="evidence-matrix-row"><strong>估值含义</strong><span>叙事资产，不支付世界模型溢价</span><span>里程碑融资，按失败概率折现</span><span>可建立经营底座，但仍区分项目与产品</span><span><b>双高才可重估</b><br>讨论软件复用与平台倍数</span></div>
+        </div>
+        <div class="boundary-note reveal d3"><svg class="icon"><use href="#i-shield-check"/></svg><span><strong>四象限：</strong>技术高 / 商业低是技术期权；技术低 / 商业高是工程或项目资产；双低是叙事资产；只有双高才讨论平台重估。</span></div>
+        <div class="source">ANALYSIS · Evidence is attached to named products, experiments and revenues rather than a whole-company level</div>
+        <div class="deep-copy"><h3>为什么不再给公司排 Level</h3><p>整家公司可能同时拥有已量产硬件、未验证模型和项目制收入。技术与商业两条链允许对具体产品、收入和主张分别定价。</p><h3>证据纪律</h3><p>“没有公开”不等于“公司没有”，但不能作为当前已证事实；订单、到场、验收、收入、回款和复购必须分别表述。</p></div>
+      </div>
+    </section>
+
+    <!-- ===========================================
+         46 · ROUTES TO REVENUE
+         =========================================== -->
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="六类收入接口，六种估值底座" data-deep-mode="collapsed">
+      <div class="slide-shell">
+        <div class="rail"><span class="paper-id">ROUTE TO VALUE · SIX VALUATION BASES</span><span class="page-no">46 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">商业化与估值</div><h2 class="slide-title reveal d1">六类收入接口，六种<span class="cool">估值底座</span></h2></div><div class="thesis-tag reveal d2">先识别客户买什么，再选可比与方法；“世界模型”标签本身不生成倍数。</div></div>
+        <div class="revenue-route-grid reveal d2">
+          <article class="revenue-route"><svg class="icon"><use href="#i-cpu"/></svg><h3>基础设施平台</h3><p>算力、仿真、工具与端侧部署。</p><dl><div><dt>收入接口</dt><dd>硬件、云用量、软件与支持</dd></div><div><dt>估值底座</dt><dd>芯片 / 云基础设施 / 工业软件</dd></div><div><dt>核心指标</dt><dd>工作负载、软件附着、design-in</dd></div><div><dt>主要折价</dt><dd>资本开支、库存与平台替代</dd></div></dl></article>
+          <article class="revenue-route"><svg class="icon"><use href="#i-layers"/></svg><h3>空间 SaaS / API</h3><p>世界生成、编辑和三维工作流。</p><dl><div><dt>收入接口</dt><dd>订阅、credits 与 API 用量</dd></div><div><dt>估值底座</dt><dd>SaaS / 开发者工具 / API</dd></div><div><dt>核心指标</dt><dd>付费留存、调用增长、单位毛利</dd></div><div><dt>主要折价</dt><dd>算力成本与工作流黏性</dd></div></dl></article>
+          <article class="revenue-route"><svg class="icon"><use href="#i-brain-circuit"/></svg><h3>模型与策略</h3><p>可迁移策略、模型许可与开发平台。</p><dl><div><dt>收入接口</dt><dd>许可、订阅、模型服务</dd></div><div><dt>估值底座</dt><dd>早期里程碑；成熟后软件收入</dd></div><div><dt>核心指标</dt><dd>跨本体迁移、续费、软件毛利</dd></div><div><dt>主要折价</dt><dd>技术归因与客户接口未证</dd></div></dl></article>
+          <article class="revenue-route"><svg class="icon"><use href="#i-robot"/></svg><h3>全栈机器人</h3><p>本体、软件、集成与售后共同交付。</p><dl><div><dt>收入接口</dt><dd>整机、项目、软件与服务</dd></div><div><dt>估值底座</dt><dd>硬件 / 项目分部 + 软件期权</dd></div><div><dt>核心指标</dt><dd>ASP、BOM、毛利、库存、复用</dd></div><div><dt>主要折价</dt><dd>营运资金与组织复杂度</dd></div></dl></article>
+          <article class="revenue-route"><svg class="icon"><use href="#i-factory"/></svg><h3>垂直项目 / 运营</h3><p>行业方案、项目交付或按结果收费。</p><dl><div><dt>收入接口</dt><dd>项目、运维、许可或运营结果</dd></div><div><dt>估值底座</dt><dd>验收收入与贡献毛利</dd></div><div><dt>核心指标</dt><dd>回款、利用率、客户 ROI、复购</dd></div><div><dt>主要折价</dt><dd>定制工时与客户集中</dd></div></dl></article>
+          <article class="revenue-route"><svg class="icon"><use href="#i-gauge"/></svg><h3>传感器 / 芯片 / 支撑层</h3><p>触觉、端侧计算与三维感知部件。</p><dl><div><dt>收入接口</dt><dd>部件、板卡、软件与工具链</dd></div><div><dt>估值底座</dt><dd>部件 / 半导体 / 工业自动化</dd></div><div><dt>核心指标</dt><dd>ASP、良率、出货、生命周期</dd></div><div><dt>主要折价</dt><dd>客户集中、价格战与自研替代</dd></div></dl></article>
+        </div>
+        <div class="key-line reveal d3" style="margin-top:10px">共同调整项：还要投入多少资本、等待多长时间，才能获得<span class="cool">下一项会改变估值的证据</span>。</div>
+        <div class="source">ANALYSIS · Revenue interface determines margin structure, working capital and the relevant financial comparables</div>
+        <div class="deep-copy"><h3>估值方法怎样用</h3><p>主页面不强行给未经筛选的倍数区间，而是明确每类资产应该寻找哪一种财务可比、核心指标和折价项。具体融资价格用于反推本轮已经计入的里程碑。</p><h3>项目走向产品化的信号</h3><p>第二客户部署更快、现场工程师减少、标准 BOM 与软件配置比例提高、售后流程稳定，并出现非关联客户复购与毛利改善。</p></div>
+      </div>
+    </section>
+
+    <!-- ===========================================
+         47 · WORLD-MODEL-SPECIFIC DILIGENCE
+         =========================================== -->
+    <section class="slide" data-chapter="公司路线与产业映射" data-title="七项专项尽调，对应七个重估条件" data-deep-mode="collapsed">
+      <div class="slide-shell">
+        <div class="rail"><span class="paper-id">WORLD MODEL DILIGENCE · SEVEN TESTS</span><span class="page-no">47 / 50</span></div>
+        <div class="heading-row compact"><div><div class="chapter-label">专项尽调</div><h2 class="slide-title reveal d1">七项专项尽调，对应七个<span class="cool">重估条件</span></h2></div><div class="thesis-tag reveal d2">每通过一项测试，降低一类不确定性；第二客户复用成立后，才具备讨论平台倍数的基础。</div></div>
+        <div class="diligence-layout wm-diligence reveal d2">
           <div class="diligence-scorecard">
-            <div class="diligence-row"><strong>1 · 任务成功率</strong><span>明确任务、分母、连续运行时间和人工介入。</span><b>真机原始日志</b></div>
-            <div class="diligence-row"><strong>2 · 泛化边界</strong><span>新物体、新场景、新指令和新本体分别测试。</span><b>分布外回归集</b></div>
-            <div class="diligence-row"><strong>3 · 数据成本</strong><span>每千小时采集、清洗、标注与失败数据成本。</span><b>边际成本曲线</b></div>
-            <div class="diligence-row"><strong>4 · 交付复用率</strong><span>第二客户部署是否减少工程师、代码和调试时间。</span><b>项目工时表</b></div>
-            <div class="diligence-row"><strong>5 · 单机经济性</strong><span>ASP、BOM、毛利、售后、稼动与客户回收期。</span><b>单位贡献毛利</b></div>
-            <div class="diligence-row"><strong>6 · 现金消耗</strong><span>研发、产线、库存和应收分别占用多少现金。</span><b>18 月 runway</b></div>
-            <div class="diligence-row"><strong>7 · 融资依赖</strong><span>下一轮前必须完成什么产品与收入里程碑。</span><b>反稀释情景</b></div>
+            <div class="diligence-row"><strong>1 · 动作反事实</strong><span>改变候选动作，预测未来是否按因果方向变化。</span><b>降低因果折价</b></div>
+            <div class="diligence-row"><strong>2 · 预测模块消融</strong><span>同数据同算力，去掉世界建模目标后真机指标差多少。</span><b>降低归因折价</b></div>
+            <div class="diligence-row"><strong>3 · 仿真真实性</strong><span>物理错误、策略排序一致性与 sim-to-real 偏差。</span><b>降低模型折价</b></div>
+            <div class="diligence-row"><strong>4 · 数据边际增益</strong><span>新增一百小时数据带来多少成功率和迁移提升。</span><b>降低资本折价</b></div>
+            <div class="diligence-row"><strong>5 · 在线时延</strong><span>世界预测进入推理后，端到端频率与拒绝延迟是否可用。</span><b>降低产品折价</b></div>
+            <div class="diligence-row"><strong>6 · 部署接管率</strong><span>连续运行中的人工介入、失败恢复与任务利用率。</span><b>降低运营折价</b></div>
+            <div class="diligence-row"><strong>7 · 第二客户复用</strong><span>新客户是否减少代码、数据、工程师和调试时间。</span><b>降低平台折价</b></div>
           </div>
-          <div class="watch-groups">
-            <article><h3>模型观察组</h3><p>银河、星海图、千寻、智平方、自变量：盯真机增益和数据边际收益。</p></article>
-            <article><h3>产品观察组</h3><p>宇树、智元、优必选、云深处、乐聚：盯销量、毛利、利用率和复购。</p></article>
-            <article><h3>卖铲观察组</h3><p>灵心、帕西尼、地瓜、梅卡曼德：盯多客户渗透、良率、接口与议价权。</p></article>
+          <div class="diligence-principles">
+            <article><h3>1–3 · 提高技术期权概率</h3><p>先证明动作因果、模块归因和模型内策略排序，不为系统工程收益重复付款。</p></article>
+            <article><h3>4–5 · 验证产品经济性</h3><p>数据增益必须覆盖采集训练成本，预测能力必须进入端侧控制周期。</p></article>
+            <article><h3>6–7 · 进入收入与平台定价</h3><p>连续运行先进入收入预测；第二客户复用成立后，才有软件或平台倍数依据。</p></article>
           </div>
         </div>
-        <div class="key-line reveal d3" style="margin-top:16px">季度跟踪只保留十个数：部署量、运行小时、接管率、成功率、复购、ASP、毛利、软件占比、现金消耗、最新估值口径。</div>
-        <div class="source">ANALYSIS · Internal VC diligence framework · Detailed 24-company memo accompanies this deck</div>
-        <div class="deep-copy"><h3>投前实测与路线分型</h3><p>由投资团队指定未训练任务、随机物体和连续运行窗口，保留全部失败与后台操作并对齐原始日志；判断时，模型路线看数据效率，本体路线看标准产品，场景路线看项目复用，部件路线看多客户渗透，避免用同一把尺子掩盖商业模式差异。</p></div>
+        <div class="source">ANALYSIS · Seven-test diligence framework · Numbering is aligned across slide and speaker notes</div>
+        <div class="deep-copy"><h3>投资备忘录要写清什么</h3><p>公司不需要在本轮通过全部七项，但必须明确当前价格已经为哪几项证据付款、下一轮前必须完成哪一项，以及未完成时对应的估值和融资影响。</p><h3>最低交付包</h3><p>原始任务日志、训练数据组成、版本前后对比、预测模块消融、端侧延迟、失败与接管记录、第二客户工时。缺失的不是“材料”，而是尚未充分降低的不确定性。</p></div>
       </div>
     </section>
 
     <!-- ===========================================
-         45 · SIX OPEN CHALLENGES
+         48 · SIX OPEN CHALLENGES
          =========================================== -->
-    <section class="slide" data-chapter="挑战" data-title="六个问题决定世界模型能否真正部署">
+    <section class="slide" data-chapter="风险" data-title="未解决的技术问题，最终表现为资本与时间风险" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">SEC. 8 · CHALLENGES & FUTURE DIRECTIONS</span><span class="page-no">45 / 47</span></div>
+        <div class="rail"><span class="paper-id">RISK REGISTER · RUNWAY TO EVIDENCE</span><span class="page-no">48 / 50</span></div>
         <div class="heading-row compact">
-          <div><div class="chapter-label">开放问题</div><h2 class="slide-title reveal d1">六个问题，决定世界模型能否<span class="cool">真正部署</span></h2></div>
+          <div><div class="chapter-label">技术风险的资本翻译</div><h2 class="slide-title reveal d1">未解决的问题，最终表现为<span class="cool">资本与时间风险</span></h2></div>
+          <div class="thesis-tag reveal d2">Runway 不是还能活多久，而是现金能否覆盖下一项可融资证据及其缓冲期。</div>
         </div>
         <div class="content tight">
           <div class="three-col reveal d2">
-            <article class="paper-block amber"><h3>1 · Causal conditioning</h3><p>未来受历史和意图影响，却不一定忠实响应待执行动作。</p></article>
-            <article class="paper-block"><h3>2 · Efficiency</h3><p>视频生成与迭代去噪带来训练成本和在线延迟。</p></article>
-            <article class="paper-block"><h3>3 · Multimodal perception</h3><p>视觉难感知摩擦、刚度、力与接触稳定，需要触觉和力觉。</p></article>
-            <article class="paper-block"><h3>4 · Classical control</h3><p>学习动力学需要与 MPC、稳定性和鲁棒控制保证结合。</p></article>
-            <article class="paper-block"><h3>5 · Symbolic structure</h3><p>长时程需要对象、关系与规则，但抽象和 grounding 很难。</p></article>
-            <article class="paper-block blue"><h3>6 · Evaluation</h3><p>缺少统一、功能导向、跨本体可比较的标准指标。</p></article>
+            <article class="paper-block amber"><h3>1 · 因果与归因</h3><p><b>资本：</b>真实数据、严格消融、第三方测试。<br><b>下一证据：</b>动作干预与预测模块独立增益。</p></article>
+            <article class="paper-block"><h3>2 · 效率与时延</h3><p><b>资本：</b>训练算力、压缩、端侧优化。<br><b>下一证据：</b>P50 / P95 延迟、功耗与单位推理成本。</p></article>
+            <article class="paper-block"><h3>3 · 多模态接触</h3><p><b>资本：</b>传感器、BOM、同步与集成。<br><b>下一证据：</b>接触任务成功率与硬件经济性。</p></article>
+            <article class="paper-block"><h3>4 · 控制与安全</h3><p><b>资本：</b>控制器、安全验证、故障恢复。<br><b>下一证据：</b>连续运行接管率和可拒绝边界。</p></article>
+            <article class="paper-block"><h3>5 · 长时程与结构</h3><p><b>资本：</b>长序列数据、任务设计与现场运营。<br><b>下一证据：</b>多阶段任务恢复与跨场景复用。</p></article>
+            <article class="paper-block blue"><h3>6 · 统一评测</h3><p><b>资本：</b>回归系统、真机基准与客户验收。<br><b>下一证据：</b>同口径任务分母与策略排序一致。</p></article>
           </div>
-          <div class="key-line reveal d3" style="margin-top:26px">最核心的矛盾：模型越丰富，越难实时；表示越抽象，越难保证没有丢掉关键物理信息。</div>
-          <div class="challenge-gates reveal d4" aria-label="世界模型部署门槛">
-            <span><svg class="icon"><use href="#i-flask"/></svg><b>因果可信</b><small>动作改变，未来必须跟着改变</small></span>
+          <div class="key-line reveal d3" style="margin-top:22px"><span class="cool">成功概率作用于期权价值</span>；达标净现金单独扣除；兑现时间、执行和流动性风险分别折现。</div>
+          <div class="challenge-gates reveal d4" aria-label="从资本到下一轮融资的风险链">
+            <span><svg class="icon"><use href="#i-database"/></svg><b>现有现金</b><small>覆盖研发、部署与失败缓冲</small></span>
             <i><svg class="icon"><use href="#i-chevron-right"/></svg></i>
-            <span><svg class="icon"><use href="#i-gauge"/></svg><b>实时可用</b><small>训练收益覆盖在线延迟与算力</small></span>
+            <span><svg class="icon"><use href="#i-flask"/></svg><b>关键证据</b><small>在融资窗口前完成并可审计</small></span>
             <i><svg class="icon"><use href="#i-chevron-right"/></svg></i>
-            <span><svg class="icon"><use href="#i-shield-check"/></svg><b>安全可控</b><small>失败可诊断、可拒绝、可恢复</small></span>
+            <span><svg class="icon"><use href="#i-repeat"/></svg><b>下一轮融资</b><small>未完成则转化为稀释与估值风险</small></span>
           </div>
         </div>
-        <div class="source">SOURCE · Sec. 8.1-8.6</div>
+        <div class="source">ANALYSIS · Survey Sec. 8.1-8.6 translated into capital plans and financing milestones</div>
         <div class="deep-copy">
-          <h3>效率方向</h3>
-          <p>可采用部分去噪、单步预测、潜空间建模、轻量 adapter，或像 Fast-WAM 一样只在训练时使用世界模型目标，部署时完全跳过视频分支。</p>
-          <h3>多模态与控制方向</h3>
-          <p>触觉是高频低维信号，视觉是低频高维信号，融合时容易出现视觉主导。另一方面，神经世界模型表达力强，但仍缺少 Lyapunov 稳定性等正式控制保证。</p>
+          <h3>Runway to evidence 表</h3>
+          <p>逐项列出当前缺失证据、所需净现金、计划完成时间、融资缓冲与失败回退路线。现金覆盖时间短于证据完成时间加融资缓冲时，技术问题已经转化为融资问题。</p>
+          <h3>失败回退</h3>
+          <p>因果不足可收缩技术主张，效率不足可转离线工具，多模态成本过高可限定任务，长时程不成立可先做垂直产品；回退路径决定下行保护。</p>
         </div>
       </div>
     </section>
 
     <!-- ===========================================
-         46 · CRITICAL READING
+         49 · CRITICAL READING
          =========================================== -->
-    <section class="slide" data-chapter="评论" data-title="这篇综述贡献了地图，但没有给出最终答案">
+    <section class="slide" data-chapter="市场" data-title="技术地图之外：市场可能沿三种情景兑现" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CRITICAL READING · CHINA MARKET RESPONSE</span><span class="page-no">46 / 47</span></div>
-        <div class="heading-row">
-          <div><div class="chapter-label">批判性阅读</div><h2 class="slide-title reveal d1">它贡献了一张地图，但没有给出<span class="cool">最终答案</span></h2></div>
+        <div class="rail"><span class="paper-id">MARKET SCENARIOS · EXIT PATHS</span><span class="page-no">49 / 50</span></div>
+        <div class="heading-row compact">
+          <div><div class="chapter-label">市场兑现路径</div><h2 class="slide-title reveal d1">技术地图之外，市场可能沿<span class="cool">三种情景</span>兑现</h2></div>
+          <div class="thesis-tag reveal d2">估值不能只采用“通用平台胜出”的牛市情景；退出方式必须倒推当前进入价格。</div>
         </div>
-        <div class="content">
-          <div class="two-col review-columns">
-            <div class="paper-block blue reveal d2">
-              <h3>主要贡献</h3>
-              <ul class="bullet-list">
-                <li>用联合分布统一策略、被动 WM、可控 WM 与 IDM。</li>
-                <li>同时区分架构耦合、模拟器功能和视频能力演进。</li>
-                <li>把评测标准从视觉质量转向行动与闭环效用。</li>
-                <li>系统整理 2025-2026 快速增长的方法、数据和 benchmark。</li>
-              </ul>
-              <div class="card-detail review-detail"><span><b>理论</b> 联合分布统一四类查询</span><span><b>工程</b> 五类策略架构 + 两类模拟器用途</span><span><b>评价</b> 从视觉指标转向决策效用</span></div>
-            </div>
-            <div class="paper-block amber reveal d3">
-              <h3>主要局限</h3>
-              <ul class="bullet-list">
-                <li>定义较宽，视频生成、VLA 辅助预测与世界模型边界模糊。</li>
-                <li>类别存在交叉，无法形成完全互斥的 taxonomy。</li>
-                <li>视频路线占主导，触觉、符号与经典控制讨论较薄。</li>
-                <li>缺少同算力、同数据的 meta-analysis 与延迟成本比较。</li>
-              </ul>
-              <div class="card-detail review-detail"><span><b>边界</b> taxonomy 交叉且定义偏宽</span><span><b>证据</b> 缺统一预算下的严格消融</span><span><b>盲区</b> 触觉、符号与经典控制偏薄</span></div>
-            </div>
+        <div class="content tight">
+          <div class="three-col reveal d2">
+            <article class="paper-block blue"><h3>情景 A · 基础设施先标准化</h3><p>算力、仿真、芯片和工具先形成利润池，应用公司仍分散。</p><div class="card-detail"><small>判断：没有独占客户流程与数据的公司，价值更可能被上游平台捕获。</small></div></article>
+            <article class="paper-block"><h3>情景 B · 垂直闭环先兑现</h3><p>汽车、工业与专业作业先形成收入，世界模型体现为内部效率。</p><div class="card-detail"><small>判断：真实收入更早，但不自动支持通用平台倍数。</small></div></article>
+            <article class="paper-block amber"><h3>情景 C · 通用模型平台形成</h3><p>跨本体、跨任务复用，独立软件收入与数据边际增益同时成立。</p><div class="card-detail"><small>若当前价格已隐含该情景，就应要求关键复用证据在本轮计划内兑现。</small></div></article>
           </div>
-          <div class="key-line reveal d4" style="margin-top:28px">技术上最重要的未证假设：预测目标是否真的学到<span class="cool">可干预的物理因果</span>；市场上则要继续验证它能否降低部署成本。</div>
+          <div class="three-col reveal d3" style="margin-top:18px">
+            <article class="paper-block"><h3>IPO</h3><p>需要标准化收入、毛利可见、现金转换和治理透明。</p></article>
+            <article class="paper-block"><h3>产业并购</h3><p>看稀缺技术、明确买方和整合协同；平台依赖削弱议价权。</p></article>
+            <article class="paper-block"><h3>持续私募融资</h3><p>若退出依赖后续私募，承销模型必须计入稀释、估值悬空和融资窗口风险。</p></article>
+          </div>
+          <div class="key-line reveal d4" style="margin-top:18px">进入价格应倒推：在<span class="cool">非最乐观情景</span>下，哪一种退出仍能覆盖目标回报。</div>
         </div>
-        <div class="source">ANALYSIS · Based on the survey's scope, taxonomy and reported evidence</div>
+        <div class="source">ANALYSIS · Scenario framework links value capture, financing dependence and feasible exit paths</div>
         <div class="deep-copy">
-          <h3>时效性风险</h3>
-          <p>论文是 2026 年 4 月的 v1，引用大量近期预印本。方法归类、公开结果和 benchmark 状态很可能继续变化，正式引用前应核对最新版论文与项目仓库。</p>
-          <h3>建议的后续研究问题</h3>
-          <p>需要严格消融世界建模目标带来的独立增益；建立统一延迟和算力报告；测量真实与模型内策略排名一致性；并在失败恢复、接触任务和跨本体环境中验证。</p>
-          <h3>对中国市场的额外限制</h3>
-          <p>论文 taxonomy 不覆盖本体良率、供应链、项目回款和融资 runway。不能从“世界模型重要”直接推出“相关叙事公司的估值更高”；平台溢价需要技术增益、部署数据与复用收入共同成立。</p>
+          <h3>如何给三种情景分权重</h3>
+          <p>结合客户预算迁移、标准化速度、第二客户复用和上游平台议价权动态更新，不把单一 TAM 或“通用机器人最终成立”当作基准预测。</p>
+          <h3>退出纪律</h3>
+          <p>IPO、产业并购和持续私募融资对应不同的收入质量、治理要求与回报路径。进入时就要验证潜在买方、资本市场窗口与后续稀释，而不是投后再讨论退出。</p>
         </div>
       </div>
     </section>
 
     <!-- ===========================================
-         47 · CLOSING SYNTHESIS
+         50 · CLOSING SYNTHESIS
          =========================================== -->
-    <section class="slide dark" data-chapter="结论" data-title="从生成未来，到约束行动">
+    <section class="slide dark" data-chapter="结论" data-title="最终纪律：已验证价值定底座，技术期权按概率付款" data-deep-mode="collapsed">
       <div class="slide-shell">
-        <div class="rail"><span class="paper-id">CONCLUSION · TECHNICAL AND INVESTMENT SYNTHESIS</span><span class="page-no">47 / 47</span></div>
+        <div class="rail"><span class="paper-id">INVESTMENT ACTION · PRICE THE EVIDENCE</span><span class="page-no">50 / 50</span></div>
         <div style="margin:auto 0">
           <div class="chapter-label reveal d1">最终判断</div>
-          <h2 class="section-title reveal d2" data-edit="s47-title">世界模型的竞争，正在从<br><span class="mark">生成未来</span>转向<span class="mark">约束行动</span></h2>
-          <p class="section-summary reveal d3" data-edit="s47-summary" style="margin-top:34px">真正可用的世界模型，必须对动作干预敏感、在长时程内保持状态一致、能被验证，并把真实任务增益转化为可复用的部署与收入。</p>
+          <h2 class="section-title reveal d2" data-edit="s50-title">最终纪律：已验证价值定底座，<span class="mark">技术期权按概率付款</span></h2>
+          <p class="section-summary reveal d3" data-edit="s50-summary" style="margin-top:34px">当前价格应在基准和非最乐观情景下保留目标回报，并明确核心里程碑失败后的资产残值与下行风险。</p>
           <div class="three-col reveal d4" style="margin-top:52px;max-width:1500px">
-            <div class="paper-block blue"><h3>看架构</h3><p>预测如何进入动作生成？推理时是否必须生成未来？</p><div class="card-detail"><small>接口位置决定可解释性、动作对齐和在线成本。</small></div></div>
-            <div class="paper-block"><h3>看证据</h3><p>是否改善闭环任务、策略排名和跨环境泛化？</p><div class="card-detail"><small>开放环画质只能作为第一层证据，不能替代任务收益。</small></div></div>
-            <div class="paper-block"><h3>看兑现</h3><p>部署能否复用，毛利与回款能否覆盖现金消耗？</p><div class="card-detail"><small>模型、本体、场景与部件，应按各自已经证明的资产定价。</small></div></div>
+            <div class="paper-block blue"><h3>现在投资</h3><p>已验证资产或业务底座明确，技术与经营结果对应，资本覆盖下一里程碑。</p><div class="card-detail"><small>非最乐观情景下，当前价格仍保留目标回报。</small></div></div>
+            <div class="paper-block"><h3>继续跟踪</h3><p>方向可信，但缺一项会改变估值的决定性证据。</p><div class="card-detail"><small>写清触发器、验证口径、时间节点和可接受价格上限。</small></div></div>
+            <div class="paper-block"><h3>不支付平台溢价</h3><p>复用与软件收入未证，或达标资本明显超过现有 runway。</p><div class="card-detail"><small>技术方向正确，不等于当前价格具有投资价值。</small></div></div>
           </div>
-          <div class="closing-chain reveal d4"><span>预测候选未来</span><i>→</i><span>比较动作后果</span><i>→</i><span>验证物理与风险</span><i>→</i><strong>约束真实行动</strong></div>
+          <div class="closing-chain reveal d4"><span>已验证资产 / 业务价值</span><i>+</i><span>概率加权技术期权</span><i>−</i><span>达标资本与时间折价</span><i>≈</i><strong>可接受进入价格</strong></div>
         </div>
-        <div class="source">WORLD MODEL FOR ROBOT LEARNING: A COMPREHENSIVE SURVEY · HOU ET AL., 2026</div>
+        <div class="source">INVESTMENT DISCIPLINE · Evidence, probability, capital and time determine price</div>
         <div class="deep-copy">
-          <h3>最后带走的四个问题</h3>
-          <ul><li>模型预测的是“可能未来”，还是“这个动作导致的未来”？</li><li>预测是否真正参与动作选择，还是只作为训练正则？</li><li>评测是否覆盖闭环任务、策略排名和物理可执行性？</li><li>收益是否足以覆盖训练、延迟和系统复杂度成本？</li></ul>
+          <h3>三项持续跟踪指标</h3>
+          <ul><li>第二客户部署成本是否下降；</li><li>连续运行接管率是否持续改善；</li><li>新增数据是否降低单位任务成本。</li></ul>
           <h3>一句话结论</h3>
-          <p>世界模型不是机器人学习的装饰性生成模块，而是在语义意图与物理行动之间建立可验证预测桥梁的尝试；具身智能公司的价值，则取决于这座桥能否持续降低行动成本并形成复用收入。</p>
+          <p>真正值得投资的不是世界模型叙事最完整的公司，而是在当前价格下，能用可审计证据把技术期权转成复用收入，并且资本结构允许投资人等到价值兑现的公司。</p>
         </div>
       </div>
     </section>
@@ -4696,7 +5193,7 @@ body:has(.inline-deep[open]) .deck-controls { opacity: 1; pointer-events: auto; 
   <button id="prevBtn" type="button" title="上一页（←）" aria-label="上一页"><svg class="icon"><use href="#i-chevron-left"/></svg></button>
   <button class="page-index-button" id="overviewBtn" type="button" title="打开全册目录（O）">
     <svg class="icon page-menu-mark" aria-hidden="true"><use href="#i-grid"/></svg>
-    <span class="counter"><span id="currentNo">01</span><i>/</i><span id="totalNo">47</span></span>
+    <span class="counter"><span id="currentNo">01</span><i>/</i><span id="totalNo">50</span></span>
     <strong id="controlTitle">机器人学习中的世界模型</strong>
   </button>
   <button class="control-utility" id="fullBtn" type="button" title="全屏（F）"><svg class="icon"><use href="#i-maximize"/></svg><span>全屏</span></button>
@@ -4818,8 +5315,8 @@ class SlidePresentation {
       'workflow', 'route', 'layers', 'combine', 'flask', 'network', 'target', 'layers', 'gauge',
       'box', 'repeat', 'shield-check', 'triangle-alert', 'layers', 'film', 'workflow', 'scan-line',
       'orbit', 'eye', 'navigation', 'gauge', 'database', 'chart',
-      'briefcase', 'grid', 'brain-circuit', 'robot', 'robot', 'factory', 'cpu', 'database', 'navigation',
-      'layers', 'coins', 'coins', 'briefcase',
+      'briefcase', 'route', 'grid', 'brain-circuit', 'robot', 'robot', 'factory', 'cpu', 'database',
+      'navigation', 'cpu', 'layers', 'combine', 'gauge', 'coins', 'microscope',
       'triangle-alert', 'microscope', 'check'
     ];
     const layouts = [
@@ -4827,8 +5324,8 @@ class SlidePresentation {
       'pipeline', 'ladder', 'split', 'evidence', 'experts', 'triptych', 'representation', 'matrix',
       'compare', 'pipeline', 'split', 'risk', 'ladder', 'pipeline', 'split', 'structure', 'split',
       'quadrant', 'compare', 'tabs', 'table', 'table',
-      'framework', 'matrix', 'table', 'table', 'table', 'table', 'table', 'pipeline', 'pipeline',
-      'ladder', 'compare', 'compare', 'evidence',
+      'framework', 'pipeline', 'matrix', 'compare', 'compare', 'split', 'compare', 'compare', 'pipeline',
+      'pipeline', 'split', 'representation', 'table', 'matrix', 'compare', 'evidence',
       'challenges', 'evidence', 'closing'
     ];
     const iconForText = (value, fallback) => {
@@ -4849,9 +5346,10 @@ class SlidePresentation {
     };
 
     this.slides.forEach((slide, index) => {
-      const pageIcon = topicIcons[index];
-      slide.dataset.layout = layouts[index];
-      slide.classList.add(`layout-${layouts[index]}`);
+      const pageIcon = topicIcons[index] || 'orbit';
+      const pageLayout = layouts[index] || 'compare';
+      slide.dataset.layout = pageLayout;
+      slide.classList.add(`layout-${pageLayout}`);
       const shell = slide.querySelector('.slide-shell');
       if (!shell) return;
 
@@ -4867,6 +5365,8 @@ class SlidePresentation {
 
       const rail = shell.querySelector('.rail');
       if (rail && !rail.querySelector('.rail-icon')) rail.insertAdjacentHTML('afterbegin', icon(pageIcon, 'icon rail-icon'));
+      const pageNo = rail?.querySelector('.page-no');
+      if (pageNo) pageNo.textContent = `${index + 1} / ${this.slides.length}`;
       const label = shell.querySelector('.chapter-label');
       if (label && !label.querySelector('.icon')) label.insertAdjacentHTML('afterbegin', icon(pageIcon));
       const thesis = shell.querySelector('.thesis-tag');
@@ -5028,170 +5528,195 @@ class SlidePresentation {
         name: '银河通用', route: '模型优先 · 轮式双臂', product: 'Galbot G1；GraspVLA / GroceryVLA',
         world: '公开证据偏端到端可执行表征：仿真合成数据与真机策略闭环，未把高保真视频生成作为产品核心。',
         evidence: '零售、工业、医疗验证；与延锋推进制造场景合作。连续运行利用率和接管率仍待核验。',
-        funding: '2026 年新轮 25 亿元；225 亿元为媒体推算口径，非正式估值文件。',
-        risk: '高估值要求部署快速放量；零样本泛化需要跨门店、跨 SKU 的运营数据验证。'
+        risk: '需用跨门店、跨 SKU 的连续运营数据验证零样本泛化。'
       },
       galaxea: {
         name: '星海图', route: '模型平台 · 整机与开发生态', product: 'R1 Pro / Lite；G0+；VLA 一体机与开发平台',
         world: '端到端 VLA、开放模型与开发者平台并行，世界预测能力主要通过策略与平台接口体现。',
         evidence: '科研开发与产业验证并行；开发者覆盖不能直接等同于工业规模收入。',
-        funding: '现有融资资料显示，2026 年 B 轮 10 亿元、B+ 轮近 20 亿元；200 亿元为媒体推算口径。',
         risk: '硬件平台收入能否反哺模型与数据，以及 PoC 向量产的转化率尚待验证。'
       },
       spirit: {
         name: '千寻智能', route: '模型优先 · 视频预训练', product: 'Spirit VLA；全力控人形机器人 Moz1',
         world: '以互联网人类视频学习动作先验，再以遥操作与真机数据完成具身对齐。',
         evidence: '现阶段更偏模型、开发者和样机验证；规模客户与持续部署数据公开有限。',
-        funding: '现有融资资料显示，2025 年 Pre-A / Pre-A+ 合计约 11 亿元；100 亿元为媒体推算口径。',
         risk: '人类视频的低成本优势能否迁移到接触、力控与长时程失败恢复，是核心技术门。'
       },
       ai2: {
         name: '智平方', route: 'VLA 全栈 · 产业工具链', product: '爱宝机器人；端到端 VLA；采集、仿真与训练工具链',
         world: '公开资料支持策略内化预测表征与产业数据闭环，尚不能证明独立世界模型在线参与决策。',
         evidence: '机场行李车回收、配送与向导等半结构化场景，适合形成早期运营闭环。',
-        funding: '现有融资资料显示，2026 年 B 系列融资超 10 亿元；100 亿元为媒体推算口径。',
         risk: '项目定制比例、第二场景复用率和部署毛利决定其能否从方案商走向平台。'
       },
       x2: {
         name: '自变量机器人', route: '模型优先 · World Unified Model', product: 'WALL-A / WALL-B；WALL-WM；移动操作本体',
         world: '名单中最直接把世界统一模型置于核心架构的公司之一，强调真实数据到真机自主进化。',
         evidence: '家庭与工业实习生式部署仍早期，公开长期运营数据有限。',
-        funding: '现有融资资料显示，至 2025 年 A 轮由美团战投领投；100 亿元为媒体推算口径。',
         risk: '需要拆解统一模型相对标准 VLA 的独立真机增益、时延与数据边际收益。'
       },
       psibot: {
         name: '灵初智能', route: '灵巧操作 · 模型数据本体全栈', product: 'Psi Sim / Data / Model / Bot；Psi H1 灵巧手',
         world: '以人类手部操作数据和强化学习 VLA 补足通用视频对接触与精细动作的不足。',
         evidence: '模型、数据和研发平台并行，商业规模仍处早期。',
-        funding: '现有融资资料显示已完成天使轮与 2026 年 Pre-A；累计融资口径需公司及投资方材料复核。',
         risk: '数据授权、标注质量、失败覆盖与真机迁移收益需要第三方验证。'
       },
       agibot: {
         name: '智元机器人', route: '软硬件全栈 · 多产品线', product: '远征、灵犀、精灵；启元、GraspVLA、AimRT / AimDK',
         world: '具身基座模型和抓取 VLA 持续投入，当前可验证资产还包括整机、供应链和开放平台。',
         evidence: '工业搬运、码垛、商业服务与科研开发，多产品线提供数据入口。',
-        funding: '现有融资资料显示，腾讯、京东、上海具身智能基金等参与多轮投资；150 亿元为媒体推算口径。',
         risk: '产品线过宽可能推高研发与营运资金；需验证共用软件比例和现金消耗。'
       },
       robotera: {
         name: '星动纪元', route: '软硬件全栈 · 人形与灵巧手', product: '人形本体、灵巧手；ERA-42 VLA',
         world: '公开路线以全栈 VLA 和真机迭代为主，尚无充分证据确认独立可干预世界模型。',
         evidence: '科研、展示与产业验证并行；战略股东可提供制造场景。',
-        funding: '现有融资资料显示已完成 2025 年 A/A+ 与 2026 年战略轮；100 亿元为媒体推算口径。',
         risk: '战略合作能否转为规模收入，以及全栈模块是否真正共享，是资本效率关键。'
       },
       noematrix: {
         name: '穹彻智能', route: '具身大脑平台 · 跨本体适配', product: 'Noematrix Brain；Training / DevPlatform；CoMiner',
         world: '任务分解、规划、导航与技能操作平台化；预测模块对闭环决策的独立贡献尚未公开。',
         evidence: '泛商业场景与合作伙伴本体适配，收入中软件与集成工时需要拆分。',
-        funding: '现有融资资料显示已完成多轮 Pre-A 及阿里战略融资；未见权威公开估值。',
         risk: '适配成本和硬件差异可能削弱平台效应，需看跨本体技能复用与软件收入。'
       },
       tas: {
         name: '它石智航', route: '工业全栈 · 部署数据闭环', product: '数据—模型—本体一体化工业机器人系统',
         world: '公开证据支持以工业部署数据迭代策略；具体世界模型架构仍需技术尽调。',
         evidence: '上海经信部门披露与安波福合作及百台级部署计划；计划不等于验收与回款。',
-        funding: '现有融资资料显示，2025 年天使轮 1.2 亿美元、天使+轮 1.22 亿美元；无权威估值。',
         risk: '公司年轻且交付承诺大，组织、供应链、实际到场数量和客户回款均需核验。'
       },
       limx: {
         name: '逐际动力', route: '本体平台 · 大小脑融合', product: 'LimX Oli、TRON 2、LimX COSA OS；LimX VGM',
         world: '公开把视频生成、大小脑融合与具身 OS 放在同一路线，但需区分训练辅助与在线规划。',
         evidence: '科研平台与全球产品销售已有交付基础，多形态本体可积累跨本体数据。',
-        funding: '公司公告 2026 年完成 2 亿美元 B 轮；未见权威公开估值。',
         risk: '平台销量、生态活跃与通用人形产品之间的协同尚未量化。'
       },
       unitree: {
         name: '宇树科技', route: '本体优先 · 运动控制与供应链', product: '四足、人形、机械臂；关节、电机、控制器与算法',
         world: '具身模型投入增加，但当前优势证据仍主要来自运动控制、成本、产品与供应链。',
         evidence: '开发者、科研、教育、娱乐与巡检等标准产品销售，全球渠道成熟度较高。',
-        funding: '现有融资资料显示，2025 年 C 轮近 7 亿元；127 亿元为媒体推算口径，经营以申报文件为准。',
         risk: '若通用操作“大脑”成为价值中心，硬件领先能否持续保持定价权。'
       },
       deep: {
         name: '云深处科技', route: '场景交付 · 四足与特种移动', product: '绝影 X30、Lite3、山猫 M20；行业巡检方案',
         world: '真实巡检可产生高价值运行数据，但公开材料未证明世界模型是主要策略架构。',
         evidence: '电力、消防、救援、安防及海外工业市场，场景边界和耐候产品证据较强。',
-        funding: '现有融资资料显示，2025 年完成多轮 C / Pre-IPO 融资；未见权威公开估值。',
         risk: '项目型销售、客户集中、回款和跨行业扩张速度决定增长质量。'
       },
       leju: {
         name: '乐聚机器人', route: '产业交付 · 教育到全尺寸人形', product: 'KUAVO 5 / 5-W；科研平台与工业方案',
         world: '部署可形成数据入口，公开证据更偏系统集成和产业化，世界模型角色仍不清晰。',
         evidence: '科研、工业与特种场景；与制造企业合作需继续跟踪订单、验收和复购。',
-        funding: '现有融资资料显示已获得多轮战略与产业资本投资；具体估值以正式材料为准。',
         risk: '生态合作与项目订单若不能沉淀标准产品，交付工时会限制规模化。'
       },
       fourier: {
         name: '傅利叶智能', route: '成熟产品 · 康复与通用人形', product: '康复机器人矩阵；GR-1 / GR-2 人形平台',
         world: '康复业务提供真实客户与工程基础，人形路线的模型与原业务协同仍需验证。',
         evidence: '医疗康复产品已有长期销售与全球渠道，是人形样本中的商业化对照组。',
-        funding: '现有融资资料显示已完成多轮融资，80 亿元为媒体推算口径。',
         risk: '康复现金流能否支撑人形投入，以及两条业务的数据、渠道和技术复用程度。'
       },
       ubtech: {
         name: '优必选', route: '产业交付 · 上市人形平台', product: 'Walker S 系列；工业人形与教育、服务机器人',
         world: '公开重点是工业人形系统集成与策略能力，世界模型成熟度需看具体技术资料。',
         evidence: '上市公司披露、汽车工厂试点和订单提供较高质量证据，但订单仍需看交付与回款。',
-        funding: '已上市，融资与经营数据优先采用交易所定期报告。',
         risk: '持续亏损、长回款项目、量产良率和大额订单兑现节奏。'
       },
       narwal: {
         name: '云鲸智能', route: '成熟消费产品 · 单任务闭环', product: '扫拖机器人；清洁算法、供应链与渠道',
         world: '不是通用人形公司，但真实家庭数据和封闭任务闭环是判断“产品化智能”的重要对照。',
         evidence: '消费产品销量、渠道和供应链已接受市场检验，可直接观察复购、退货与售后。',
-        funding: '现有融资资料显示已完成多轮融资；“超 100 亿元”属于媒体推算口径。',
         risk: '消费硬件竞争、营销费用、渠道库存与品类扩张，而非通用机器人同类风险。'
       },
       magic: {
         name: '魔法原子', route: '多本体全栈 · 场景扩张', product: 'MagicBot、MagicDog、MagicHand；Magic-Mix / MagicSim',
         world: '尝试联合视频预测、动作专家与合成数据，需第三方复现和真机闭环指标支撑。',
         evidence: '工业、仓储、咖啡和大健康等多场景；公开订单需核验客户、验收与回款。',
-        funding: '现有融资资料显示，2024 年天使轮 1.5 亿元并有后续战略融资；无权威公开估值。',
         risk: '早期公司同时铺开多本体与多场景，可能稀释产品收敛和组织执行。'
       },
       engine: {
         name: '众擎机器人', route: '本体优先 · 高动态双足', product: 'SE01、PM01；全尺寸人形与灵巧手配置',
         world: '证据主要是运动策略与本体能力，尚不能证明通用操作或世界模型闭环。',
         evidence: '科研、开发者和展示需求为主，规模生产性部署信息较少。',
-        funding: '现有融资资料显示，2025 年完成多轮 Pre-A / A 系融资；未见权威公开估值。',
         risk: '动态演示与持续生产任务之间存在证据鸿沟，需看销量、故障率与操作收入。'
       },
       noetix: {
         name: '松延动力', route: '低成本本体 · 消费与仿生', product: 'N2、E1、小布米及仿生人头平台',
         world: '优势主要在成本、结构和仿生表现，暂无充分公开证据支持通用世界模型能力。',
         evidence: '教育、家庭、文娱和品牌活动，商业需求曲线与工业人形不同。',
-        funding: '现有融资资料显示，2026 年 B 轮近 10 亿元；未见权威公开估值。',
         risk: '低 ASP、退货、内容需求和软件留存决定其是否能超越硬件玩具属性。'
       },
       linker: {
         name: '灵心巧手', route: '核心部件 · 灵巧手与数采', product: 'Linker Hand 系列；灵巧操作数据采集方案',
         world: '灵巧手和遥操作接口决定动作空间与数据质量，是世界模型接触任务的重要输入层。',
         evidence: '价值来自跨整机客户渗透、出货、耐久和接口标准，而非单一演示。',
-        funding: '现有融资资料显示已完成多轮早期融资；估值与出货口径需投资方和审计材料核验。',
         risk: '整机厂自研、价格战、耐久良率与客户集中会压缩部件议价权。'
       },
       paxini: {
         name: '帕西尼', route: '核心部件 · 多维触觉', product: '多维触觉传感器、电子皮肤与触觉数据平台',
         world: '为摩擦、压力、滑移等视觉不可见物理量提供监督，可提升预测和接触控制。',
-        evidence: '应按量产良率、标定一致性、客户导入和实际装机，而非参数与展会效果估值。',
-        funding: '“帕西尼感知科技 / 帕西尼”已合并为同一主体；现有融资轮次未见权威估值支持。',
+        evidence: '证据应来自量产良率、标定一致性、客户导入和实际装机，而非参数与展会效果。',
         risk: '传感器成本、寿命、漂移、数据接口标准与整机厂自研替代。'
       },
       drobotics: {
         name: '地瓜机器人', route: '计算平台 · 端侧软硬协同', product: '机器人计算芯片、板卡、工具链与开发平台',
         world: '提供 VLA 与世界模型落地所需端侧算力、时延与部署工具，不直接代表策略能力。',
         evidence: '商业价值看设计导入、量产装机、客户集中和软件生态活跃，而非峰值算力。',
-        funding: '现有融资资料显示已完成多轮融资；具体估值口径需以公司和投资协议为准。',
         risk: '芯片迭代、生态迁移成本、客户自研和大厂平台竞争。'
       },
       mechmind: {
         name: '梅卡曼德', route: '工业视觉 · 软硬件平台', product: '3D 相机、机器视觉软件与工业机器人解决方案',
         world: '并非通用世界模型路线，但视觉—规划—执行闭环和工业数据可作为成熟商业对照。',
         evidence: '工业客户、标准产品和重复部署比单次项目更能说明价值捕获。',
-        funding: '现有融资资料显示已完成多轮融资；未见权威公开估值。',
         risk: '工业周期、项目定制、竞争降价和通用模型对传统视觉栈的替代。'
       }
+    };
+
+    /* The live card deliberately excludes financing. These maps translate each
+       company into the seven route-level fields used by the rebuilt chapter. */
+    const modeledObject = {
+      galbot: '物体、场景与可执行操作状态。',
+      galaxea: '视觉—语言—动作表征与任务技能。',
+      spirit: '人类行为、视觉变化与动作先验。',
+      ai2: '产业任务状态、动作序列与环境反馈。',
+      x2: '世界状态、未来变化与动作的统一表征。',
+      psibot: '手部接触、物体状态与灵巧操作。',
+      agibot: '多本体任务、抓取与环境状态。',
+      robotera: '人形全身状态与灵巧操作。',
+      noematrix: '任务结构、技能与环境状态。',
+      tas: '工业工序、对象状态与操作结果。',
+      limx: '视频未来、全身状态与跨本体动作。',
+      unitree: '本体状态、动力学与运动控制。',
+      deep: '地形、巡检路径与环境异常。',
+      leju: '人形任务与行业场景状态。',
+      fourier: '康复 / 人形运动与交互状态。',
+      ubtech: '工业任务、工位与人形操作。',
+      narwal: '家庭清洁状态、路径与障碍。',
+      magic: '视频未来、动作与多本体任务。',
+      engine: '双足姿态与高动态运动状态。',
+      noetix: '低成本本体与仿生交互状态。',
+      linker: '灵巧手动作空间与遥操作数据。',
+      paxini: '压力、摩擦、滑移与接触状态。',
+      drobotics: '非建模层：端侧工作负载与算力约束。',
+      mechmind: '三维空间、物体位姿与抓取状态。'
+    };
+    const systemPosition = {
+      galbot: '策略模型 / 移动操作', galaxea: '模型平台 / 开发生态', spirit: '视频预训练 / VLA',
+      ai2: 'VLA / 产业工具链', x2: '统一世界模型 / 策略', psibot: '灵巧操作 / 数据模型全栈',
+      agibot: '多本体全栈 / 开放平台', robotera: '人形全栈 / 灵巧手', noematrix: '具身大脑 / 跨本体平台',
+      tas: '工业全栈 / 垂直部署', limx: '本体平台 / 具身 OS', unitree: '本体与控制 / 标准产品',
+      deep: '专业本体 / 行业部署', leju: '人形本体 / 产业交付', fourier: '专业产品 / 人形平台',
+      ubtech: '工业人形 / 系统交付', narwal: '消费产品 / 单任务闭环', magic: '多本体全栈 / 场景扩张',
+      engine: '本体与控制 / 双足', noetix: '低成本本体 / 消费交互', linker: '灵巧手 / 数采支撑',
+      paxini: '触觉输入 / 数据支撑', drobotics: '端侧计算 / 工具链', mechmind: '3D 感知 / 工业软件'
+    };
+    const actionCoupling = {
+      galbot: '预测表征进入端到端操作策略。', galaxea: '通过 VLA 与开发平台生成动作。', spirit: '视频先验迁移到 VLA 动作。',
+      ai2: '策略与产业数据闭环耦合。', x2: '未来、状态与动作在统一模型中耦合。', psibot: '接触数据进入强化学习与 VLA。',
+      agibot: '模型、运行时与多本体执行连接。', robotera: '全栈 VLA 连接人形与灵巧手。', noematrix: '任务规划与技能适配合作本体。',
+      tas: '工业部署数据迭代操作策略。', limx: 'VGM 与大小脑 / OS 的角色待拆解。', unitree: '以运动控制为主；世界预测角色待证。',
+      deep: '行业导航与控制；未证明核心世界模型。', leju: '系统集成与任务控制，公开角色有限。', fourier: '康复控制与人形策略并行。',
+      ubtech: '工业任务策略连接人形执行。', narwal: '封闭任务感知—规划—执行闭环。', magic: '视频预测、动作专家与策略联合主张。',
+      engine: '高动态控制；未证明通用操作闭环。', noetix: '运动与交互控制；世界模型证据有限。', linker: '定义动作空间并提供遥操作输入。',
+      paxini: '触觉监督进入接触预测与控制。', drobotics: '不直接生成动作，约束部署时延。', mechmind: '三维感知连接规划与工业执行。'
     };
 
     const map = document.getElementById('companyMap');
@@ -5199,8 +5724,15 @@ class SlidePresentation {
     if (!map || !card) return;
     const fields = Object.fromEntries(Array.from(card.querySelectorAll('[data-field]')).map((node) => [node.dataset.field, node]));
     const render = (key) => {
-      const company = companies[key];
-      if (!company) return;
+      const raw = companies[key];
+      if (!raw) return;
+      const company = {
+        ...raw,
+        object: modeledObject[key] || '',
+        system: systemPosition[key] || '',
+        coupling: actionCoupling[key] || '',
+        boundary: raw.risk || ''
+      };
       Object.entries(fields).forEach(([field, node]) => { node.textContent = company[field] || ''; });
       map.querySelectorAll('.company-chip').forEach((button) => {
         const selected = button.dataset.company === key;
